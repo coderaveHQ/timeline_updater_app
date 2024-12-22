@@ -1,0 +1,24 @@
+name: timeline_updater_admin_app
+description: The TimeLine Updater Admin App
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  timeline_updater_app_ui:
+    path: ./../../packages/timeline_updater_app_ui
+  timeline_updater_app_utils:
+    path: ./../../packages/timeline_updater_app_utils
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

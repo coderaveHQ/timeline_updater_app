@@ -1,0 +1,8 @@
+include: package:lints/recommended.yaml
+
+linter:
+  rules:
+    prefer_single_quotes: true
+    avoid_print: true
+    slash_for_doc_comments: true
+    public_member_api_docs: true
