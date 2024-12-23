@@ -8,7 +8,7 @@
 PRODUCT_NAME = timeline_updater_admin_app
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = dev.coderave.dev.timelineUpdaterAdminApp
+PRODUCT_BUNDLE_IDENTIFIER = dev.coderave.timelineUpdaterAdminApp
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 dev.coderave.dev. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 dev.coderave. All rights reserved.

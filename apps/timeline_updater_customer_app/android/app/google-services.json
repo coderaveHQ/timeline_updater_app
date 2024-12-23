@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "62175683604",
+    "project_id": "timeline-updater-customer-app",
+    "storage_bucket": "timeline-updater-customer-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62175683604:android:54f7b563514b414944b301",
+        "android_client_info": {
+          "package_name": "dev.coderave.timeline_updater_customer_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO9HXbq9ZBC8JQ_4zye2GS2zz6eHhTA2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,24 +1,32 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:timeline_updater_app/core/utils/env.dart';
 import 'package:timeline_updater_app/src/app.dart';
+import 'package:timeline_updater_app/firebase_options.dart';
 
 /// The main entry point for the application
 Future<void> main() async {
 
-  /// Ensure that the widgets binding is initialized
+  // Ensure that the widgets binding is initialized
   WidgetsFlutterBinding.ensureInitialized();
 
-  /// Load the environment variables
+  // Load the environment variables
   await loadEnv();
 
-  /// Initialize the Supabase client
+  // Initialize the Supabase client
   await initializeSupabase();
 
-  /// Run the application
+  // Initialize the Firebase client
+  await initializeFirebase();
+
+  // Run the application
   runApp(const App());
 }
 
@@ -34,4 +42,11 @@ Future<void> initializeSupabase() async {
     anonKey: Env.supabaseAnonKey,
     authOptions: const FlutterAuthClientOptions(detectSessionInUri: false)
   );
+}
+
+/// Initializes the Firebase client
+Future<void> initializeFirebase() async {
+  // Skip when platform is Linux since Firebase does not support this platform, yet
+  if (!kIsWeb && Platform.isLinux) return;
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
