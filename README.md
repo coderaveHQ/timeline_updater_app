@@ -9,7 +9,7 @@
     "UPDATES CAN BE FUN"
     <br />
     <br />
-    <a href="https://app.timeline-updater.com">Web-App</a>
+    <a href="https://app.timeline-updater.com">Web App</a>
     ·
     <a href="https://timeline-updater.com">Website</a>
     ·
