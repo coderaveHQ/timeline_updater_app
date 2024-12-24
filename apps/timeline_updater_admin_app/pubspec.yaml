@@ -25,6 +25,9 @@ dependencies:
   firebase_core: ^3.8.1
   firebase_messaging: ^15.1.6
 
+  # Platform specifics
+  bitsdojo_window: ^0.1.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
