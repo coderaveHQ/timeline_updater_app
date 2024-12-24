@@ -59,8 +59,6 @@ Future<void> initializeFirebase() async {
 void configureDesktopWindow() {
   // Skip when platform is Web or Mobile since there is no window to be configured
   if (kIsWeb || Platform.isAndroid || Platform.isIOS) return;
-
-  // Configure the window
   doWhenWindowReady(() {
     const Size initialSize = Size(600.0, 450.0);
     appWindow.minSize = initialSize;
