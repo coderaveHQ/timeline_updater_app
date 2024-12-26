@@ -24,22 +24,10 @@
 </p>
 
 <p align="center">
-  <span style="display: inline-block; text-align: center; margin-right: 20px;">
-    <img src="./images/flutter.png" width="100" height="100" />
-    <br>Flutter
-  </span>
-  <span style="display: inline-block; text-align: center; margin-right: 20px;">
-    <img src="./images/supabase.png" width="100" height="100" />
-    <br>Supabase
-  </span>
-  <span style="display: inline-block; text-align: center; margin-right: 20px;">
-    <img src="./images/brick.png" width="100" height="100" />
-    <br>Brick
-  </span>
-  <span style="display: inline-block; text-align: center;">
-    <img src="./images/firebase.png" width="100" height="100" />
-    <br>Firebase
-  </span>
+  <img src="./images/flutter.png" width="100" height="100" alt="Flutter" />
+  <img src="./images/supabase.png" width="100" height="100" alt="Supabase" />
+  <img src="./images/brick.png" width="100" height="100" alt="Brick" />
+  <img src="./images/firebase.png" width="100" height="100" alt="Firebase" />
 </p>
 
 <strong>Usage</strong>
@@ -51,7 +39,7 @@
 
 ---
 
-## Activity
+## Activity 📊
 
 ![Alt](https://repobeats.axiom.co/api/embed/d985ebe656995c901b32f8e9d93c4cdac257e7dd.svg "Repobeats analytics image")
 
@@ -64,30 +52,12 @@ TimeLine Updater is a software consisting of three different applications that a
 Every application is available on all platforms.
 
 <p align="center">
-  <span style="display: inline-block; text-align: center; margin-right: 20px;">
-    <img src="./images/windows.png" width="100" height="100" />
-    <br>Windows
-  </span>
-  <span style="display: inline-block; text-align: center; margin-right: 20px;">
-    <img src="./images/macos.png" width="100" height="100" />
-    <br>macOS
-  </span>
-  <span style="display: inline-block; text-align: center; margin-right: 20px;">
-    <img src="./images/linux.png" width="100" height="100" />
-    <br>Linux
-  </span>
-  <span style="display: inline-block; text-align: center;">
-    <img src="./images/android.png" width="100" height="100" />
-    <br>Android
-  </span>
-  <span style="display: inline-block; text-align: center;">
-    <img src="./images/ios.png" width="100" height="100" />
-    <br>iOS
-  </span>
-  <span style="display: inline-block; text-align: center;">
-    <img src="./images/chrome.png" width="100" height="100" />
-    <br>Web
-  </span>
+  <img src="./images/windows.png" width="100" height="100" alt="Windows" />
+  <img src="./images/macos.png" width="100" height="100" alt="macOS" />
+  <img src="./images/linux.png" width="100" height="100" alt="Linux" />
+  <img src="./images/android.png" width="100" height="100" alt="Android" />
+  <img src="./images/ios.png" width="100" height="100" alt="iOS" />
+  <img src="./images/chrome.png" width="100" height="100" alt="Web" />
 </p>
 
 ### Features
