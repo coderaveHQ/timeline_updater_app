@@ -51,6 +51,10 @@
 
 ---
 
+## Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/d985ebe656995c901b32f8e9d93c4cdac257e7dd.svg "Repobeats analytics image")
+
 ## Overview 👓
 
 TimeLine Updater is a software consisting of three different applications that allow users to automate software updates of the TimeLine ERP system.
