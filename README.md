@@ -19,9 +19,11 @@
 
 ---
 
-<p align="center" style="font-size: 24px;">
-  <strong>Tech Stack</strong>
-</p>
+## Activity 📊
+
+![Alt](https://repobeats.axiom.co/api/embed/d985ebe656995c901b32f8e9d93c4cdac257e7dd.svg "Repobeats analytics image")
+
+## Tech Stack 👾
 
 <p align="center">
   <img src="./images/flutter.png" width="100" height="100" alt="Flutter" />
@@ -36,12 +38,6 @@
 - [Supabase](https://supabase.com/): [PostgreSQL](https://www.postgresql.org/) database and [S3](https://aws.amazon.com/de/s3/) storage
 - [Brick](https://pub.dev/packages/brick_offline_first): Local cache via [SQLite](https://www.sqlite.org/)
 - [Firebase](https://firebase.google.com/): Push-Notifications
-
----
-
-## Activity 📊
-
-![Alt](https://repobeats.axiom.co/api/embed/d985ebe656995c901b32f8e9d93c4cdac257e7dd.svg "Repobeats analytics image")
 
 ## Overview 👓
 
@@ -74,18 +70,9 @@ Every application is available on all platforms.
 There are three different Apps for different purposes.
 
 <p align="center">
-  <span style="display: inline-block; text-align: center; margin-right: 20px;">
-    <img src="./images/timeline-updater.png" width="100" height="100" />
-    <br>TimeLine Updater
-  </span>
-  <span style="display: inline-block; text-align: center; margin-right: 20px;">
-    <img src="./images/timeline-updater-admin.png" width="100" height="100" />
-    <br>TimeLine Updater Admin
-  </span>
-  <span style="display: inline-block; text-align: center; margin-right: 20px;">
-    <img src="./images/timeline-updater-customer.png" width="100" height="100" />
-    <br>TimeLine Updater Customer
-  </span>
+  <img src="./images/timeline-updater.png" width="100" height="100" alt="TimeLine Updater" />
+  <img src="./images/timeline-updater-admin.png" width="100" height="100" alt="TimeLine Updater Admin" />
+  <img src="./images/timeline-updater-customer.png" width="100" height="100" alt="TimeLine Updater Customer" />
 </p>
 
 In addition to that we developed a UI library called **TimeLine Updater App UI**, a utils collection called **TimeLine Updater App Utils** and a documenation page available at [TimeLine Updater Docs](https://docs.timeline-updater.com).
