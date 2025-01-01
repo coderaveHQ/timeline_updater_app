@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-import 'package:timeline_updater_app_ui/res/theme/colors/sc_color_data.dart';
+import 'package:timeline_updater_app_ui/res/theme/colors/tl_color_data.dart';
 
 /// An enum specifying the available color modes
 enum TLColorMode {
