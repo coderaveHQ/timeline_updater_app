@@ -15,9 +15,20 @@ dependencies:
   timeline_updater_app_utils:
     path: ./../../packages/timeline_updater_app_utils
 
+  # Supabase
+  supabase_flutter: ^2.8.1
+
   # Firebase
   firebase_core: ^3.8.1
   firebase_messaging: ^15.1.6
+
+  # State Management
+  hooks_riverpod: ^2.5.2
+  flutter_hooks: ^0.20.5
+  riverpod_annotation: ^2.3.5
+
+  # Routing
+  go_router: ^14.2.7
 
   # Platform specifics
   bitsdojo_window: ^0.1.6
@@ -25,10 +36,16 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # Linting
   flutter_lints: ^5.0.0
+  custom_lint: ^0.7.0
+  riverpod_lint: ^2.3.13
 
   # Generators
   build_runner: ^2.4.12
+  riverpod_generator: ^2.4.3
+  go_router_builder: ^2.7.1
 
 flutter:
   uses-material-design: true

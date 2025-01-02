@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:timeline_updater_app_ui/res/localization/language/tl_language_data.dart';
 import 'package:timeline_updater_app_ui/res/localization/tl_localization.dart';
+import 'package:timeline_updater_app_ui/res/theme/colors/tl_color_data.dart';
+import 'package:timeline_updater_app_ui/res/theme/tl_theme.dart';
 
 /// A class for setting properties that can be retrieved in the App
 class TLApp extends StatefulWidget {
@@ -12,11 +14,15 @@ class TLApp extends StatefulWidget {
   /// Holds localized strings
   final TLLanguageData language;
 
+  /// Holds colors
+  final TLColorData colors;
+
   /// Defualt constructor
   const TLApp({
     super.key,
     required this.router,
-    required this.language
+    required this.language,
+    required this.colors
   });
 
   @override
@@ -40,7 +46,10 @@ class _TLAppState extends State<TLApp> {
         builder: (BuildContext context, Widget? child) {
           return TLLocalization(
             language: widget.language,
-            child: child!
+            child: TLTheme(
+              colors: widget.colors,
+              child: child!
+            )
           );
         }
       )
