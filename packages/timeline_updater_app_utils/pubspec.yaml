@@ -10,6 +10,18 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # environment variables
+  flutter_dotenv: ^5.2.1
+
+  # Supabase
+  supabase_flutter: ^2.8.1
+
+  # Firebase
+  firebase_core: ^3.8.1
+
+  # Platform specifics
+  bitsdojo_window: ^0.1.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
