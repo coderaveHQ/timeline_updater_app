@@ -1,12 +1,20 @@
 name: timeline_updater_app_utils
 description: A utils collection for the TimeLine Updater App
-version: 1.0.0
+version: 0.0.1
 
 environment:
   sdk: ^3.6.0
+  flutter: ">=1.17.0"
 
 dependencies:
+  flutter:
+    sdk: flutter
 
 dev_dependencies:
-  lints: ^5.0.0
-  test: ^1.24.0
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
