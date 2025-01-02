@@ -2,54 +2,99 @@ import 'package:flutter/material.dart';
 
 import 'package:timeline_updater_app_ui/res/theme/colors/tl_colors.dart';
 
-/// A class specifying the color data used for different
-class TLColorData {
+/// A class holding all localizable strings
+abstract class TLColorable {
+
+  /// The brightness of the keyboard
+  Brightness get keyboardBrightness;
+
+  /// The brightness of the status bar
+  Brightness get statusBarBrightness;
+
+  /// The brightness of the status bar icon
+  Brightness get statusBarIconBrightness;
 
   /// The brightness of the system navigation bar icon
-  final Brightness systemNavigationBarIconBrightness;
-  /// The brightness of the status bar
-  final Brightness statusBarBrightness;
-  /// The brightness of the status bar icon
-  final Brightness statusBarIconBrightness;
-  /// The brightness of the keyboard
-  final Brightness keyboardBrightness;
+  Brightness get systemNavigationBarIconBrightness;
+
   /// The color of the status bar
-  final Color statusBarColor;
+  Color get statusBarColor;
+
   /// The color of the system navigation bar
-  final Color systemNavigationBarColor;
+  Color get systemNavigationBarColor;
+
   /// The color of the system navigation bar divider
-  final Color systemNavigationBarDividerColor;
+  Color get systemNavigationBarDividerColor;
+}
+
+/// A class holding all colors per color theme
+class TLColorData {
+
+  /// light
+  final TLColorDataLight light;
+
+  /// dark
+  final TLColorDataDark dark;
 
   /// Default constructor
   const TLColorData({
-    required this.systemNavigationBarIconBrightness,
-    required this.statusBarBrightness,
-    required this.statusBarIconBrightness,
-    required this.keyboardBrightness,
-    required this.statusBarColor,
-    required this.systemNavigationBarColor,
-    required this.systemNavigationBarDividerColor
+    required this.light,
+    required this.dark
   });
+}
 
-  /// Creates an instance of the color data for the light color mode
-  factory TLColorData.light() => const TLColorData(
-    systemNavigationBarIconBrightness: Brightness.dark,
-    statusBarBrightness: Brightness.light,
-    statusBarIconBrightness: Brightness.dark,
-    keyboardBrightness: Brightness.light,
-    statusBarColor: TLColors.transparent,
-    systemNavigationBarColor: TLColors.white,
-    systemNavigationBarDividerColor: TLColors.white
-  );
+/// Holds all light colors
+class TLColorDataLight implements TLColorable {
 
-  /// Creates an instance of the color data for the dark color mode
-  factory TLColorData.dark() => const TLColorData(
-    systemNavigationBarIconBrightness: Brightness.light,
-    statusBarBrightness: Brightness.dark,
-    statusBarIconBrightness: Brightness.light,
-    keyboardBrightness: Brightness.dark,
-    statusBarColor: TLColors.transparent,
-    systemNavigationBarColor: TLColors.gray900,
-    systemNavigationBarDividerColor: TLColors.gray900
-  );
+  /// Default constructor
+  const TLColorDataLight();
+  
+  @override
+  Brightness get keyboardBrightness => Brightness.light;
+  
+  @override
+  Brightness get statusBarBrightness => Brightness.light;
+
+  @override
+  Brightness get statusBarIconBrightness => Brightness.dark;
+
+  @override
+  Brightness get systemNavigationBarIconBrightness => Brightness.dark;
+  
+  @override
+  Color get statusBarColor => TLColors.transparent;
+  
+  @override
+  Color get systemNavigationBarColor => TLColors.white;
+  
+  @override
+  Color get systemNavigationBarDividerColor => TLColors.white;
+}
+
+/// Holds all dark colors
+class TLColorDataDark implements TLColorable {
+
+  /// Default constructor
+  const TLColorDataDark();
+  
+  @override
+  Brightness get keyboardBrightness => Brightness.dark;
+  
+  @override
+  Brightness get statusBarBrightness => Brightness.dark;
+
+  @override
+  Brightness get statusBarIconBrightness => Brightness.light;
+
+  @override
+  Brightness get systemNavigationBarIconBrightness => Brightness.light;
+  
+  @override
+  Color get statusBarColor => TLColors.transparent;
+  
+  @override
+  Color get systemNavigationBarColor => TLColors.gray900;
+  
+  @override
+  Color get systemNavigationBarDividerColor => TLColors.gray900;
 }

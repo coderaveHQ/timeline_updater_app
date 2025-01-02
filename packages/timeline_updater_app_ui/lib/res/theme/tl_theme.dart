@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
 
-import 'package:timeline_updater_app_ui/res/theme/tl_theme_data.dart';
+import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 
-/// A class specifying the theme used
+/// A class that holds information about the theme
 class TLTheme extends InheritedWidget {
 
-  /// The theme data
-  final TLThemeData data;
+  /// Holds all colors per color theme
+  final TLColorData colors;
 
   /// Default constructor
   const TLTheme({
     super.key,
     required super.child,
-    required this.data
+    required this.colors
   });
 
-  /// Gets the theme from the current context
-  static TLThemeData of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<TLTheme>()!.data;
+  /// Gets the `TLTheme`widget based on the context
+  static TLTheme of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<TLTheme>()!;
+  }
+
+  /// Gets the localized strings based on the context
+  static C colorsOf<C extends TLColorable>(BuildContext context) {
+    // TODO Get reactive color mode based on preferences
+    return of(context).colors.light as C;
   }
 
   @override
   bool updateShouldNotify(covariant TLTheme oldWidget) {
-    return data != oldWidget.data;
+    return oldWidget != oldWidget;
   }
 }

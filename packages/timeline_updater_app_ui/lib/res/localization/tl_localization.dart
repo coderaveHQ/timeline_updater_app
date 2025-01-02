@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
 
-import 'package:timeline_updater_app_ui/res/localization/tl_localization_data.dart';
+import 'package:timeline_updater_app_ui/res/localization/language/tl_language_data.dart';
 
-/// A class holding all localization data
+/// A class that holds information about the localization
 class TLLocalization extends InheritedWidget {
 
-  /// The localization data to be used
-  final TLLocalizationData data;
+  /// Holds all localizable strings per language
+  final TLLanguageData language;
 
   /// Default constructor
   const TLLocalization({
     super.key,
     required super.child,
-    required this.data
+    required this.language
   });
 
-  /// Gets the localization data from the current context
-  static TLLocalizationData of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<TLLocalization>()!.data;
+  /// Gets the `TLLocalization`widget based on the context
+  static TLLocalization of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<TLLocalization>()!;
+  }
+
+  /// Gets the localized strings based on the context
+  static L languageOf<L extends TLLocalizable>(BuildContext context) {
+    // TODO Get reactive language mode based on preferences
+    return of(context).language.deDE as L;
   }
 
   @override
   bool updateShouldNotify(covariant TLLocalization oldWidget) {
-    return data != oldWidget.data;
+    return oldWidget != oldWidget;
   }
 }
