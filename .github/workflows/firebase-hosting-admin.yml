@@ -21,7 +21,6 @@ jobs:
     env:
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-      FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TIMELINE_UPDATER_ADMIN_APP }}
 
     steps:
 
@@ -62,7 +61,7 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: $FIREBASE_SERVICE_ACCOUNT
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TIMELINE_UPDATER_ADMIN_APP }}
           channelId: live
           projectId: timeline-updater-admin-app
           entryPoint: ./apps/timeline_updater_admin_app
