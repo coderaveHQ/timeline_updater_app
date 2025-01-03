@@ -5,6 +5,9 @@ import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 /// A custom class holding all colors
 abstract class CustomColorable extends TLColorable {
   
-  /// This is for test purposes only
-  Color get test1;
+  /// Sign in page title color
+  Color get signInTitle;
+
+  /// Sign in page subtitle color
+  Color get signInSubtitle;
 }

@@ -17,12 +17,16 @@ class TLApp extends StatefulWidget {
   /// Holds colors
   final TLColorData colors;
 
+  /// Callback for building a widget wrapper
+  final Widget Function(Widget)? builder;
+
   /// Defualt constructor
   const TLApp({
     super.key,
     required this.router,
     required this.language,
-    required this.colors
+    required this.colors,
+    this.builder
   });
 
   @override
@@ -48,7 +52,7 @@ class _TLAppState extends State<TLApp> {
             language: widget.language,
             child: TLTheme(
               colors: widget.colors,
-              child: child!
+              child: widget.builder?.call(child!) ?? child!
             )
           );
         }

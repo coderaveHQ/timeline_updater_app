@@ -24,7 +24,10 @@ class CustomColorDataLight extends TLColorDataLight implements CustomColorable {
   const CustomColorDataLight();
 
   @override
-  Color get test1 => TLColors.white;
+  Color get signInTitle => TLColors.gray900;
+
+  @override
+  Color get signInSubtitle => TLColors.gray500;
 }
 
 /// Holds all dark colors
@@ -34,5 +37,8 @@ class CustomColorDataDark extends TLColorDataDark implements CustomColorable {
   const CustomColorDataDark();
 
   @override
-  Color get test1 => TLColors.gray900;
+  Color get signInTitle => TLColors.gray100;
+
+  @override
+  Color get signInSubtitle => TLColors.gray400;
 }

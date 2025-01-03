@@ -22,9 +22,22 @@ class CustomLanguageDataDeDE extends TLLanguageDataDeDE implements CustomLocaliz
   const CustomLanguageDataDeDE();
 
   @override
-  String test2() {
-    return 'Test 2 (de-DE)';
-  }
+  String get signInAppBarTitle => 'Anmelden';
+
+  @override
+  String get signInTitle => 'Schön dich zu sehen!';
+
+  @override
+  String get signInSubtitle => 'Melde dich kurz an, damit ich weiß mit wem ich es zu tun habe.';
+
+  @override
+  String get signInEmailTextFieldHint => 'E-Mail';
+
+  @override
+  String get signInPasswordTextFieldHint => 'Passwort';
+
+  @override
+  String get signInSignInButtonTitle => 'Anmelden';
 }
 
 /// Holds all en-US localized strings
@@ -34,7 +47,20 @@ class CustomLanguageDataEnUS extends TLLanguageDataEnUS implements CustomLocaliz
   const CustomLanguageDataEnUS();
 
   @override
-  String test2() {
-    return 'Test 2 (en-US)';
-  }
+  String get signInAppBarTitle => 'Sign In';
+
+  @override
+  String get signInTitle => 'Nice to see you!';
+
+  @override
+  String get signInSubtitle => 'Sign in real quick so that I know who I am talking to.';
+
+  @override
+  String get signInEmailTextFieldHint => 'E-Mail';
+
+  @override
+  String get signInPasswordTextFieldHint => 'Password';
+
+  @override
+  String get signInSignInButtonTitle => 'Sign In';
 }

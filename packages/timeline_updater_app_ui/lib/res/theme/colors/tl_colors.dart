@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 /// A class specifying the available colors
 class TLColors {
 
+  /// The TimeLine specific blue
+  static const Color timeline = Color(0xFF204D90);
+
   /// The color transparent
   static const Color transparent = Color(0x00000000);
 

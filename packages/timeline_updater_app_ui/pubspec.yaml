@@ -10,6 +10,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Notifications
+  delightful_toast: ^1.1.0
+
+  # UI
+  lucide_icons_flutter: ^1.2.5
+  gap: ^3.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 
+import 'package:timeline_updater_admin_app/src/features/auth/presentation/widgets/custom_auth_state_wrapper.dart';
 import 'package:timeline_updater_admin_app/core/res/theme/custom_color_data.dart';
 import 'package:timeline_updater_admin_app/core/services/router.dart';
 import 'package:timeline_updater_admin_app/core/res/localization/custom_language_data.dart';
@@ -22,7 +23,10 @@ class App extends ConsumerWidget {
     return TLApp(
       router: router,
       language: CustomLanguageData(),
-      colors: CustomColorData()
+      colors: CustomColorData(),
+      builder: (Widget child) {
+        return CustomAuthStateWrapper(child: child);
+      }
     );
   }
 }
