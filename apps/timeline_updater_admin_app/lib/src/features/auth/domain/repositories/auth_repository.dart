@@ -25,6 +25,14 @@ abstract interface class AuthRepository {
     required String password
   });
 
+  /// Creates a new user
+  FutureResult<void, Object> createUser({
+    required String name,
+    required String email,
+    required String password,
+    required String serviceKey
+  });
+
   /// Signs out the currently signed in user
   FutureResult<void, Object> signOut();
 }

@@ -139,10 +139,10 @@ BEGIN
     VALUES (
         NEW.id, 
         NEW.raw_user_meta_data->>'name',
-        NEW.raw_user_meta_data->>'type'
+        (NEW.raw_user_meta_data->>'type')::public.user_type
     );
 
-    IF NEW.raw_user_meta_data->>'type'::public.user_type = 'customer'::public.user_type THEN
+    IF (NEW.raw_user_meta_data->>'type')::public.user_type = 'customer'::public.user_type THEN
         INSERT INTO public.customer_profiles (
             customer_id, 
             profile_id

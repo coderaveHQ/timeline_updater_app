@@ -20,4 +20,31 @@ abstract class CustomLocalizable extends TLLocalizable {
 
   /// Sign in page sign in button title
   String get signInSignInButtonTitle;
+
+  /// Create user page app bar title
+  String get createUserAppBarTitle;
+
+  /// Create user page title
+  String get createUserTitle;
+
+  /// Create user page subtitle
+  String get createUserSubtitle;
+
+  /// Create user page name text field hint
+  String get createUserNameTextFieldHint;
+
+  /// Create user page email text field hint
+  String get createUserEmailTextFieldHint;
+
+  /// Create user page password text field hint
+  String get createUserPasswordTextFieldHint;
+
+  /// Create user page service key text field hint
+  String get createUserServiceKeyTextFieldHint;
+
+  /// Create user page create user button title
+  String get createUserCreateUserButtonTitle;
+
+  /// Toast for when a new user was created
+  String get successToastUserCreated;
 }

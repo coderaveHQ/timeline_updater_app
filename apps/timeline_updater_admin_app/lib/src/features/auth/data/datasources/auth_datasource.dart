@@ -17,10 +17,18 @@ abstract interface class AuthDatasource {
   /// Default constructor
   const AuthDatasource();
 
-  /// Signs in the user based on the given credentials consitsing of `email` and `password`
+  /// Signs in the user based on the given credentials consisting of `email` and `password`
   Future<void> signIn({
     required String email,
     required String password
+  });
+
+  /// Creates a new user
+  Future<void> createUser({
+    required String name,
+    required String email,
+    required String password,
+    required String serviceKey
   });
 
   /// Signs out the currently signed in user

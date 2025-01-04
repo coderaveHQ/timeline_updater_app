@@ -9,16 +9,19 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 
 /// A class that provides access to environment variables
-abstract class TLEnv {
+class TLEnv {
+
+  /// Default constructor
+  const TLEnv();
 
   /// A getter for the Supabase URL
-  static String get supabaseUrl => getKey('SUPABASE_URL');
+  String get supabaseUrl => getKey('SUPABASE_URL');
 
   /// A getter for the Supabase anonymous key
-  static String get supabaseAnonKey => getKey('SUPABASE_ANON_KEY');
+  String get supabaseAnonKey => getKey('SUPABASE_ANON_KEY');
 
   /// Helper method to get the value of an environment variable
-  static String getKey(String key) {
+  String getKey(String key) {
     return dotenv.env[key]!;
   }
 }
@@ -55,8 +58,8 @@ Future<void> _loadEnv() async {
 /// Initializes the Supabase client
 Future<void> _initializeSupabase() async {
   await Supabase.initialize(
-    url: TLEnv.supabaseUrl,
-    anonKey: TLEnv.supabaseAnonKey,
+    url: TLEnv().supabaseUrl,
+    anonKey: TLEnv().supabaseAnonKey,
     authOptions: const FlutterAuthClientOptions(detectSessionInUri: false)
   );
 }

@@ -21,10 +21,10 @@ class TLToasts {
 class TLSuccessToasts {
 
   /// For when the user signed in
-  TLToast get signedIn => TLToast((TLLocalizable language) => language.successToastSignedIn);
+  TLToast get signedIn => TLToast(ToastType.success, (TLLocalizable language) => language.successToastSignedIn);
 
   /// For when the user signed out
-  TLToast get signedOut => TLToast((TLLocalizable language) => language.successToastSignedOut);
+  TLToast get signedOut => TLToast(ToastType.success, (TLLocalizable language) => language.successToastSignedOut);
 }
 
 /// A class defining all info toasts
@@ -34,18 +34,21 @@ class TLInfoToasts { }
 class TLWarningToasts { }
 
 /// A class defining the structure of a toast
-class TLToast {
+class TLToast<L extends TLLocalizable> {
+
+  /// The type of the toast e.g. success, info, warning etc.
+  final ToastType type;
   
   /// A callback for the translation
-  final String Function(TLLocalizable) message;
+  final String Function(L) message;
 
   /// Default constructor
-  const TLToast(this.message);
+  const TLToast(this.type, this.message);
 
   /// Shows a toast with the corresponding message
   void show(BuildContext context) {
-    final TLLocalizable language = TLLocalization.languageOf(context);
+    final L language = TLLocalization.languageOf<L>(context);
     final String msg = message.call(language);
-    Toaster.showError(context, msg);
+    Toaster.show(context, type, msg);
   }
 }

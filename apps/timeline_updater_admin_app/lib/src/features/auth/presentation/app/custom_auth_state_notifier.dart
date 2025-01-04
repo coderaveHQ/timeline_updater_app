@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:timeline_updater_admin_app/src/features/auth/domain/usecases/auth_create_user_usecase.dart';
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
 
@@ -55,6 +56,46 @@ class CustomAuthStateNotifier extends _$CustomAuthStateNotifier {
       );
       
       final Result<void, Object> result = await ref.watch(authSignInUsecaseProvider).call(params);
+
+      result.fold<void>(
+        onSuccess: (void _) => state = state.copyWith(isLoading: false),
+        onFailure: (Object error) => throw error
+      );
+    } catch (e) {
+      state = state.copyWith(
+        isLoading: false,
+        error: e
+      );
+      rethrow;
+    }
+  }
+
+  /// Creates a new user
+  Future<void> createUser({
+    required String name,
+    required String email,
+    required String password,
+    required String serviceKey
+  }) async {
+    state = state.copyWith(
+      isLoading: true,
+      removeError: true
+    );
+
+    try {
+      Validator.validateName(name);
+      Validator.validateEmail(email);
+      Validator.validatePassword(password);
+      Validator.validateServiceKey(serviceKey);
+
+      final AuthCreateUserUsecaseParams params = AuthCreateUserUsecaseParams(
+        name: name,
+        email: email,
+        password: password,
+        serviceKey: serviceKey
+      );
+      
+      final Result<void, Object> result = await ref.watch(authCreateUserUsecaseProvider).call(params);
 
       result.fold<void>(
         onSuccess: (void _) => state = state.copyWith(isLoading: false),

@@ -54,26 +54,26 @@ class Toaster {
 
   /// Shows a success toast
   static void showSuccess(BuildContext context, String text) {
-    _show(context, ToastType.success, text);
+    show(context, ToastType.success, text);
   }
 
   /// Shows an info toast
   static void showInfo(BuildContext context, String text) {
-    _show(context, ToastType.info, text);
+    show(context, ToastType.info, text);
   }
 
   /// Shows a warning toast
   static void showWarning(BuildContext context, String text) {
-    _show(context, ToastType.warning, text);
+    show(context, ToastType.warning, text);
   }
 
   /// Shows an error toast
   static void showError(BuildContext context, String text) {
-    _show(context, ToastType.error, text);
+    show(context, ToastType.error, text);
   }
 
   /// Shows a toast
-  static void _show(BuildContext context, ToastType type, String text) {
+  static void show(BuildContext context, ToastType type, String text) {
     DelightToastBar(
       autoDismiss: true,
       builder: (BuildContext context) => _build(context, type, text)

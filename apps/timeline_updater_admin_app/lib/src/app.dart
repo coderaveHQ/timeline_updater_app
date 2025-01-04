@@ -25,7 +25,7 @@ class App extends ConsumerWidget {
       language: CustomLanguageData(),
       colors: CustomColorData(),
       builder: (Widget child) {
-        return CustomAuthStateWrapper(child: child);
+        return Builder(builder: (c) => CustomAuthStateWrapper(child: child));
       }
     );
   }

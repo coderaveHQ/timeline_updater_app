@@ -11,4 +11,12 @@ class ValidationError extends IError {
   /// An error for when a password seems to be invalid
   ValidationError.invalidPassword()
     : super((TLLocalizable language) => language.validationErrorInvalidPassword);
+
+  /// An error for when a name seems to be invalid
+  ValidationError.invalidName()
+    : super((TLLocalizable language) => language.validationErrorInvalidName);
+
+  /// An error for when a service key seems to be invalid
+  ValidationError.invalidServiceKey()
+    : super((TLLocalizable language) => language.validationErrorInvalidServiceKey);
 }

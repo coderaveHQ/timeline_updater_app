@@ -1,6 +1,7 @@
+import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
+
 import 'package:timeline_updater_admin_app/src/features/auth/data/datasources/auth_datasource.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/domain/repositories/auth_repository.dart';
-import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
 
 /// An implementation of the authentication repository
 class AuthRepositoryImpl implements AuthRepository {
@@ -22,6 +23,26 @@ class AuthRepositoryImpl implements AuthRepository {
       await _authDatasource.signIn(
         email: email,
         password: password
+      );
+      return const Success(data: null);
+    } catch (e) {
+      return Failure(error: e);
+    }
+  }
+
+  @override
+  FutureResult<void, Object> createUser({
+    required String name,
+    required String email,
+    required String password,
+    required String serviceKey
+  }) async {
+    try {
+      await _authDatasource.createUser(
+        name: name,
+        email: email,
+        password: password,
+        serviceKey: serviceKey
       );
       return const Success(data: null);
     } catch (e) {

@@ -38,6 +38,33 @@ class CustomLanguageDataDeDE extends TLLanguageDataDeDE implements CustomLocaliz
 
   @override
   String get signInSignInButtonTitle => 'Anmelden';
+
+  @override
+  String get createUserAppBarTitle => 'Benutzer*in erstellen';
+
+  @override
+  String get createUserTitle => 'Lege ein neues Konto an!';
+
+  @override
+  String get createUserSubtitle => 'Hier kannst du dir selbst ein neues Konto anlegen.';
+
+  @override
+  String get createUserNameTextFieldHint => 'Name';
+
+  @override
+  String get createUserEmailTextFieldHint => 'E-Mail';
+
+  @override
+  String get createUserPasswordTextFieldHint => 'Passwort';
+
+  @override
+  String get createUserServiceKeyTextFieldHint => 'Serviceschlüssel';
+
+  @override
+  String get createUserCreateUserButtonTitle => 'Erstellen';
+
+  @override
+  String get successToastUserCreated => 'Benutzer*in erfolgreich erstellt!';
 }
 
 /// Holds all en-US localized strings
@@ -63,4 +90,31 @@ class CustomLanguageDataEnUS extends TLLanguageDataEnUS implements CustomLocaliz
 
   @override
   String get signInSignInButtonTitle => 'Sign In';
+
+  @override
+  String get createUserAppBarTitle => 'Create user';
+
+  @override
+  String get createUserTitle => 'Create a new account!';
+
+  @override
+  String get createUserSubtitle => 'Here you can create a new account for yourself.';
+
+  @override
+  String get createUserNameTextFieldHint => 'Name';
+
+  @override
+  String get createUserEmailTextFieldHint => 'E-Mail';
+
+  @override
+  String get createUserPasswordTextFieldHint => 'Password';
+
+  @override
+  String get createUserServiceKeyTextFieldHint => 'Service key';
+
+  @override
+  String get createUserCreateUserButtonTitle => 'Create';
+
+  @override
+  String get successToastUserCreated => 'Successfully created a new user!';
 }

@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/app/custom_auth_state_notifier.dart';
+import 'package:timeline_updater_admin_app/src/features/auth/presentation/pages/create_user_page.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:timeline_updater_admin_app/src/features/home/presentation/pages/home_page.dart';
 import 'package:timeline_updater_admin_app/src/features/main/presentation/pages/main_page.dart';
@@ -136,6 +137,31 @@ class SignInRoute extends GoRouteData {
     return NoTransitionPage(
       key: state.pageKey,
       child: const SignInPage()
+    );
+  }
+}
+
+/// The create user route
+@TypedGoRoute<CreateUserRoute>(path: CreateUserRoute.location)
+class CreateUserRoute extends GoRouteData {
+
+  /// Default constructor
+  const CreateUserRoute();
+
+  /// The location of the route
+  static const String location = '/create-user';
+
+  /// The full path of the route
+  static const String path = location;
+
+  /// The parent navigator key
+  static final GlobalKey<NavigatorState> $parentNavigatorKey = rootNavigatorKey;
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) {
+    return NoTransitionPage(
+      key: state.pageKey,
+      child: const CreateUserPage()
     );
   }
 }

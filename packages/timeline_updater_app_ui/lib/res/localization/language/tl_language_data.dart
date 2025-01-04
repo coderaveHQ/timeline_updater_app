@@ -13,6 +13,12 @@ abstract class TLLocalizable {
   /// ValidationError.invalidPassword
   String get validationErrorInvalidPassword;
 
+  /// ValidationError.invalidName
+  String get validationErrorInvalidName;
+
+  /// ValidationError.invalidServiceKey
+  String get validationErrorInvalidServiceKey;
+
   /// LaunchError.urlNotOpened
   String get launchErrorUrlNotOpened;
 
@@ -55,6 +61,12 @@ class TLLanguageDataDeDE implements TLLocalizable {
   String get validationErrorInvalidPassword => 'Das Passwort muss zwischen 6 und 128 Zeichen lang sein.';
 
   @override
+  String get validationErrorInvalidName =>  'Der Name muss zwischen 2 und 64 Zeichen lang sein.';
+
+  @override
+  String get validationErrorInvalidServiceKey => 'Der Serviceschlüssel darf nicht leer sein.';
+
+  @override
   String get launchErrorUrlNotOpened => 'Die URL konnte nicht geöffnet werden.';
 
   @override
@@ -78,6 +90,12 @@ class TLLanguageDataEnUS implements TLLocalizable {
 
   @override
   String get validationErrorInvalidPassword => 'The password has to be between 6 and 128 characters long.';
+
+  @override
+  String get validationErrorInvalidName =>  'The name has to be between 2 and 64 characters long.';
+
+  @override
+  String get validationErrorInvalidServiceKey => 'The service key can not be empty.';
 
   @override
   String get launchErrorUrlNotOpened => 'The URL could not be opened.';

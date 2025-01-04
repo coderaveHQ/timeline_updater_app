@@ -6,22 +6,24 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 
-import 'package:timeline_updater_admin_app/src/features/auth/presentation/app/sign_in_page_state_notifier.dart';
-import 'package:timeline_updater_admin_app/core/res/custom_assets.dart';
+import 'package:timeline_updater_admin_app/src/features/auth/presentation/app/create_user_page_state_notifier.dart';
 import 'package:timeline_updater_admin_app/core/res/localization/custom_localizable.dart';
 import 'package:timeline_updater_admin_app/core/res/theme/custom_colorable.dart';
 
 /// The sign in page
-class SignInPage extends StatefulHookConsumerWidget {
+class CreateUserPage extends StatefulHookConsumerWidget {
 
   /// Default constructor
-  const SignInPage({ super.key });
+  const CreateUserPage({ super.key });
 
   @override
-  ConsumerState<SignInPage> createState() => _SignInPageState();
+  ConsumerState<CreateUserPage> createState() => _CreateUserPageState();
 }
 
-class _SignInPageState extends ConsumerState<SignInPage> {
+class _CreateUserPageState extends ConsumerState<CreateUserPage> {
+
+  /// Controller for the name text field
+  late TextEditingController _nameController;
 
   /// Controller for the email text field
   late TextEditingController _emailController;
@@ -29,30 +31,44 @@ class _SignInPageState extends ConsumerState<SignInPage> {
   /// Controller for the password text field
   late TextEditingController _passwordController;
 
-  /// Handles when the sign in button is pressed
-  Future<void> _handleSignIn() async {
+  /// Controller for the service key text field
+  late TextEditingController _serviceKeyController;
+
+  /// Handles when the create user button is pressed
+  Future<void> _handleCreateUser() async {
+    final String name = _nameController.text.trim();
     final String email = _emailController.text.trim().toLowerCase();
     final String password = _passwordController.text.trim();
+    final String serviceKey = _serviceKeyController.text.trim();
 
-    await ref.read(signInPageStateNotifierProvider.notifier).signIn(
+    await ref.read(createUserPageStateNotifierProvider.notifier).createUser(
+      name: name,
       email: email,
-      password: password
+      password: password,
+      serviceKey: serviceKey
     );
+
+    
   }
 
   @override
   Widget build(BuildContext context) {
 
+    _nameController = useTextEditingController();
     _emailController = useTextEditingController();
     _passwordController = useTextEditingController();
+    _serviceKeyController = useTextEditingController();
 
     final CustomLocalizable language = TLLocalization.languageOf(context);
     final CustomColorable colors = TLTheme.colorsOf(context);
 
-    final SignInPageState pageState = ref.watch(signInPageStateNotifierProvider);
+    final CreateUserPageState pageState = ref.watch(createUserPageStateNotifierProvider);
 
     return TLScaffold(
-      appBar: TLAppBar(title: language.signInAppBarTitle),
+      appBar: TLAppBar(
+        title: language.createUserAppBarTitle,
+        backButton: TLAppBarBackButton(isEnabled: !pageState.isCreateUserLoading)
+      ),
       body: Center(
         child: SingleChildScrollView(
           padding: EdgeInsets.only(
@@ -64,17 +80,8 @@ class _SignInPageState extends ConsumerState<SignInPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TLMaxSize.size(
-                size: const Size.square(160.0), 
-                child: Image.asset(
-                  CustomAssets.logo,
-                  width: context.screenWidth / 2.8,
-                  height: context.screenWidth / 2.8
-                )
-              ),
-              const Gap(TLSpacing.xxl),
               TLText(
-                text: language.signInTitle,
+                text: language.createUserTitle,
                 alignment: TextAlign.center,
                 style: TextStyle(
                   fontSize: 24.0,
@@ -84,7 +91,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
               ),
               const Gap(TLSpacing.lg),
               TLText(
-                text: language.signInSubtitle,
+                text: language.createUserSubtitle,
                 alignment: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16.0,
@@ -94,11 +101,19 @@ class _SignInPageState extends ConsumerState<SignInPage> {
               ),
               const Gap(TLSpacing.xl),
               TLTextField(
+                controller: _nameController,
+                icon: LucideIcons.tag,
+                hint: language.createUserNameTextFieldHint,
+                isEnabled: !pageState.isCreateUserLoading,
+                inputType: TextInputType.name
+              ),
+              const Gap(TLSpacing.lg),
+              TLTextField(
                 controller: _emailController,
                 inputType: TextInputType.emailAddress,
                 icon: LucideIcons.mail,
                 hint: language.signInEmailTextFieldHint,
-                isEnabled: !pageState.isSignInLoading
+                isEnabled: !pageState.isCreateUserLoading
               ),
               const Gap(TLSpacing.lg),
               TLTextField(
@@ -106,14 +121,22 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                 obscure: true,
                 icon: LucideIcons.lock,
                 hint: language.signInPasswordTextFieldHint,
-                isEnabled: !pageState.isSignInLoading
+                isEnabled: !pageState.isCreateUserLoading
+              ),
+              const Gap(TLSpacing.lg),
+              TLTextField(
+                controller: _serviceKeyController,
+                obscure: true,
+                icon: LucideIcons.key,
+                hint: language.createUserServiceKeyTextFieldHint,
+                isEnabled: !pageState.isCreateUserLoading
               ),
               const Gap(TLSpacing.xl),
               TLRectangleButton(
-                onPressed: _handleSignIn,
-                isLoading: pageState.isSignInLoading,
-                isEnabled: !pageState.isSignInLoading,
-                title: language.signInSignInButtonTitle
+                onPressed: _handleCreateUser,
+                isLoading: pageState.isCreateUserLoading,
+                isEnabled: !pageState.isCreateUserLoading,
+                title: language.createUserCreateUserButtonTitle
               )
             ]
           )

@@ -13,4 +13,14 @@ class Validator {
   static void validatePassword(String password) {
     if (password.length < 6 || password.length > 128) throw ValidationError.invalidPassword();
   }
+
+  /// Validates a users name
+  static void validateName(String name) {
+    if (name.length < 2 || name.length > 64) throw ValidationError.invalidName();
+  }
+
+  /// Validates a service key
+  static void validateServiceKey(String serviceKey) {
+    if (serviceKey.isEmpty) throw ValidationError.invalidServiceKey();
+  }
 }
