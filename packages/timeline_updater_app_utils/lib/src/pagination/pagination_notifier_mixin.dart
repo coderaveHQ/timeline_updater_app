@@ -2,7 +2,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:timeline_updater_app_utils/src/extensions/async_value_x.dart';
 import 'package:timeline_updater_app_utils/src/pagination/pagination_data.dart';
-import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
+import 'package:timeline_updater_app_utils/src/result.dart';
+import 'package:timeline_updater_app_utils/src/typedefs.dart';
 
 /// An abstract mixin interface defining how notifiers should be designed
 abstract interface class PaginationNotifierMixin<D extends PaginationData<T>, T> {

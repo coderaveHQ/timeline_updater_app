@@ -178,6 +178,33 @@ abstract class TLColorable {
 
   /// The color of the text on a chip
   Color get chipForegroundColor;
+
+  /// The color of the border of a selected radio button
+  Color get radioButtonSelectedBorder;
+
+  /// The color of the border of an unselected radio button
+  Color get radioButtonUnselectedBorder;
+
+  /// The color of the indicator inside of a radio button
+  Color get radioButtonIndicator;
+
+  /// The color of the title of a selected radio button
+  Color get radioButtonSelectedTitleForeground;
+
+  /// The color of the title of an unselected radio button
+  Color get radioButtonUnselectedTitleForeground;
+
+  /// Settings page description
+  Color get settingsDescription;
+
+  /// The color of the title of a settings section
+  Color get settingsSectionTitle;
+
+  /// The color of the description of a settings section
+  Color get settingsSectionDescription;
+
+  /// The color of the title of a settings section item
+  Color get settingsSectionItemTitle;
 }
 
 /// A class holding all colors per color theme
@@ -375,6 +402,33 @@ class TLColorDataLight implements TLColorable {
 
   @override
   Color get chipForegroundColor => TLColors.white;
+
+  @override
+  Color get radioButtonSelectedBorder => TLColors.timeline;
+
+  @override
+  Color get radioButtonUnselectedBorder => TLColors.gray500;
+
+  @override
+  Color get radioButtonIndicator => TLColors.timeline;
+
+  @override
+  Color get radioButtonSelectedTitleForeground => TLColors.gray900;
+
+  @override
+  Color get radioButtonUnselectedTitleForeground => TLColors.gray500;
+
+  @override
+  Color get settingsDescription => TLColors.gray900;
+
+  @override
+  Color get settingsSectionTitle => TLColors.gray900;
+
+  @override
+  Color get settingsSectionDescription => TLColors.gray500;
+
+  @override
+  Color get settingsSectionItemTitle => TLColors.gray900;
 }
 
 /// Holds all dark colors
@@ -556,4 +610,31 @@ class TLColorDataDark implements TLColorable {
 
   @override
   Color get chipForegroundColor => TLColors.white;
+
+  @override
+  Color get radioButtonSelectedBorder => TLColors.timeline;
+
+  @override
+  Color get radioButtonUnselectedBorder => TLColors.gray400;
+
+  @override
+  Color get radioButtonIndicator => TLColors.timeline;
+
+  @override
+  Color get radioButtonSelectedTitleForeground => TLColors.gray100;
+
+  @override
+  Color get radioButtonUnselectedTitleForeground => TLColors.gray400;
+
+  @override
+  Color get settingsDescription => TLColors.gray100;
+
+  @override
+  Color get settingsSectionTitle => TLColors.gray100;
+
+  @override
+  Color get settingsSectionDescription => TLColors.gray400;
+
+  @override
+  Color get settingsSectionItemTitle => TLColors.gray100;
 }

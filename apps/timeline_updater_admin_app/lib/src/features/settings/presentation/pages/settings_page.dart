@@ -1,39 +1,25 @@
 import 'package:flutter/material.dart';
 
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 
-import 'package:timeline_updater_admin_app/core/res/localization/custom_localizable.dart';
-import 'package:timeline_updater_admin_app/src/features/auth/presentation/widgets/sign_out_button.dart';
+import 'package:timeline_updater_admin_app/core/common/app/color_mode_notifier.dart';
+import 'package:timeline_updater_admin_app/core/common/app/language_mode_notifier.dart';
+import 'package:timeline_updater_admin_app/core/services/custom_preferences.dart';
 
 /// The settings page
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends ConsumerWidget {
 
   /// Default constructor
   const SettingsPage({ super.key });
 
   @override
-  Widget build(BuildContext context) {
-
-    final CustomLocalizable translations = TLLocalization.translationsOf(context);
-
-    return TLScaffold(
-      appBar: TLAppBar(
-        navigationRailExists: true,
-        title: translations.settingsAppBarTitle
-      ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.only(
-          left: TLSpacing.sm,
-          right: context.rightPadding + TLSpacing.sm,
-          top: TLSpacing.lg,
-          bottom: context.bottomPaddingOrZeroWhenKeyboard + TLSpacing.lg
-        ),
-        child: Column(
-          children: [
-            const SignOutButton()
-          ]
-        )
-      )
+  Widget build(BuildContext context, WidgetRef ref) {
+    return TLSettingsPage(
+      preferences: ref.watch(customPreferencesProvider),
+      onColorModeChanged: (TLColorMode colorMode) => ref.read(colorModeNotifierProvider.notifier).setColorMode(colorMode),
+      onLanguageModeChanged: (TLLanguageMode languageMode) => ref.read(languageModeNotifierProvider.notifier).setLanguageMode(languageMode)
     );
   }
 }

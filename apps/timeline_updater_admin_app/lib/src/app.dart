@@ -29,7 +29,7 @@ class App extends ConsumerWidget {
     return TLApp(
       router: router,
       languageMode: languageMode,
-      colorMode: TLColorMode.light,
+      colorMode: colorMode,
       languageData: CustomLanguageData(),
       colorData: CustomColorData(),
       builder: (Widget child) => PopoverOverlay(

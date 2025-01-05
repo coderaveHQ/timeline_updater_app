@@ -96,9 +96,6 @@ abstract class CustomLocalizable extends TLLocalizable {
   /// Customers app bar title
   String get customersAppBarTitle;
 
-  /// Settings app bar title
-  String get settingsAppBarTitle;
-
   /// Toast for when a new user was created
   String get successToastUserCreated;
 }

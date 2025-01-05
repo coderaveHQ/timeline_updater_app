@@ -1,3 +1,8 @@
+import 'package:flutter/material.dart';
+
+import 'package:timeline_updater_app_ui/res/localization/language/tl_language_data.dart';
+import 'package:timeline_updater_app_ui/res/localization/tl_localization.dart';
+
 /// An enum specifying the available language modes
 enum TLLanguageMode {
 
@@ -27,5 +32,15 @@ enum TLLanguageMode {
   /// Gets the language mode by the id
   static TLLanguageMode getLanguageModeById(int? id) {
     return TLLanguageMode.values.firstWhere((TLLanguageMode mode) => mode.id == id);
+  }
+
+  /// Gets the translated title of the enum value
+  String title(BuildContext context) {
+    final TLLocalizable translations = TLLocalization.translationsOf(context);
+    return switch (this) {
+      TLLanguageMode.system => translations.languageModeSystemTitle,
+      TLLanguageMode.de => translations.languageModeDeTitle,
+      TLLanguageMode.en => translations.languageModeEnTitle
+    };
   }
 }

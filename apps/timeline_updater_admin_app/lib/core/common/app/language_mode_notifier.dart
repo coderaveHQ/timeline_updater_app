@@ -18,9 +18,8 @@ class LanguageModeNotifier extends _$LanguageModeNotifier {
     return _preferences.getLanguageMode();
   }
 
-  /// Sets the language mode and save it into local preferences
+  /// Sets the language mode
   Future<void> setLanguageMode(TLLanguageMode languageMode) async {
-    await _preferences.setLanguageMode(languageMode);
     state = languageMode;
   }
 }

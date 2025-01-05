@@ -1,6 +1,24 @@
 /// A class holding all localizable strings
 abstract class TLLocalizable {
 
+  /// The title for the system color mode
+  String get colorModeSystemTitle;
+
+  /// The title for the light color mode
+  String get colorModeLightTitle;
+
+  /// The title for the dark color mode
+  String get colorModeDarkTitle;
+
+  /// The title for the system language mode
+  String get languageModeSystemTitle;
+
+  /// The title for the german language mode
+  String get languageModeDeTitle;
+
+  /// The title for the english language mode
+  String get languageModeEnTitle;
+
   /// The title of the admin user type
   String get userTypeAdminTitle;
 
@@ -9,6 +27,30 @@ abstract class TLLocalizable {
 
   /// The title of the customer user type
   String get userTypeCustomerTitle;
+
+  /// Settings app bar title
+  String get settingsAppBarTitle;
+
+  /// The page description of the settings page
+  String get settingsDescription;
+
+  /// The appearance section title for the settings page
+  String get settingsAppearanceSectionTitle;
+
+  /// The appearance section description for the settings page
+  String get settingsAppearanceSectionDescription;
+
+  /// The theme section item title for the settings page
+  String get settingsAppearanceSectionItemThemeTitle;
+
+  /// The localization section title for the settings page
+  String get settingsLocalizationSectionTitle;
+
+  /// The localization section description for the settings page
+  String get settingsLocalizationSectionDescription;
+
+  /// The language section item title for the settings page
+  String get settingsLocalizationSectionItemLanguageTitle;
 
   /// TLToast.success.signedIn
   String get successToastSignedIn;
@@ -58,6 +100,24 @@ class TLLanguageDataDe implements TLLocalizable {
   const TLLanguageDataDe();
 
   @override
+  String get colorModeSystemTitle => 'System';
+
+  @override
+  String get colorModeLightTitle => 'Hell';
+
+  @override
+  String get colorModeDarkTitle => 'Dunkel';
+
+  @override
+  String get languageModeSystemTitle => 'System';
+
+  @override
+  String get languageModeDeTitle => 'Deutsch';
+
+  @override
+  String get languageModeEnTitle => 'Englisch';
+
+  @override
   String get userTypeAdminTitle => 'Admin';
 
   @override
@@ -65,6 +125,30 @@ class TLLanguageDataDe implements TLLocalizable {
 
   @override
   String get userTypeCustomerTitle => 'Kund*in';
+
+  @override
+  String get settingsAppBarTitle => 'Einstellungen';
+
+  @override
+  String get settingsDescription => 'Sieh dir deine Einstellungen an und passe sie nach deinem Geschmack an.';
+
+  @override
+  String get settingsAppearanceSectionTitle => 'Darstellung';
+
+  @override
+  String get settingsAppearanceSectionDescription => 'Hier kannst du die Software ganz nach deinen Belieben gestalten.';
+
+  @override
+  String get settingsAppearanceSectionItemThemeTitle => 'Thema';
+
+  @override
+  String get settingsLocalizationSectionTitle => 'Lokalisierung';
+
+  @override
+  String get settingsLocalizationSectionDescription => 'Für den Fall, dass wir deine Sprache falsch eingestellt haben, kannst du sie hier umstellen.';
+
+  @override
+  String get settingsLocalizationSectionItemLanguageTitle => 'Sprache';
 
   @override
   String get successToastSignedIn => 'Erfolgreich angemeldet.';
@@ -98,6 +182,24 @@ class TLLanguageDataEn implements TLLocalizable {
   const TLLanguageDataEn();
 
   @override
+  String get colorModeSystemTitle => 'System';
+
+  @override
+  String get colorModeLightTitle => 'Light';
+
+  @override
+  String get colorModeDarkTitle => 'Dark';
+
+  @override
+  String get languageModeSystemTitle => 'System';
+
+  @override
+  String get languageModeDeTitle => 'German';
+
+  @override
+  String get languageModeEnTitle => 'English';
+
+  @override
   String get userTypeAdminTitle => 'Admin';
 
   @override
@@ -105,6 +207,30 @@ class TLLanguageDataEn implements TLLocalizable {
 
   @override
   String get userTypeCustomerTitle => 'Customer';
+
+  @override
+  String get settingsAppBarTitle => 'Settings';
+
+  @override
+  String get settingsDescription => 'View your settings and adjust them to your needs.';
+
+  @override
+  String get settingsAppearanceSectionTitle => 'Appearance';
+
+  @override
+  String get settingsAppearanceSectionDescription => 'Here you can customize the software to your liking.';
+
+  @override
+  String get settingsAppearanceSectionItemThemeTitle => 'Theme';
+
+  @override
+  String get settingsLocalizationSectionTitle => 'Localization';
+
+  @override
+  String get settingsLocalizationSectionDescription => 'In case we have set your language incorrectly, you can change it here.';
+
+  @override
+  String get settingsLocalizationSectionItemLanguageTitle => 'Language';
 
   @override
   String get successToastSignedIn => 'Successfully signed in.';

@@ -115,9 +115,6 @@ class CustomLanguageDataDe extends TLLanguageDataDe implements CustomLocalizable
   String get customersAppBarTitle => 'Kund*innen';
 
   @override
-  String get settingsAppBarTitle => 'Einstellungen';
-
-  @override
   String get successToastUserCreated => 'Benutzer*in erfolgreich erstellt!';
 }
 
@@ -219,9 +216,6 @@ class CustomLanguageDataEn extends TLLanguageDataEn implements CustomLocalizable
 
   @override
   String get customersAppBarTitle => 'Customers';
-
-  @override
-  String get settingsAppBarTitle => 'Settings';
 
   @override
   String get successToastUserCreated => 'Successfully created a new user!';

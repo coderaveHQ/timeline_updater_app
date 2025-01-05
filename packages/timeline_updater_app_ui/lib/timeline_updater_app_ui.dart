@@ -23,6 +23,9 @@ export './widgets/tl_max_size.dart';
 export './widgets/tl_icon_button.dart';
 export './widgets/tl_table.dart';
 export './widgets/tl_chip.dart';
+export './widgets/tl_radio_button.dart';
+
+export './pages/settings_page.dart' hide TLSettingsLanguageMode, TLSettingsColorMode;
 
 export './services/toaster.dart';
 export './services/tl_ui_preferences.dart';

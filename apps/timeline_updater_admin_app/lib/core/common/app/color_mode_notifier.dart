@@ -18,9 +18,8 @@ class ColorModeNotifier extends _$ColorModeNotifier {
     return _preferences.getColorMode();
   }
 
-  /// Sets the color mode and save it into local preferences
+  /// Sets the color mode
   Future<void> setColorMode(TLColorMode colorMode) async {
-    await _preferences.setColorMode(colorMode);
     state = colorMode;
   }
 }

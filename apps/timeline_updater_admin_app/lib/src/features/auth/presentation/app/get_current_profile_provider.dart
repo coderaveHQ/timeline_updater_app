@@ -18,3 +18,5 @@ Future<ProfileEntity> getCurrentProfile(Ref ref) async {
     onFailure: (Object error) => throw error
   );
 }
+
+// TODO: Outsource popover
