@@ -1,5 +1,6 @@
 name: timeline_updater_app_ui
 description: A UI library for the TimeLine Updater App
+publish_to: 'none'
 version: 0.0.1
 
 environment:
@@ -10,12 +11,23 @@ dependencies:
   flutter:
     sdk: flutter
 
+  timeline_updater_app_utils:
+    path: ./../timeline_updater_app_utils
+
+  # State Management
+  hooks_riverpod: ^2.5.2
+
   # Notifications
   delightful_toast: ^1.1.0
+
+  # Services
+  url_launcher: ^6.3.1
 
   # UI
   lucide_icons_flutter: ^1.2.5
   gap: ^3.0.1
+  skeletonizer: ^1.4.2
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   flutter_test:

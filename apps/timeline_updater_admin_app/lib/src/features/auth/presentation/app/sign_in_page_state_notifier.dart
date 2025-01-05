@@ -26,7 +26,6 @@ class SignInPageStateNotifier extends _$SignInPageStateNotifier {
         email: email,
         password: password
       );
-
       state = state.copyWith(isSignInLoading: false);
     } catch (e) {
       state = state.copyWith(

@@ -1,8 +1,8 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:timeline_updater_admin_app/core/utils/custom_env.dart';
-
-import 'package:timeline_updater_admin_app/src/features/auth/data/datasources/auth_datasource.dart';
 import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
+
+import 'package:timeline_updater_admin_app/core/utils/custom_env.dart';
+import 'package:timeline_updater_admin_app/src/features/auth/data/datasources/auth_datasource.dart';
 
 /// An implementation of the authentication datasource
 class AuthDatasourceImpl implements AuthDatasource {

@@ -47,7 +47,7 @@ class TLToast<L extends TLLocalizable> {
 
   /// Shows a toast with the corresponding message
   void show(BuildContext context) {
-    final L language = TLLocalization.languageOf<L>(context);
+    final L language = TLLocalization.translationsOf<L>(context);
     final String msg = message.call(language);
     Toaster.show(context, type, msg);
   }

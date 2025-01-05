@@ -13,6 +13,9 @@ import 'package:timeline_updater_app_ui/widgets/tl_text.dart';
 /// Custom App Bar widget
 class TLAppBar extends StatelessWidget implements PreferredSizeWidget {
 
+  /// Wether there is a navigation rail, because then there is no need for subtracting the devices left padding
+  final bool navigationRailExists;
+
   /// Back button
   final TLAppBarBackButton? backButton;
 
@@ -25,6 +28,7 @@ class TLAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// Default constructor
   const TLAppBar({ 
     super.key,
+    this.navigationRailExists = false,
     this.backButton,
     this.title = '',
     this.actionButtons = const <TLAppBarButton>[]
@@ -46,7 +50,7 @@ class TLAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0.0,
       title: Padding(
         padding: EdgeInsets.only(
-          left: context.leftPadding + TLSpacing.lg,
+          left: (navigationRailExists ? 0.0 : context.leftPadding) + TLSpacing.lg,
           right: context.rightPadding + TLSpacing.lg
         ),
         child: Row(

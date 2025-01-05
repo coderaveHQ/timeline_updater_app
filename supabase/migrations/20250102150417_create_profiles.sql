@@ -29,21 +29,37 @@ CREATE TABLE public.profiles (
 COMMENT ON TABLE public.profiles IS 'The users profiles.';
 
 -- Enable RLS for profiles
-ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
+--ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 
 -- [POLICY] (only authenticated) Allow selects to all profiles but for customers which can only select their own
-CREATE POLICY "public_profiles_select" ON "public"."profiles" FOR
-SELECT TO authenticated USING (
-    profiles.id = auth.uid() OR
-    (SELECT p.type FROM profiles p WHERE p.id = auth.uid()) <> 'customer'::public.user_type
-);
+/*CREATE POLICY "public_profiles_select" 
+ON "public"."profiles"
+FOR SELECT 
+TO authenticated 
+USING (
+    profiles.id = auth.uid() 
+    OR EXISTS (
+        SELECT 1 
+        FROM profiles p 
+        WHERE p.id = auth.uid() 
+        AND p.type <> 'customer'::public.user_type
+    )
+);*/
 
 -- [POLICY] (only authenticated) Allow updates to the users own profile or if the user is an admin
-CREATE POLICY "public_profiles_update" ON "public"."profiles" FOR
-UPDATE USING (
-    profiles.id = auth.uid() OR
-    (SELECT p.type FROM profiles p WHERE p.id = auth.uid()) = 'admin'::public.user_type
-);
+/*CREATE POLICY "public_profiles_update" 
+ON "public"."profiles" 
+FOR UPDATE 
+TO authenticated 
+USING (
+    profiles.id = auth.uid() 
+    OR EXISTS (
+        SELECT 1 
+        FROM profiles p 
+        WHERE p.id = auth.uid() 
+        AND p.type = 'admin'::public.user_type
+    )
+);*/
 
 -- [TRIGGER] to update the updated_at timestamp
 CREATE TRIGGER update_profiles_updated_at_trigger
@@ -64,31 +80,47 @@ CREATE TABLE public.customers (
 COMMENT ON TABLE public.customers IS 'The available customers.';
 
 -- Enable RLS for customers
-ALTER TABLE public.customers ENABLE ROW LEVEL SECURITY;
-
--- [POLICY] (only authenticated) Allow selects to all customers for admins or employees
-CREATE POLICY "public_customers_select" ON "public"."customers" FOR
-SELECT TO authenticated USING (
-    (SELECT p.type FROM profiles p WHERE p.id = auth.uid()) <> 'customer'::public.user_type
-);
+-- ALTER TABLE public.customers ENABLE ROW LEVEL SECURITY;
 
 -- [POLICY] (only authenticated) Allow updates to admins only
-CREATE POLICY "public_customers_update" ON "public"."customers" FOR
-UPDATE TO authenticated USING (
-    (SELECT p.type FROM profiles p WHERE p.id = auth.uid()) = 'admin'::public.user_type
-);
+/*CREATE POLICY "public_customers_update" 
+ON "public"."customers" 
+FOR UPDATE 
+TO authenticated USING (
+    EXISTS (
+        SELECT 1 
+        FROM profiles p 
+        WHERE p.id = auth.uid() 
+        AND p.type = 'admin'::public.user_type
+    )
+);*/
 
 -- [POLICY] (only authenticated) Allow inserts to admins only
-CREATE POLICY "public_customers_insert" ON "public"."customers" FOR
-INSERT TO authenticated WITH CHECK (
-    (SELECT p.type FROM profiles p WHERE p.id = auth.uid()) = 'admin'::public.user_type
-);
+/*CREATE POLICY "public_customers_insert" 
+ON "public"."customers" 
+FOR INSERT TO authenticated 
+WITH CHECK (
+    EXISTS (
+        SELECT 1 
+        FROM profiles p 
+        WHERE p.id = auth.uid() 
+        AND p.type = 'admin'::public.user_type
+    )
+);*/
 
 -- [POLICY] (only authenticated) Allow deletion to admins only
-CREATE POLICY "public_customers_delete" ON "public"."customers" FOR
-DELETE TO authenticated USING (
-    (SELECT p.type FROM profiles p WHERE p.id = auth.uid()) = 'admin'::public.user_type
-);
+/*CREATE POLICY "public_customers_delete" 
+ON "public"."customers" 
+FOR DELETE 
+TO authenticated 
+USING (
+    EXISTS (
+        SELECT 1 
+        FROM profiles p 
+        WHERE p.id = auth.uid() 
+        AND p.type = 'admin'::public.user_type
+    )
+);*/
 
 -- [TRIGGER] to update the updated_at timestamp
 CREATE TRIGGER update_customers_updated_at_trigger
@@ -112,11 +144,58 @@ COMMENT ON TABLE public.customer_profiles IS 'The connection between customer an
 -- Enable RLS for customer_profiles
 ALTER TABLE public.customer_profiles ENABLE ROW LEVEL SECURITY;
 
--- [POLICY] (only authenticated) Allow admins or employees selects to all customer profiles
-CREATE POLICY "public_customer_profiles_select" ON "public"."customer_profiles" FOR
-SELECT TO authenticated USING (
-    (SELECT p.type FROM profiles p WHERE p.id = auth.uid()) <> 'customer'::public.user_type
-);
+-- [POLICY] (only authenticated) Allow selects to customers where user is part of or user is not a customer
+/*CREATE POLICY "public_customers_select" 
+ON "public"."customers" 
+FOR SELECT 
+TO authenticated 
+USING (
+    EXISTS (
+        SELECT 1 
+        FROM customer_profiles cp 
+        WHERE cp.profile_id = auth.uid()
+        AND cp.customer_id = customers.id
+    )
+    OR EXISTS (
+        SELECT 1 
+        FROM profiles p 
+        WHERE p.id = auth.uid() 
+        AND p.type <> 'customer'::public.user_type
+    )
+);*/
+
+-- [POLICY] (only authenticated) Allow selects to rows where user is part of or user is not a customer
+/*CREATE POLICY "public_customer_profiles_select" 
+ON "public"."customer_profiles" 
+FOR SELECT 
+TO authenticated 
+USING (
+    EXISTS (
+        SELECT 1 
+        FROM customer_profiles cp 
+        WHERE cp.profile_id = auth.uid()
+        AND cp.customer_id = customer_profiles.customer_id
+    )
+    OR EXISTS (
+        SELECT 1 
+        FROM profiles p 
+        WHERE p.id = auth.uid() 
+        AND p.type <> 'customer'::public.user_type
+    )
+);*/
+
+-- [POLICY] (only authenticated) Allow updates to admins only
+/*CREATE POLICY "public_customer_profiles_update" 
+ON "public"."customer_profiles" 
+FOR UPDATE 
+TO authenticated USING (
+    EXISTS (
+        SELECT 1 
+        FROM profiles p 
+        WHERE p.id = auth.uid() 
+        AND p.type = 'admin'::public.user_type
+    )
+);*/
 
 -- [TRIGGER] to update the updated_at timestamp
 CREATE TRIGGER update_customer_profiles_updated_at_trigger

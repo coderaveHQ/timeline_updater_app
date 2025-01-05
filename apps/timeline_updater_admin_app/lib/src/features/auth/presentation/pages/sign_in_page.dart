@@ -46,77 +46,75 @@ class _SignInPageState extends ConsumerState<SignInPage> {
     _emailController = useTextEditingController();
     _passwordController = useTextEditingController();
 
-    final CustomLocalizable language = TLLocalization.languageOf(context);
+    final CustomLocalizable translations = TLLocalization.translationsOf(context);
     final CustomColorable colors = TLTheme.colorsOf(context);
 
     final SignInPageState pageState = ref.watch(signInPageStateNotifierProvider);
 
     return TLScaffold(
-      appBar: TLAppBar(title: language.signInAppBarTitle),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.only(
-            top: context.topPadding + TLSpacing.lg,
-            left: context.leftPadding + TLSpacing.lg + TLUIUtils.additionalPaddingForCenteredMaxWidth(context),
-            right: context.rightPadding + TLSpacing.lg + TLUIUtils.additionalPaddingForCenteredMaxWidth(context),
-            bottom: context.bottomPaddingOrZeroWhenKeyboard + TLSpacing.lg
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              TLMaxSize.size(
-                size: const Size.square(160.0), 
-                child: Image.asset(
-                  CustomAssets.logo,
-                  width: context.screenWidth / 2.8,
-                  height: context.screenWidth / 2.8
-                )
-              ),
-              const Gap(TLSpacing.xxl),
-              TLText(
-                text: language.signInTitle,
-                alignment: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.w900,
-                  color: colors.signInTitle
-                )
-              ),
-              const Gap(TLSpacing.lg),
-              TLText(
-                text: language.signInSubtitle,
-                alignment: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                  color: colors.signInSubtitle
-                )
-              ),
-              const Gap(TLSpacing.xl),
-              TLTextField(
-                controller: _emailController,
-                inputType: TextInputType.emailAddress,
-                icon: LucideIcons.mail,
-                hint: language.signInEmailTextFieldHint,
-                isEnabled: !pageState.isSignInLoading
-              ),
-              const Gap(TLSpacing.lg),
-              TLTextField(
-                controller: _passwordController,
-                obscure: true,
-                icon: LucideIcons.lock,
-                hint: language.signInPasswordTextFieldHint,
-                isEnabled: !pageState.isSignInLoading
-              ),
-              const Gap(TLSpacing.xl),
-              TLRectangleButton(
-                onPressed: _handleSignIn,
-                isLoading: pageState.isSignInLoading,
-                isEnabled: !pageState.isSignInLoading,
-                title: language.signInSignInButtonTitle
+      appBar: TLAppBar(title: translations.signInAppBarTitle),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(
+          top: TLSpacing.lg,
+          left: context.leftPadding + TLSpacing.lg + TLUIUtils.additionalPaddingForCenteredMaxWidth(context),
+          right: context.rightPadding + TLSpacing.lg + TLUIUtils.additionalPaddingForCenteredMaxWidth(context),
+          bottom: context.bottomPaddingOrZeroWhenKeyboard + TLSpacing.lg
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            TLMaxSize.size(
+              size: const Size.square(160.0), 
+              child: Image.asset(
+                CustomAssets.logo,
+                width: context.screenWidth / 2.8,
+                height: context.screenWidth / 2.8
               )
-            ]
-          )
+            ),
+            const Gap(TLSpacing.xxl),
+            TLText(
+              text: translations.signInTitle,
+              alignment: TextAlign.center,
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.w900,
+                color: colors.signInTitle
+              )
+            ),
+            const Gap(TLSpacing.lg),
+            TLText(
+              text: translations.signInSubtitle,
+              alignment: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w400,
+                color: colors.signInSubtitle
+              )
+            ),
+            const Gap(TLSpacing.xl),
+            TLTextField(
+              controller: _emailController,
+              inputType: TextInputType.emailAddress,
+              icon: LucideIcons.mail,
+              hint: translations.signInEmailTextFieldHint,
+              isEnabled: !pageState.isSignInLoading
+            ),
+            const Gap(TLSpacing.lg),
+            TLTextField(
+              controller: _passwordController,
+              obscure: true,
+              icon: LucideIcons.lock,
+              hint: translations.signInPasswordTextFieldHint,
+              isEnabled: !pageState.isSignInLoading
+            ),
+            const Gap(TLSpacing.xl),
+            TLRectangleButton(
+              onPressed: _handleSignIn,
+              isLoading: pageState.isSignInLoading,
+              isEnabled: !pageState.isSignInLoading,
+              title: translations.signInSignInButtonTitle
+            )
+          ]
         )
       )
     );

@@ -24,10 +24,31 @@ class CustomColorDataLight extends TLColorDataLight implements CustomColorable {
   const CustomColorDataLight();
 
   @override
+  Color get mainTopBarPath => TLColors.gray900;
+
+  @override
+  Color get profileButtonAvatarBackground => TLColors.gray200;
+
+  @override
+  Color get profileButtonAvatarIcon => TLColors.gray900;
+
+  @override
+  Color get profileButtonName => TLColors.gray900;
+
+  @override
   Color get signInTitle => TLColors.gray900;
 
   @override
   Color get signInSubtitle => TLColors.gray500;
+
+  @override
+  Color get createUserTitle => TLColors.gray900;
+
+  @override
+  Color get createUserSubtitle => TLColors.gray500;
+
+  @override
+  Color get usersDescription => TLColors.gray900;
 }
 
 /// Holds all dark colors
@@ -37,8 +58,29 @@ class CustomColorDataDark extends TLColorDataDark implements CustomColorable {
   const CustomColorDataDark();
 
   @override
+  Color get mainTopBarPath => TLColors.gray100;
+
+  @override
+  Color get profileButtonAvatarBackground => TLColors.gray800;
+
+  @override
+  Color get profileButtonAvatarIcon => TLColors.gray100;
+
+  @override
+  Color get profileButtonName => TLColors.gray100;
+
+  @override
   Color get signInTitle => TLColors.gray100;
 
   @override
   Color get signInSubtitle => TLColors.gray400;
+
+  @override
+  Color get createUserTitle => TLColors.gray100;
+
+  @override
+  Color get createUserSubtitle => TLColors.gray400;
+
+  @override
+  Color get usersDescription => TLColors.gray100;
 }

@@ -6,7 +6,6 @@ import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:bitsdojo_window/bitsdojo_window.dart';
 
 /// A class that provides access to environment variables
 class TLEnv {
@@ -45,9 +44,6 @@ Future<void> initializeAndRun({
 
   // Run the application
   runApp(app);
-
-  // Configure the window
-  _configureDesktopWindow();
 }
 
 /// Loads the environment variables
@@ -69,17 +65,4 @@ Future<void> _initializeFirebase(FirebaseOptions options) async {
   // Skip when platform is Linux since Firebase does not support this platform, yet
   if (!kIsWeb && Platform.isLinux) return;
   await Firebase.initializeApp(options: options);
-}
-
-/// Configures the desktop window
-void _configureDesktopWindow() {
-  // Skip when platform is Web or Mobile since there is no window to be configured
-  if (kIsWeb || Platform.isAndroid || Platform.isIOS) return;
-  doWhenWindowReady(() {
-    const Size initialSize = Size(600.0, 450.0);
-    appWindow.minSize = initialSize;
-    appWindow.size = initialSize;
-    appWindow.alignment = Alignment.center;
-    appWindow.show();
-  });
 }

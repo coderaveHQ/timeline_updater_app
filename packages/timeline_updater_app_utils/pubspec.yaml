@@ -1,5 +1,6 @@
 name: timeline_updater_app_utils
 description: A utils collection for the TimeLine Updater App
+publish_to: 'none'
 version: 0.0.1
 
 environment:
@@ -19,8 +20,11 @@ dependencies:
   # Firebase
   firebase_core: ^3.8.1
 
-  # Platform specifics
-  bitsdojo_window: ^0.1.6
+  # Local persistence
+  shared_preferences: ^2.3.5
+
+  # State Management
+  hooks_riverpod: ^2.5.2
 
 dev_dependencies:
   flutter_test:

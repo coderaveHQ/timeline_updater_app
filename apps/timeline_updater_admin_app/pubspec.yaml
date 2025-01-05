@@ -15,12 +15,18 @@ dependencies:
   timeline_updater_app_utils:
     path: ./../../packages/timeline_updater_app_utils
 
+  # environment variables
+  flutter_dotenv: ^5.2.1
+
   # Supabase
   supabase_flutter: ^2.8.1
 
   # Firebase
   firebase_core: ^3.8.1
   firebase_messaging: ^15.1.6
+
+  # Local persistence
+  shared_preferences: ^2.3.5
 
   # State Management
   hooks_riverpod: ^2.5.2
@@ -33,9 +39,6 @@ dependencies:
   # UI
   lucide_icons_flutter: ^1.2.5
   gap: ^3.0.1
-
-  # Platform specifics
-  bitsdojo_window: ^0.1.6
 
 dev_dependencies:
   flutter_test:

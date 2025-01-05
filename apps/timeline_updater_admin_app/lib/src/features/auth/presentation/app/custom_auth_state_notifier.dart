@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:timeline_updater_admin_app/src/features/auth/domain/usecases/auth_create_user_usecase.dart';
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
 
+import 'package:timeline_updater_admin_app/src/features/auth/domain/usecases/auth_create_user_usecase.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/domain/usecases/auth_sign_out_usecase.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/domain/usecases/auth_sign_in_usecase.dart';
 import 'package:timeline_updater_admin_app/core/services/router.dart';
@@ -145,9 +145,11 @@ enum CustomAuthStatus {
 
   /// authenticated
   authenticated(
-    redirectPath: HomeRoute.path,
+    redirectPath: UsersRoute.path,
     allowedPaths: <String>[
-      HomeRoute.path
+      UsersRoute.path,
+      CustomersRoute.path,
+      SettingsRoute.path
     ]
   );
 

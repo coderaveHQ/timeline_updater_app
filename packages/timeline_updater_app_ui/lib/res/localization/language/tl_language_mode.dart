@@ -6,13 +6,13 @@ enum TLLanguageMode {
     id: null
   ),
 
-  /// The en-US language mode
-  enUS(
+  /// The english language mode
+  en(
     id: 1
   ),
 
-  /// The de-DE language mode
-  deDE(
+  /// The german language mode
+  de(
     id: 2
   );
 

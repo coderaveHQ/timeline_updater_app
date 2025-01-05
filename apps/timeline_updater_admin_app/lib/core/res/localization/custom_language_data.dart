@@ -6,20 +6,20 @@ import 'package:timeline_updater_admin_app/core/res/localization/custom_localiza
 class CustomLanguageData implements TLLanguageData {
 
   @override
-  TLLanguageDataDeDE get deDE => const CustomLanguageDataDeDE();
+  TLLanguageDataDe get de => const CustomLanguageDataDe();
 
   @override
-  TLLanguageDataEnUS get enUS => const CustomLanguageDataEnUS();
+  TLLanguageDataEn get en => const CustomLanguageDataEn();
 
   /// Default constructor
   const CustomLanguageData();
 }
 
-/// Holds all de-DE localized strings
-class CustomLanguageDataDeDE extends TLLanguageDataDeDE implements CustomLocalizable {
+/// Holds all german localized strings
+class CustomLanguageDataDe extends TLLanguageDataDe implements CustomLocalizable {
 
   /// Default constructor
-  const CustomLanguageDataDeDE();
+  const CustomLanguageDataDe();
 
   @override
   String get signInAppBarTitle => 'Anmelden';
@@ -64,14 +64,53 @@ class CustomLanguageDataDeDE extends TLLanguageDataDeDE implements CustomLocaliz
   String get createUserCreateUserButtonTitle => 'Erstellen';
 
   @override
+  String get signOutButtonTitle => 'Abmelden';
+
+  @override
+  String get navigationRailUsersTitle => 'Benutzer*innen';
+
+  @override
+  String get navigationRailCustomersTitle => 'Kund*innen';
+
+  @override
+  String get navigationRailSettingsTitle => 'Einstellungen';
+
+  @override
+  String get navigationRailDocumentationTitle => 'Dokumentation';
+
+  @override
+  String get navigationRailWebAppTitle => 'Im Browser öffnen';
+
+  @override
+  String get usersAppBarTitle => 'Benutzer*innen';
+
+  @override
+  String get usersDescription => 'Sieh dir alle Benutzer*innen an, bearbeite sie oder erstelle neue Konten.';
+
+  @override
+  String get usersProfilesTableTitle => 'Alle Benutzer*innen';
+
+  @override
+  String get usersProfilesTableCreateUserButtonTitle => 'Erstellen';
+
+  @override
+  String get usersProfilesTableEmpty => 'Keine Benutzer*innen gefunden.';
+
+  @override
+  String get customersAppBarTitle => 'Kund*innen';
+
+  @override
+  String get settingsAppBarTitle => 'Einstellungen';
+
+  @override
   String get successToastUserCreated => 'Benutzer*in erfolgreich erstellt!';
 }
 
-/// Holds all en-US localized strings
-class CustomLanguageDataEnUS extends TLLanguageDataEnUS implements CustomLocalizable {
+/// Holds all english localized strings
+class CustomLanguageDataEn extends TLLanguageDataEn implements CustomLocalizable {
 
   /// Default constructor
-  const CustomLanguageDataEnUS();
+  const CustomLanguageDataEn();
 
   @override
   String get signInAppBarTitle => 'Sign In';
@@ -114,6 +153,45 @@ class CustomLanguageDataEnUS extends TLLanguageDataEnUS implements CustomLocaliz
 
   @override
   String get createUserCreateUserButtonTitle => 'Create';
+
+  @override
+  String get signOutButtonTitle => 'Abmelden';
+
+  @override
+  String get navigationRailUsersTitle => 'Users';
+
+  @override
+  String get navigationRailCustomersTitle => 'Customers';
+
+  @override
+  String get navigationRailSettingsTitle => 'Settings';
+
+  @override
+  String get navigationRailDocumentationTitle => 'Documentation';
+
+  @override
+  String get navigationRailWebAppTitle => 'Open in browser';
+
+  @override
+  String get usersAppBarTitle => 'Users';
+
+  @override
+  String get usersDescription => 'View all users, edit them or create new accounts.';
+
+  @override
+  String get usersProfilesTableTitle => 'All users';
+
+  @override
+  String get usersProfilesTableCreateUserButtonTitle => 'Create';
+
+  @override
+  String get usersProfilesTableEmpty => 'No users found.';
+
+  @override
+  String get customersAppBarTitle => 'Customers';
+
+  @override
+  String get settingsAppBarTitle => 'Settings';
 
   @override
   String get successToastUserCreated => 'Successfully created a new user!';

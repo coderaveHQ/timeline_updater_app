@@ -9,15 +9,15 @@ import 'package:timeline_updater_app_ui/services/toaster.dart';
 extension ObjectExtension on Object {
 
   /// Gets the message of the error
-  String _errorMessage(BuildContext context) {
-    final TLLocalizable language = TLLocalization.languageOf(context);
+  String errorMessage(BuildContext context) {
+    final TLLocalizable language = TLLocalization.translationsOf(context);
     if (this is IError) return (this as IError).message.call(language);
     return language.unknownErrorMessage;
   }
 
   /// Shows a toast with a proper message
   void showErrorToast(BuildContext context) {
-    final String errorMessage = _errorMessage(context);
-    Toaster.showError(context, errorMessage);
+    final String errorMsg = errorMessage(context);
+    Toaster.showError(context, errorMsg);
   }
 }

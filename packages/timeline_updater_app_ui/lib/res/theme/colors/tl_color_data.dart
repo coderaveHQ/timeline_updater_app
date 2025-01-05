@@ -5,6 +5,15 @@ import 'package:timeline_updater_app_ui/res/theme/colors/tl_colors.dart';
 /// A class holding all localizable strings
 abstract class TLColorable {
 
+  /// The color of the admin user type
+  Color get userTypeAdmin;
+
+  /// The color of the employee user type
+  Color get userTypeEmployee;
+
+  /// The color of the customer user type
+  Color get userTypeCustomer;
+
   /// The brightness of the keyboard
   Brightness get keyboardBrightness;
 
@@ -28,6 +37,9 @@ abstract class TLColorable {
 
   /// The primary background
   Color get primaryBackground;
+
+  /// The secondary background
+  Color get secondaryBackground;
 
   /// The background color of the app bar
   Color get appBarBackground;
@@ -100,6 +112,72 @@ abstract class TLColorable {
 
   /// The color of the icon of a toast of type error
   Color get toastErrorIcon;
+
+  /// The color of the navigation rails app name
+  Color get navigationRailAppNameForeground;
+
+  /// The color of the navigation rails app version
+  Color get navigationRailAppVersionForeground;
+
+  /// The leading icon color of a selected navigation rail item
+  Color get navigationRailItemSelectedLeadingIcon;
+
+  /// The leading icon color of an unselected navigation rail item
+  Color get navigationRailItemUnselectedLeadingIcon;
+
+  /// The trailing icon color of a selected navigation rail item
+  Color get navigationRailItemSelectedTrailingIcon;
+
+  /// The trailing icon color of an unselected navigation rail item
+  Color get navigationRailItemUnselectedTrailingIcon;
+
+  /// The background color of a selected navigation rail item
+  Color get navigationRailItemSelectedBackground;
+
+  /// The color of the title of a selected navigation rail item
+  Color get navigationRailItemSelectedTitleForeground;
+
+  /// The color of the title of an unselected navigation rail item
+  Color get navigationRailItemUnselectedTitleForeground;
+
+  /// The color of the icon of an icon button
+  Color get iconButtonForeground;
+
+  /// The color of the icon of a critical icon button
+  Color get iconButtonCriticalForeground;
+
+  /// The color of the table title
+  Color get tableTitle;
+
+  /// The color of the empty text in a table
+  Color get tableEmptyText;
+
+  /// The color of the error text in a table
+  Color get tableErrorText;
+
+  /// The background color of the table button
+  Color get tableButtonBackground;
+
+  /// The foreground color of the table button
+  Color get tableButtonForeground;
+
+  /// The color of the reload icon button in a table
+  Color get tableReloadIcon;
+
+  /// The background color of the table header
+  Color get tableHeaderBackground;
+
+  /// The color of the header titles
+  Color get tableHeaderTitleForeground;
+
+  /// The color of the text in a text cell
+  Color get tableCellText;
+
+  /// The background color of a chip
+  Color get chipBackgroundColor;
+
+  /// The color of the text on a chip
+  Color get chipForegroundColor;
 }
 
 /// A class holding all colors per color theme
@@ -123,6 +201,15 @@ class TLColorDataLight implements TLColorable {
 
   /// Default constructor
   const TLColorDataLight();
+
+  @override
+  Color get userTypeAdmin => TLColors.green500;
+
+  @override
+  Color get userTypeEmployee => TLColors.orange500;
+
+  @override
+  Color get userTypeCustomer => TLColors.purple500;
   
   @override
   Brightness get keyboardBrightness => Brightness.light;
@@ -147,6 +234,9 @@ class TLColorDataLight implements TLColorable {
 
   @override
   Color get primaryBackground => TLColors.white;
+
+  @override
+  Color get secondaryBackground => TLColors.gray200;
 
   @override
   Color get appBarBackground => TLColors.white;
@@ -219,6 +309,72 @@ class TLColorDataLight implements TLColorable {
 
   @override
   Color get toastErrorIcon => TLColors.red500;
+
+  @override
+  Color get navigationRailAppNameForeground => TLColors.gray900;
+
+  @override
+  Color get navigationRailAppVersionForeground => TLColors.gray500;
+
+  @override
+  Color get navigationRailItemSelectedLeadingIcon => TLColors.white;
+
+  @override
+  Color get navigationRailItemUnselectedLeadingIcon => TLColors.gray500;
+
+  @override
+  Color get navigationRailItemSelectedTrailingIcon => TLColors.white;
+
+  @override
+  Color get navigationRailItemUnselectedTrailingIcon => TLColors.gray500;
+
+  @override
+  Color get navigationRailItemSelectedBackground => TLColors.timeline;
+
+  @override
+  Color get navigationRailItemSelectedTitleForeground => TLColors.white;
+
+  @override
+  Color get navigationRailItemUnselectedTitleForeground => TLColors.gray500;
+
+  @override
+  Color get iconButtonForeground => TLColors.gray900;
+
+  @override
+  Color get iconButtonCriticalForeground => TLColors.red500;
+
+  @override
+  Color get tableTitle => TLColors.gray900;
+
+  @override
+  Color get tableEmptyText => TLColors.gray900;
+
+  @override
+  Color get tableErrorText => TLColors.gray900;
+
+  @override
+  Color get tableButtonBackground => TLColors.timeline;
+
+  @override
+  Color get tableButtonForeground => TLColors.white;
+
+  @override
+  Color get tableReloadIcon => TLColors.gray900;
+
+  @override
+  Color get tableHeaderBackground => TLColors.gray200;
+
+  @override
+  Color get tableHeaderTitleForeground => TLColors.gray500;
+
+  @override
+  Color get tableCellText => TLColors.gray900;
+
+  @override
+  Color get chipBackgroundColor => TLColors.timeline;
+
+  @override
+  Color get chipForegroundColor => TLColors.white;
 }
 
 /// Holds all dark colors
@@ -226,6 +382,15 @@ class TLColorDataDark implements TLColorable {
 
   /// Default constructor
   const TLColorDataDark();
+
+  @override
+  Color get userTypeAdmin => TLColors.green600;
+
+  @override
+  Color get userTypeEmployee => TLColors.orange600;
+
+  @override
+  Color get userTypeCustomer => TLColors.purple600;
   
   @override
   Brightness get keyboardBrightness => Brightness.dark;
@@ -250,6 +415,9 @@ class TLColorDataDark implements TLColorable {
 
   @override
   Color get primaryBackground => TLColors.gray900;
+
+  @override
+  Color get secondaryBackground => TLColors.gray800;
 
   @override
   Color get appBarBackground => TLColors.gray900;
@@ -322,4 +490,70 @@ class TLColorDataDark implements TLColorable {
 
   @override
   Color get toastErrorIcon => TLColors.red600;
+
+  @override
+  Color get navigationRailAppNameForeground => TLColors.gray100;
+
+  @override
+  Color get navigationRailAppVersionForeground => TLColors.gray400;
+
+  @override
+  Color get navigationRailItemSelectedLeadingIcon => TLColors.white;
+
+  @override
+  Color get navigationRailItemUnselectedLeadingIcon => TLColors.gray400;
+
+  @override
+  Color get navigationRailItemSelectedTrailingIcon => TLColors.white;
+
+  @override
+  Color get navigationRailItemUnselectedTrailingIcon => TLColors.gray400;
+
+  @override
+  Color get navigationRailItemSelectedBackground => TLColors.timeline;
+
+  @override
+  Color get navigationRailItemSelectedTitleForeground => TLColors.white;
+
+  @override
+  Color get navigationRailItemUnselectedTitleForeground => TLColors.gray400;
+
+  @override
+  Color get iconButtonForeground => TLColors.gray100;
+
+  @override
+  Color get iconButtonCriticalForeground => TLColors.red600;
+
+  @override
+  Color get tableTitle => TLColors.gray100;
+
+  @override
+  Color get tableEmptyText => TLColors.gray100;
+
+  @override
+  Color get tableErrorText => TLColors.gray100;
+
+  @override
+  Color get tableButtonBackground => TLColors.timeline;
+
+  @override
+  Color get tableButtonForeground => TLColors.white;
+
+  @override
+  Color get tableReloadIcon => TLColors.gray100;
+
+  @override
+  Color get tableHeaderBackground => TLColors.gray800;
+
+  @override
+  Color get tableHeaderTitleForeground => TLColors.gray400;
+
+  @override
+  Color get tableCellText => TLColors.gray100;
+
+  @override
+  Color get chipBackgroundColor => TLColors.timeline;
+
+  @override
+  Color get chipForegroundColor => TLColors.white;
 }

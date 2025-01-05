@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 
+import 'package:timeline_updater_admin_app/core/utils/custom_toasts.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/app/create_user_page_state_notifier.dart';
 import 'package:timeline_updater_admin_app/core/res/localization/custom_localizable.dart';
 import 'package:timeline_updater_admin_app/core/res/theme/custom_colorable.dart';
@@ -48,7 +49,8 @@ class _CreateUserPageState extends ConsumerState<CreateUserPage> {
       serviceKey: serviceKey
     );
 
-    
+    // Show a success toast
+    if (mounted) CustomSuccessToasts().userCreated.show(context);
   }
 
   @override
@@ -59,87 +61,85 @@ class _CreateUserPageState extends ConsumerState<CreateUserPage> {
     _passwordController = useTextEditingController();
     _serviceKeyController = useTextEditingController();
 
-    final CustomLocalizable language = TLLocalization.languageOf(context);
+    final CustomLocalizable translations = TLLocalization.translationsOf(context);
     final CustomColorable colors = TLTheme.colorsOf(context);
 
     final CreateUserPageState pageState = ref.watch(createUserPageStateNotifierProvider);
 
     return TLScaffold(
       appBar: TLAppBar(
-        title: language.createUserAppBarTitle,
+        title: translations.createUserAppBarTitle,
         backButton: TLAppBarBackButton(isEnabled: !pageState.isCreateUserLoading)
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.only(
-            top: context.topPadding + TLSpacing.lg,
-            left: context.leftPadding + TLSpacing.lg + TLUIUtils.additionalPaddingForCenteredMaxWidth(context),
-            right: context.rightPadding + TLSpacing.lg + TLUIUtils.additionalPaddingForCenteredMaxWidth(context),
-            bottom: context.bottomPaddingOrZeroWhenKeyboard + TLSpacing.lg
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              TLText(
-                text: language.createUserTitle,
-                alignment: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.w900,
-                  color: colors.signInTitle
-                )
-              ),
-              const Gap(TLSpacing.lg),
-              TLText(
-                text: language.createUserSubtitle,
-                alignment: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                  color: colors.signInSubtitle
-                )
-              ),
-              const Gap(TLSpacing.xl),
-              TLTextField(
-                controller: _nameController,
-                icon: LucideIcons.tag,
-                hint: language.createUserNameTextFieldHint,
-                isEnabled: !pageState.isCreateUserLoading,
-                inputType: TextInputType.name
-              ),
-              const Gap(TLSpacing.lg),
-              TLTextField(
-                controller: _emailController,
-                inputType: TextInputType.emailAddress,
-                icon: LucideIcons.mail,
-                hint: language.signInEmailTextFieldHint,
-                isEnabled: !pageState.isCreateUserLoading
-              ),
-              const Gap(TLSpacing.lg),
-              TLTextField(
-                controller: _passwordController,
-                obscure: true,
-                icon: LucideIcons.lock,
-                hint: language.signInPasswordTextFieldHint,
-                isEnabled: !pageState.isCreateUserLoading
-              ),
-              const Gap(TLSpacing.lg),
-              TLTextField(
-                controller: _serviceKeyController,
-                obscure: true,
-                icon: LucideIcons.key,
-                hint: language.createUserServiceKeyTextFieldHint,
-                isEnabled: !pageState.isCreateUserLoading
-              ),
-              const Gap(TLSpacing.xl),
-              TLRectangleButton(
-                onPressed: _handleCreateUser,
-                isLoading: pageState.isCreateUserLoading,
-                isEnabled: !pageState.isCreateUserLoading,
-                title: language.createUserCreateUserButtonTitle
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(
+          top: TLSpacing.lg,
+          left: context.leftPadding + TLSpacing.lg + TLUIUtils.additionalPaddingForCenteredMaxWidth(context),
+          right: context.rightPadding + TLSpacing.lg + TLUIUtils.additionalPaddingForCenteredMaxWidth(context),
+          bottom: context.bottomPaddingOrZeroWhenKeyboard + TLSpacing.lg
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            TLText(
+              text: translations.createUserTitle,
+              alignment: TextAlign.center,
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.w900,
+                color: colors.createUserTitle
               )
-            ]
-          )
+            ),
+            const Gap(TLSpacing.lg),
+            TLText(
+              text: translations.createUserSubtitle,
+              alignment: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w400,
+                color: colors.createUserSubtitle
+              )
+            ),
+            const Gap(TLSpacing.xl),
+            TLTextField(
+              controller: _nameController,
+              icon: LucideIcons.tag,
+              hint: translations.createUserNameTextFieldHint,
+              isEnabled: !pageState.isCreateUserLoading,
+              inputType: TextInputType.name
+            ),
+            const Gap(TLSpacing.lg),
+            TLTextField(
+              controller: _emailController,
+              inputType: TextInputType.emailAddress,
+              icon: LucideIcons.mail,
+              hint: translations.signInEmailTextFieldHint,
+              isEnabled: !pageState.isCreateUserLoading
+            ),
+            const Gap(TLSpacing.lg),
+            TLTextField(
+              controller: _passwordController,
+              obscure: true,
+              icon: LucideIcons.lock,
+              hint: translations.signInPasswordTextFieldHint,
+              isEnabled: !pageState.isCreateUserLoading
+            ),
+            const Gap(TLSpacing.lg),
+            TLTextField(
+              controller: _serviceKeyController,
+              obscure: true,
+              icon: LucideIcons.key,
+              hint: translations.createUserServiceKeyTextFieldHint,
+              isEnabled: !pageState.isCreateUserLoading
+            ),
+            const Gap(TLSpacing.xl),
+            TLRectangleButton(
+              onPressed: _handleCreateUser,
+              isLoading: pageState.isCreateUserLoading,
+              isEnabled: !pageState.isCreateUserLoading,
+              title: translations.createUserCreateUserButtonTitle
+            )
+          ]
         )
       )
     );

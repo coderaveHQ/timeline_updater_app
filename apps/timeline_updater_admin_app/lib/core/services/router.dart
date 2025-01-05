@@ -9,8 +9,10 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/app/custom_auth_state_notifier.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/pages/create_user_page.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/pages/sign_in_page.dart';
-import 'package:timeline_updater_admin_app/src/features/home/presentation/pages/home_page.dart';
+import 'package:timeline_updater_admin_app/src/features/customers/presentation/pages/customers_page.dart';
 import 'package:timeline_updater_admin_app/src/features/main/presentation/pages/main_page.dart';
+import 'package:timeline_updater_admin_app/src/features/settings/presentation/pages/settings_page.dart';
+import 'package:timeline_updater_admin_app/src/features/users/presentation/pages/users_page.dart';
 
 part 'router.g.dart';
 
@@ -169,7 +171,9 @@ class CreateUserRoute extends GoRouteData {
 /// The main route
 @TypedShellRoute<MainRoute>(
   routes: [
-    TypedGoRoute<HomeRoute>(path: HomeRoute.location)
+    TypedGoRoute<UsersRoute>(path: UsersRoute.location),
+    TypedGoRoute<CustomersRoute>(path: CustomersRoute.location),
+    TypedGoRoute<SettingsRoute>(path: SettingsRoute.location)
   ]
 )
 class MainRoute extends ShellRouteData {
@@ -186,11 +190,11 @@ class MainRoute extends ShellRouteData {
   }
 }
 
-/// The home route
-class HomeRoute extends GoRouteData {
+/// The users route
+class UsersRoute extends GoRouteData {
 
   /// The location of the route
-  static const String location = '/home';
+  static const String location = '/users';
 
   /// The full path of the route
   static const String path = location;
@@ -202,7 +206,49 @@ class HomeRoute extends GoRouteData {
   Page<void> buildPage(BuildContext context, GoRouterState state) {
     return NoTransitionPage(
       key: state.pageKey,
-      child: const HomePage()
+      child: const UsersPage()
+    );
+  }
+}
+
+/// The customers route
+class CustomersRoute extends GoRouteData {
+
+  /// The location of the route
+  static const String location = '/customers';
+
+  /// The full path of the route
+  static const String path = location;
+
+  /// The parent navigator key
+  static final GlobalKey<NavigatorState> $navigatorKey = shellNavigatorKey;
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) {
+    return NoTransitionPage(
+      key: state.pageKey,
+      child: const CustomersPage()
+    );
+  }
+}
+
+/// The settings route
+class SettingsRoute extends GoRouteData {
+
+  /// The location of the route
+  static const String location = '/settings';
+
+  /// The full path of the route
+  static const String path = location;
+
+  /// The parent navigator key
+  static final GlobalKey<NavigatorState> $navigatorKey = shellNavigatorKey;
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) {
+    return NoTransitionPage(
+      key: state.pageKey,
+      child: const SettingsPage()
     );
   }
 }

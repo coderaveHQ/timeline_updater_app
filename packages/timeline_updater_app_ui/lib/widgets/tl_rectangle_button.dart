@@ -27,6 +27,12 @@ class TLRectangleButton extends StatelessWidget {
   /// The foreground color
   final Color? foregroundColor;
 
+  /// Wether the button should be shrinked
+  final bool shrink;
+
+  /// An icon to display in front of the title
+  final IconData? icon;
+
   /// Default constructor
   const TLRectangleButton({
     super.key,
@@ -35,7 +41,9 @@ class TLRectangleButton extends StatelessWidget {
     this.isEnabled = true,
     required this.title,
     this.backgroundColor,
-    this.foregroundColor
+    this.foregroundColor,
+    this.shrink = false,
+    this.icon
   });
 
   @override
@@ -44,8 +52,8 @@ class TLRectangleButton extends StatelessWidget {
     final TLColorable colors = TLTheme.colorsOf(context);
     
     return SizedBox(
-      width: double.infinity,
-      height: 52.0,
+      width: shrink ? null : double.infinity,
+      height: shrink ? 44.0 : 52.0,
       child: RawMaterialButton(
         onPressed: isEnabled ? onPressed : null,
         fillColor: backgroundColor ?? colors.rectangleButtonBackground,
@@ -55,18 +63,30 @@ class TLRectangleButton extends StatelessWidget {
         child: isLoading
           ? TLCircularProgressIndicator(
             color: foregroundColor ?? colors.rectangleButtonForeground,
-            size: 18.0
+            size: shrink ? 16.0 : 18.0
           )
-          : TLText(
-            text: title,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            alignment: TextAlign.center,
-            style: TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.w600,
-              color: foregroundColor ?? colors.rectangleButtonForeground,
-            )
+          : Row(
+            children: [
+              if (icon != null) Padding(
+                padding: EdgeInsets.only(right: TLSpacing.md),
+                child: Icon(
+                  icon,
+                  size: shrink ? 16.0 : 18.0,
+                  color: foregroundColor ?? colors.rectangleButtonForeground
+                )
+              ),
+              TLText(
+                text: title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                alignment: TextAlign.center,
+                style: TextStyle(
+                  fontSize: shrink ? 16.0 : 18.0,
+                  fontWeight: FontWeight.w600,
+                  color: foregroundColor ?? colors.rectangleButtonForeground,
+                )
+              )
+            ]
           )
       )
     );

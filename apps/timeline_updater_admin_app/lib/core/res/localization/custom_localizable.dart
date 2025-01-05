@@ -45,6 +45,45 @@ abstract class CustomLocalizable extends TLLocalizable {
   /// Create user page create user button title
   String get createUserCreateUserButtonTitle;
 
+  /// Title for the sign out button
+  String get signOutButtonTitle;
+
+  /// The users navigation rail item title
+  String get navigationRailUsersTitle;
+
+  /// The customers navigation rail item title
+  String get navigationRailCustomersTitle;
+
+  /// The settings navigation rail item title
+  String get navigationRailSettingsTitle;
+
+  /// The documentation navigation rail item title
+  String get navigationRailDocumentationTitle;
+
+  /// The web app navigation rail item title
+  String get navigationRailWebAppTitle;
+
+  /// Users app bar title
+  String get usersAppBarTitle;
+
+  /// The description of the users page
+  String get usersDescription;
+
+  /// The title of the profiles table
+  String get usersProfilesTableTitle;
+
+  /// The title of the users page profiles table action button
+  String get usersProfilesTableCreateUserButtonTitle;
+
+  /// The text for when no profile is found in users page
+  String get usersProfilesTableEmpty;
+
+  /// Customers app bar title
+  String get customersAppBarTitle;
+
+  /// Settings app bar title
+  String get settingsAppBarTitle;
+
   /// Toast for when a new user was created
   String get successToastUserCreated;
 }

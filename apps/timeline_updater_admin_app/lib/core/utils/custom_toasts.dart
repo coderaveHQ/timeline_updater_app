@@ -6,7 +6,7 @@ import 'package:timeline_updater_admin_app/core/res/localization/custom_localiza
 class CustomSuccessToasts extends TLSuccessToasts {
 
   /// For when the user signed in
-  TLToast get userCreated => TLToast<CustomLocalizable>(ToastType.success, (CustomLocalizable language) => language.successToastUserCreated);
+  TLToast get userCreated => TLToast<CustomLocalizable>(ToastType.success, (CustomLocalizable translations) => translations.successToastUserCreated);
 }
 
 /// A custom class defining all custom info toasts

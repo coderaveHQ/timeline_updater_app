@@ -81,7 +81,7 @@ class Toaster {
   }
 
   /// Builds a toast
-  static ToastCard _build(BuildContext context, ToastType type, String text) {
+  static Widget _build(BuildContext context, ToastType type, String text) {
     final TLColorable colors = TLTheme.colorsOf(context);
 
     return ToastCard(

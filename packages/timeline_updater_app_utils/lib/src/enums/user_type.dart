@@ -23,4 +23,9 @@ enum UserType {
   const UserType({
     required this.dbValue
   });
+
+  /// Converts a string value to an enum value
+  static UserType fromDbValue(String dbValue) {
+    return UserType.values.firstWhere((UserType userType) => userType.dbValue == dbValue);
+  }
 }
