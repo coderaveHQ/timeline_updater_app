@@ -2,6 +2,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'package:timeline_updater_admin_app/src/features/auth/data/datasources/auth_datasource_impl.dart';
+import 'package:timeline_updater_admin_app/src/features/users/data/dto/profile_dto.dart';
 
 part 'auth_datasource.g.dart';
 
@@ -33,4 +34,7 @@ abstract interface class AuthDatasource {
 
   /// Signs out the currently signed in user
   Future<void> signOut();
+
+  /// Gets the profile of the currently signed in user
+  Future<ProfileDto> getCurrentProfile();
 }

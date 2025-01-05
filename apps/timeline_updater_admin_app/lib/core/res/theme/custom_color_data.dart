@@ -36,6 +36,9 @@ class CustomColorDataLight extends TLColorDataLight implements CustomColorable {
   Color get profileButtonName => TLColors.gray900;
 
   @override
+  Color get profileButtonPopoverBackground => TLColors.white;
+
+  @override
   Color get signInTitle => TLColors.gray900;
 
   @override
@@ -68,6 +71,9 @@ class CustomColorDataDark extends TLColorDataDark implements CustomColorable {
 
   @override
   Color get profileButtonName => TLColors.gray100;
+
+  @override
+  Color get profileButtonPopoverBackground => TLColors.gray900;
 
   @override
   Color get signInTitle => TLColors.gray100;

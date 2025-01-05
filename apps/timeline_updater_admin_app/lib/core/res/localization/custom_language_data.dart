@@ -97,6 +97,21 @@ class CustomLanguageDataDe extends TLLanguageDataDe implements CustomLocalizable
   String get usersProfilesTableEmpty => 'Keine Benutzer*innen gefunden.';
 
   @override
+  String get usersProfilesTableIdColumnTitle => 'ID';
+
+  @override
+  String get usersProfilesTableNameColumnTitle => 'Name';
+
+  @override
+  String get usersProfilesTableCreatedAtColumnTitle => 'Erstellt';
+
+  @override
+  String get usersProfilesTableUpdatedAtColumnTitle => 'Zuletzt bearbeitet';
+
+  @override
+  String get usersProfilesTableUserTypeColumnTitle => 'Rolle';
+
+  @override
   String get customersAppBarTitle => 'Kund*innen';
 
   @override
@@ -186,6 +201,21 @@ class CustomLanguageDataEn extends TLLanguageDataEn implements CustomLocalizable
 
   @override
   String get usersProfilesTableEmpty => 'No users found.';
+
+  @override
+  String get usersProfilesTableIdColumnTitle => 'ID';
+
+  @override
+  String get usersProfilesTableNameColumnTitle => 'Name';
+
+  @override
+  String get usersProfilesTableCreatedAtColumnTitle => 'Created at';
+
+  @override
+  String get usersProfilesTableUpdatedAtColumnTitle => 'Last updated at';
+
+  @override
+  String get usersProfilesTableUserTypeColumnTitle => 'Role';
 
   @override
   String get customersAppBarTitle => 'Customers';

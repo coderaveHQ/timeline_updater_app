@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
 
@@ -148,6 +149,7 @@ enum CustomAuthStatus {
     redirectPath: UsersRoute.path,
     allowedPaths: <String>[
       UsersRoute.path,
+      CreateUserRoute.path,
       CustomersRoute.path,
       SettingsRoute.path
     ]

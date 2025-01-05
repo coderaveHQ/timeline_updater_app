@@ -39,6 +39,8 @@ dependencies:
   # UI
   lucide_icons_flutter: ^1.2.5
   gap: ^3.0.1
+  easy_popover: ^0.0.6
+  skeletonizer: ^1.4.2
 
 dev_dependencies:
   flutter_test:

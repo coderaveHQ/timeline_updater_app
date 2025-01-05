@@ -78,6 +78,21 @@ abstract class CustomLocalizable extends TLLocalizable {
   /// The text for when no profile is found in users page
   String get usersProfilesTableEmpty;
 
+  /// The title of the users profile table id column
+  String get usersProfilesTableIdColumnTitle;
+
+  /// The title of the users profile table name column
+  String get usersProfilesTableNameColumnTitle;
+
+  /// The title of the users profile table created at column
+  String get usersProfilesTableCreatedAtColumnTitle;
+
+  /// The title of the users profile table updated at column
+  String get usersProfilesTableUpdatedAtColumnTitle;
+
+  /// The title of the users profile table user type column
+  String get usersProfilesTableUserTypeColumnTitle;
+
   /// Customers app bar title
   String get customersAppBarTitle;
 

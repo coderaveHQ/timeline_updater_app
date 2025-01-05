@@ -16,6 +16,9 @@ abstract class CustomColorable extends TLColorable {
 
   /// The color of the name inside the profile button
   Color get profileButtonName;
+
+  /// The background color of the profile button popover
+  Color get profileButtonPopoverBackground;
   
   /// Sign in page title color
   Color get signInTitle;

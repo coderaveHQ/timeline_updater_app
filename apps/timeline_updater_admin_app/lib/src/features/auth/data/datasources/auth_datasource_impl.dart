@@ -1,6 +1,8 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
+
 import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
 
+import 'package:timeline_updater_admin_app/src/features/users/data/dto/profile_dto.dart';
 import 'package:timeline_updater_admin_app/core/utils/custom_env.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/data/datasources/auth_datasource.dart';
 
@@ -34,7 +36,7 @@ class AuthDatasourceImpl implements AuthDatasource {
         password: password,
         emailConfirm: true,
         userMetadata: <String, dynamic>{
-          'type' : UserType.admin.dbValue,
+          'type' : UserType.admin.dbValue, // TODO
           'name' : name
         }
       )
@@ -44,5 +46,11 @@ class AuthDatasourceImpl implements AuthDatasource {
   @override
   Future<void> signOut() async {
     await Supabase.instance.client.auth.signOut();
+  }
+
+  @override
+  Future<ProfileDto> getCurrentProfile() async {
+    final List<Json> profileRow = await Supabase.instance.client.rpc('app_get_current_profile');
+    return ProfileDto.fromJson(profileRow.first);
   }
 }

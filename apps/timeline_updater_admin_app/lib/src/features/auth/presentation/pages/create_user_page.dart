@@ -49,8 +49,15 @@ class _CreateUserPageState extends ConsumerState<CreateUserPage> {
       serviceKey: serviceKey
     );
 
-    // Show a success toast
-    if (mounted) CustomSuccessToasts().userCreated.show(context);
+    if (mounted) {
+      // Clear text fields but the service key one in case we want to create even more users
+      _nameController.clear();
+      _emailController.clear();
+      _passwordController.clear();
+
+      // Show a success toast
+      CustomSuccessToasts().userCreated.show(context);
+    }
   }
 
   @override

@@ -6,6 +6,7 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
 
+import 'package:timeline_updater_admin_app/core/services/router.dart';
 import 'package:timeline_updater_admin_app/core/res/localization/custom_localizable.dart';
 import 'package:timeline_updater_admin_app/src/features/users/domain/entities/profile_entity.dart';
 import 'package:timeline_updater_admin_app/src/features/users/presentation/app/profiles_table_state_notifier.dart';
@@ -28,25 +29,25 @@ class ProfilesTable extends ConsumerWidget {
 
   TLTableHeader _tableHeader(CustomLocalizable translations) {
     return TLTableHeader(
-      items: <TLTableHeaderItem>[ // TODO localization
+      items: <TLTableHeaderItem>[
         TLTableHeaderItem(
-          title: 'ID',
+          title: translations.usersProfilesTableIdColumnTitle,
           width: 350.0
         ),
         TLTableHeaderItem(
-          title: 'Name',
+          title: translations.usersProfilesTableNameColumnTitle,
           width: 250.0
         ),
         TLTableHeaderItem(
-          title: 'Erstellt',
+          title: translations.usersProfilesTableCreatedAtColumnTitle,
           width: 200.0
         ),
         TLTableHeaderItem(
-          title: 'Zuletzt bearbeitet',
+          title: translations.usersProfilesTableUpdatedAtColumnTitle,
           width: 200.0
         ),
         TLTableHeaderItem(
-          title: 'Typ',
+          title: translations.usersProfilesTableUserTypeColumnTitle,
           width: 150.0
         )
       ]
@@ -71,8 +72,8 @@ class ProfilesTable extends ConsumerWidget {
     );
   }
 
-  Future<void> _handleCreateUser() async {
-    // TODO
+  Future<void> _handleCreateUser(BuildContext context) async {
+    await const CreateUserRoute().push(context);
   }
 
   @override
@@ -92,7 +93,7 @@ class ProfilesTable extends ConsumerWidget {
       header: _tableHeader(translations),
       dataRowBuilder: (bool isSkeleton, ProfileEntity? profile) => _tableRow(context, isSkeleton, profile),
       actionButton: TLTableButton(
-        onPressed: _handleCreateUser,
+        onPressed: () => _handleCreateUser(context),
         icon: LucideIcons.plus,
         title: translations.usersProfilesTableCreateUserButtonTitle
       )

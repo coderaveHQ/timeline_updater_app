@@ -1,3 +1,4 @@
+import 'package:easy_popover/easy_popover.dart';
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
@@ -31,7 +32,9 @@ class App extends ConsumerWidget {
       colorMode: TLColorMode.light,
       languageData: CustomLanguageData(),
       colorData: CustomColorData(),
-      builder: (Widget child) => CustomAuthStateWrapper(child: child)
+      builder: (Widget child) => PopoverOverlay(
+        builder: (BuildContext context) => CustomAuthStateWrapper(child: child)
+      )
     );
   }
 }

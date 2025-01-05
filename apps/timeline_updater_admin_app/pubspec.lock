@@ -278,6 +278,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  easy_popover:
+    dependency: "direct main"
+    description:
+      name: easy_popover
+      sha256: afbb6bf777d55b27b23c81d088b315c0f259adf0c45bdbc72126813ede2bb6fd
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.6"
   fake_async:
     dependency: transitive
     description:
@@ -910,7 +918,7 @@ packages:
     source: hosted
     version: "2.0.1"
   skeletonizer:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: skeletonizer
       sha256: "3b202e4fa9c49b017d368fb0e570d4952bcd19972b67b2face071bdd68abbfae"

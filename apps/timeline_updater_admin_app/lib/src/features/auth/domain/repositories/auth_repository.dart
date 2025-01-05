@@ -3,6 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
 
+import 'package:timeline_updater_admin_app/src/features/users/domain/entities/profile_entity.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/data/datasources/auth_datasource.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/data/repositories/auth_repository_impl.dart';
 
@@ -35,4 +36,7 @@ abstract interface class AuthRepository {
 
   /// Signs out the currently signed in user
   FutureResult<void, Object> signOut();
+
+  /// Gets the profile of the currently signed in user
+  FutureResult<ProfileEntity, Object> getCurrentProfile();
 }
