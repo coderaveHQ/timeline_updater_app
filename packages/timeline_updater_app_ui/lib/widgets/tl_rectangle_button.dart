@@ -66,6 +66,7 @@ class TLRectangleButton extends StatelessWidget {
             size: shrink ? 16.0 : 18.0
           )
           : Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (icon != null) Padding(
                 padding: EdgeInsets.only(right: TLSpacing.md),
