@@ -1,0 +1,3 @@
+- Outsource SignInPage
+- Fix settings not applied instant
+- Outsource ProfileButton
