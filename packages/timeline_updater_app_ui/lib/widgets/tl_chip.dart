@@ -48,14 +48,14 @@ class TLChip extends StatelessWidget {
     final TLColorable colors = TLTheme.colorsOf(context);
     
     return SizedBox(
-      height: 40.0,
+      height: 36.0,
       child: IntrinsicWidth(
         child: RawMaterialButton(
           onPressed: isEnabled ? onPressed : null,
           enableFeedback: isEnabled,
           fillColor: backgroundColor ?? colors.chipBackgroundColor,
           padding: const EdgeInsets.symmetric(horizontal: TLSpacing.md),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
           child: Center(
             child: TLText(
               text: title,

@@ -14,6 +14,36 @@ abstract class TLColorable {
   /// The color of the customer user type
   Color get userTypeCustomer;
 
+  /// The color of the standard evolution e3
+  Color get standardEvolutionE3;
+
+  /// The color of the standard version v15
+  Color get standardVersionV15;
+
+  /// The color of the standard version v15.5
+  Color get standardVersionV15_5;
+
+  /// The color of the standard version v16
+  Color get standardVersionV16;
+
+  /// The color of the standard flavor enterprise
+  Color get standardFlavorEnterprise;
+
+  /// The color of the standard flavor plastics
+  Color get standardFlavorPlastics;
+
+  /// The color of the standard flavor neo
+  Color get standardFlavorNeo;
+
+  /// The color of the standard flavor components
+  Color get standardFlavorComponents;
+
+  /// The color of the standard flavor electronics
+  Color get standardFlavorElectronics;
+
+  /// The color of the standard flavor guss
+  Color get standardFlavorGuss;
+
   /// The brightness of the keyboard
   Brightness get keyboardBrightness;
 
@@ -194,6 +224,18 @@ abstract class TLColorable {
   /// The color of the title of an unselected radio button
   Color get radioButtonUnselectedTitleForeground;
 
+  /// The background color of the TabBar
+  Color get tabBarBackground;
+
+  /// The background color of a selected TabBarItem
+  Color get tabBarSelectedBackground;
+
+  /// The color of the title of a selected TabBarItem
+  Color get tabBarSelectedForeground;
+
+  /// The color of the title of an unselected TabBarItem
+  Color get tabBarUnselectedForeground;
+
   /// Settings page description
   Color get settingsDescription;
 
@@ -237,6 +279,36 @@ class TLColorDataLight implements TLColorable {
 
   @override
   Color get userTypeCustomer => TLColors.purple500;
+
+  @override
+  Color get standardEvolutionE3 => TLColors.green500;
+
+  @override
+  Color get standardVersionV15 => TLColors.blue500;
+
+  @override
+  Color get standardVersionV15_5 => TLColors.purple500;
+
+  @override
+  Color get standardVersionV16 => TLColors.orange500;
+
+  @override
+  Color get standardFlavorEnterprise => TLColors.blue500;
+
+  @override
+  Color get standardFlavorPlastics => TLColors.orange500;
+
+  @override
+  Color get standardFlavorNeo => TLColors.green500;
+
+  @override
+  Color get standardFlavorComponents => TLColors.purple500;
+
+  @override
+  Color get standardFlavorElectronics => TLColors.pink500;
+
+  @override
+  Color get standardFlavorGuss => TLColors.red500;
   
   @override
   Brightness get keyboardBrightness => Brightness.light;
@@ -419,6 +491,18 @@ class TLColorDataLight implements TLColorable {
   Color get radioButtonUnselectedTitleForeground => TLColors.gray500;
 
   @override
+  Color get tabBarBackground => TLColors.gray200;
+
+  @override
+  Color get tabBarSelectedBackground => TLColors.white;
+
+  @override
+  Color get tabBarSelectedForeground => TLColors.gray900;
+
+  @override
+  Color get tabBarUnselectedForeground => TLColors.gray500;
+
+  @override
   Color get settingsDescription => TLColors.gray900;
 
   @override
@@ -445,6 +529,36 @@ class TLColorDataDark implements TLColorable {
 
   @override
   Color get userTypeCustomer => TLColors.purple600;
+
+  @override
+  Color get standardEvolutionE3 => TLColors.green600;
+
+  @override
+  Color get standardVersionV15 => TLColors.blue600;
+
+  @override
+  Color get standardVersionV15_5 => TLColors.purple600;
+
+  @override
+  Color get standardVersionV16 => TLColors.orange600;
+
+  @override
+  Color get standardFlavorEnterprise => TLColors.blue600;
+
+  @override
+  Color get standardFlavorPlastics => TLColors.orange600;
+
+  @override
+  Color get standardFlavorNeo => TLColors.green600;
+
+  @override
+  Color get standardFlavorComponents => TLColors.purple600;
+
+  @override
+  Color get standardFlavorElectronics => TLColors.pink600;
+
+  @override
+  Color get standardFlavorGuss => TLColors.red600;
   
   @override
   Brightness get keyboardBrightness => Brightness.dark;
@@ -625,6 +739,18 @@ class TLColorDataDark implements TLColorable {
 
   @override
   Color get radioButtonUnselectedTitleForeground => TLColors.gray400;
+
+  @override
+  Color get tabBarBackground => TLColors.gray800;
+
+  @override
+  Color get tabBarSelectedBackground => TLColors.gray900;
+
+  @override
+  Color get tabBarSelectedForeground => TLColors.gray100;
+
+  @override
+  Color get tabBarUnselectedForeground => TLColors.gray400;
 
   @override
   Color get settingsDescription => TLColors.gray100;

@@ -96,6 +96,96 @@ abstract class CustomLocalizable extends TLLocalizable {
   /// Customers app bar title
   String get customersAppBarTitle;
 
+  /// The description of the customers page
+  String get customersDescription;
+
+  /// The title of the customers table
+  String get customersTableTitle;
+
+  /// The title of the customers page customers table action button
+  String get customersTableCreateCustomerButtonTitle;
+
+  /// The text for when no customer is found in customers page
+  String get customersTableEmpty;
+
+  /// The title of the customers id table column
+  String get customersTableIdColumnTitle;
+
+  /// The title of the customers name table column
+  String get customersTableNameColumnTitle;
+
+  /// The title of the customers created at table column
+  String get customersTableCreatedAtColumnTitle;
+
+  /// The title of the customers updated at table column
+  String get customersTableUpdatedAtColumnTitle;
+
+  /// The title of the customers evolution table column
+  String get customersTableEvolutionColumnTitle;
+
+  /// The title of the customers version table column
+  String get customersTableVersionColumnTitle;
+
+  /// The title of the customers flavor table column
+  String get customersTableFlavorColumnTitle;
+
+  /// The app bar title of the customers details page
+  String get customerDetailsAppBarTitle;
+
+  /// The description of the customers details page
+  String get customerDetailsDescription;
+
+  /// The title of the details tab of the customer details page
+  String get customerDetailsDetailsTabTitle;
+
+  /// The title of the mandants tab of the customer details page
+  String get customerDetailsMandantsTabTitle;
+
+  /// The title of the profiles tab of the customer details page
+  String get customerDetailsProfilesTabTitle;
+
+  /// The title of the customer details mandants table
+  String get customerDetailsMandantsTableTitle;
+
+  /// The text of the customer details mandants table for when the list is empty
+  String get customerDetailsMandantsTableEmpty;
+
+  /// The title of the customer details mandants table create button
+  String get customerDetailsMandantsTableCreateCustomerButtonTitle;
+
+  /// The title of the customer details mandants table id column
+  String get customerDetailsMandantsTableIdColumnTitle;
+
+  /// The title of the customer details mandants table name column
+  String get customerDetailsMandantsTableNameColumnTitle;
+
+  /// The title of the customer details mandants table create at column
+  String get customerDetailsMandantsTableCreatedAtColumnTitle;
+
+  /// The title of the customer details mandants table updated at column
+  String get customerDetailsMandantsTableUpdatedAtColumnTitle;
+
+  /// The title of the customer details profiles table
+  String get customerDetailsProfilesTableTitle;
+
+  /// The text of the customer details profiles table for when the list is empty
+  String get customerDetailsProfilesTableEmpty;
+
+  /// The title of the customer details profiles table create button
+  String get customerDetailsProfilesTableCreateCustomerButtonTitle;
+
+  /// The title of the customer details profiles table id column
+  String get customerDetailsProfilesTableIdColumnTitle;
+
+  /// The title of the customer details profiles table name column
+  String get customerDetailsProfilesTableNameColumnTitle;
+
+  /// The title of the customer details profiles table create at column
+  String get customerDetailsProfilesTableCreatedAtColumnTitle;
+
+  /// The title of the customer details profiles table updated at column
+  String get customerDetailsProfilesTableUpdatedAtColumnTitle;
+
   /// Toast for when a new user was created
   String get successToastUserCreated;
 }

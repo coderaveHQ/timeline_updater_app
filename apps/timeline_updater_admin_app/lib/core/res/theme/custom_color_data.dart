@@ -52,6 +52,12 @@ class CustomColorDataLight extends TLColorDataLight implements CustomColorable {
 
   @override
   Color get usersDescription => TLColors.gray900;
+
+  @override
+  Color get customersDescription => TLColors.gray900;
+
+  @override
+  Color get customerDetailsDescription => TLColors.gray900;
 }
 
 /// Holds all dark colors
@@ -89,4 +95,10 @@ class CustomColorDataDark extends TLColorDataDark implements CustomColorable {
 
   @override
   Color get usersDescription => TLColors.gray100;
+
+  @override
+  Color get customersDescription => TLColors.gray100;
+
+  @override
+  Color get customerDetailsDescription => TLColors.gray100;
 }

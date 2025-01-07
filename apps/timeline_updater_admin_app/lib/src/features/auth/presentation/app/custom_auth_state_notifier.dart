@@ -151,6 +151,8 @@ enum CustomAuthStatus {
       UsersRoute.path,
       CreateUserRoute.path,
       CustomersRoute.path,
+      CustomerDetailsRoute.path,
+      CreateCustomerRoute.path,
       SettingsRoute.path
     ]
   );

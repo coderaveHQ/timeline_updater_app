@@ -34,4 +34,10 @@ abstract class CustomColorable extends TLColorable {
 
   /// Users page description
   Color get usersDescription;
+
+  /// Customers page description
+  Color get customersDescription;
+
+  /// Customer details page description
+  Color get customerDetailsDescription;
 }

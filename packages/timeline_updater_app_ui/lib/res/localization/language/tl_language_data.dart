@@ -28,6 +28,36 @@ abstract class TLLocalizable {
   /// The title of the customer user type
   String get userTypeCustomerTitle;
 
+  /// The title of the E3 standard evolution
+  String get standardEvolutionE3;
+
+  /// The title of the v15 standard version
+  String get standardVersionV15;
+
+  /// The title of the v15.5 standard version
+  String get standardVersionV15_5;
+
+  /// The title of the v16 standard version
+  String get standardVersionV16;
+
+  /// The title of the standard flavor plastics
+  String get standardFlavorEnterprise;
+
+  /// The title of the standard flavor plastics
+  String get standardFlavorPlastics;
+
+  /// The title of the standard flavor neo
+  String get standardFlavorNeo;
+
+  /// The title of the standard flavor components
+  String get standardFlavorComponents;
+
+  /// The title of the standard flavor electronics
+  String get standardFlavorElectronics;
+
+  /// The title of the standard flavor guss
+  String get standardFlavorGuss;
+
   /// Settings app bar title
   String get settingsAppBarTitle;
 
@@ -127,6 +157,36 @@ class TLLanguageDataDe implements TLLocalizable {
   String get userTypeCustomerTitle => 'Kund*in';
 
   @override
+  String get standardEvolutionE3 => 'E3';
+
+  @override
+  String get standardVersionV15 => 'v15';
+
+  @override
+  String get standardVersionV15_5 => 'v15.5';
+
+  @override
+  String get standardVersionV16 => 'v16';
+
+  @override
+  String get standardFlavorEnterprise => 'Enterprise';
+
+  @override
+  String get standardFlavorPlastics => 'Plastics';
+
+  @override
+  String get standardFlavorNeo => 'Neo';
+
+  @override
+  String get standardFlavorComponents => 'Components';
+
+  @override
+  String get standardFlavorElectronics => 'Electronics';
+
+  @override
+  String get standardFlavorGuss => 'Guss';
+
+  @override
   String get settingsAppBarTitle => 'Einstellungen';
 
   @override
@@ -207,6 +267,36 @@ class TLLanguageDataEn implements TLLocalizable {
 
   @override
   String get userTypeCustomerTitle => 'Customer';
+
+  @override
+  String get standardEvolutionE3 => 'E3';
+
+  @override
+  String get standardVersionV15 => 'v15';
+
+  @override
+  String get standardVersionV15_5 => 'v15.5';
+
+  @override
+  String get standardVersionV16 => 'v16';
+
+  @override
+  String get standardFlavorEnterprise => 'Enterprise';
+
+  @override
+  String get standardFlavorPlastics => 'Plastics';
+
+  @override
+  String get standardFlavorNeo => 'Neo';
+
+  @override
+  String get standardFlavorComponents => 'Components';
+
+  @override
+  String get standardFlavorElectronics => 'Electronics';
+
+  @override
+  String get standardFlavorGuss => 'Guss';
 
   @override
   String get settingsAppBarTitle => 'Settings';

@@ -67,12 +67,39 @@ AFTER UPDATE ON public.profiles
 FOR EACH ROW
 EXECUTE FUNCTION update_updated_at();
 
+CREATE TYPE public.standard_type AS ENUM (
+    'server',
+    'client'
+);
+
+CREATE TYPE public.standard_evolution AS ENUM (
+    'e3'
+);
+
+CREATE TYPE public.standard_version AS ENUM (
+    'v15',
+    'v15.5',
+    'v16'
+);
+
+CREATE TYPE public.standard_flavor AS ENUM (
+    'enterprise',
+    'plastics',
+    'neo',
+    'components',
+    'electronics',
+    'guss'
+);
+
 -- [TABLE] for the customers
 CREATE TABLE public.customers (
-    id UUID NOT NULL,
+    id UUID NOT NULL DEFAULT gen_random_UUID(),
     created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
     name TEXT NOT NULL,
+    evolution public.standard_evolution NOT NULL,
+    version public.standard_version NOT NULL,
+    flavor public.standard_flavor NOT NULL,
     CONSTRAINT customers_pkey PRIMARY KEY (id)
 ) TABLESPACE pg_default;
 
@@ -128,11 +155,35 @@ AFTER UPDATE ON public.customers
 FOR EACH ROW
 EXECUTE FUNCTION update_updated_at();
 
+-- [TABLE] for customer mandants
+CREATE TABLE public.customer_mandants (
+    id UUID NOT NULL DEFAULT gen_random_UUID(),
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+    customer_id UUID NOT NULL,
+    name TEXT NOT NULL,
+    is_production BOOLEAN NOT NULL,
+    CONSTRAINT public_customer_mandants_pkey PRIMARY KEY (id),
+    CONSTRAINT public_customer_mandants_customer_id_fkey FOREIGN KEY (customer_id) REFERENCES public.customers (id) ON UPDATE CASCADE ON DELETE CASCADE
+) TABLESPACE pg_default;
+
+-- [COMMENT] on customer_mandants
+COMMENT ON TABLE public.customer_mandants IS 'The mandants of a customer.';
+
+-- TODO Policies for customer_mandants
+
+-- [TRIGGER] to update the updated_at timestamp
+CREATE TRIGGER update_customer_mandants_updated_at_trigger
+AFTER UPDATE ON public.customer_mandants
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at();
+
 -- [TABLE] for the connection between a customer and THEIR employees
 CREATE TABLE public.customer_profiles (
     customer_id UUID NOT NULL,
     profile_id UUID NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
     CONSTRAINT customer_profiles_pkey PRIMARY KEY (profile_id, customer_id),
     CONSTRAINT customer_profiles_customer_id_fkey FOREIGN KEY (customer_id) REFERENCES public.customers (id) ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT customer_profiles_profile_id_fkey FOREIGN KEY (profile_id) REFERENCES public.profiles (id) ON UPDATE CASCADE ON DELETE CASCADE
@@ -142,7 +193,7 @@ CREATE TABLE public.customer_profiles (
 COMMENT ON TABLE public.customer_profiles IS 'The connection between customer and customers employees profiles.';
 
 -- Enable RLS for customer_profiles
-ALTER TABLE public.customer_profiles ENABLE ROW LEVEL SECURITY;
+--ALTER TABLE public.customer_profiles ENABLE ROW LEVEL SECURITY;
 
 -- [POLICY] (only authenticated) Allow selects to customers where user is part of or user is not a customer
 /*CREATE POLICY "public_customers_select" 
@@ -221,13 +272,13 @@ BEGIN
         (NEW.raw_user_meta_data->>'type')::public.user_type
     );
 
-    IF (NEW.raw_user_meta_data->>'type')::public.user_type = 'customer'::public.user_type THEN
+    IF NEW.raw_user_meta_data->>'customer_id' IS NOT NULL THEN
         INSERT INTO public.customer_profiles (
             customer_id, 
             profile_id
         )
         VALUES (
-            NEW.raw_user_meta_data->>'customer_id',
+            (NEW.raw_user_meta_data->>'customer_id')::UUID,
             NEW.id
         );
     END IF;

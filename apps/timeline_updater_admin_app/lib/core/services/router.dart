@@ -9,6 +9,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/app/custom_auth_state_notifier.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/pages/create_user_page.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/pages/sign_in_page.dart';
+import 'package:timeline_updater_admin_app/src/features/customers/presentation/pages/create_customer_page.dart';
+import 'package:timeline_updater_admin_app/src/features/customers/presentation/pages/customer_details_page.dart';
 import 'package:timeline_updater_admin_app/src/features/customers/presentation/pages/customers_page.dart';
 import 'package:timeline_updater_admin_app/src/features/main/presentation/pages/main_page.dart';
 import 'package:timeline_updater_admin_app/src/features/settings/presentation/pages/settings_page.dart';
@@ -172,7 +174,12 @@ class CreateUserRoute extends GoRouteData {
 @TypedShellRoute<MainRoute>(
   routes: [
     TypedGoRoute<UsersRoute>(path: UsersRoute.location),
-    TypedGoRoute<CustomersRoute>(path: CustomersRoute.location),
+    TypedGoRoute<CustomersRoute>(
+      path: CustomersRoute.location,
+      routes: [
+        TypedGoRoute<CustomerDetailsRoute>(path: CustomerDetailsRoute.location),
+      ]
+    ),
     TypedGoRoute<SettingsRoute>(path: SettingsRoute.location)
   ]
 )
@@ -229,6 +236,52 @@ class CustomersRoute extends GoRouteData {
       key: state.pageKey,
       child: const CustomersPage()
     );
+  }
+}
+
+/// The customer details route
+class CustomerDetailsRoute extends GoRouteData {
+
+  /// The id of the customer
+  final String id;
+
+  /// Default constructor
+  const CustomerDetailsRoute(this.id);
+
+  /// The location of the route
+  static const String location = ':id';
+
+  /// The full path of the route
+  static const String path = '${ CustomersRoute.path }/$location';
+
+  /// The parent navigator key
+  static final GlobalKey<NavigatorState> $navigatorKey = rootNavigatorKey;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return CustomerDetailsPage(id: id);
+  }
+}
+
+/// The create customer route
+@TypedGoRoute<CreateCustomerRoute>(path: CreateCustomerRoute.location)
+class CreateCustomerRoute extends GoRouteData {
+
+  /// Default constructor
+  const CreateCustomerRoute();
+
+  /// The location of the route
+  static const String location = '/create-customer';
+
+  /// The full path of the route
+  static const String path = location;
+
+  /// The parent navigator key
+  static final GlobalKey<NavigatorState> $parentNavigatorKey = rootNavigatorKey;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const CreateCustomerPage();
   }
 }
 

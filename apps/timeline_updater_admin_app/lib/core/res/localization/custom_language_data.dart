@@ -115,6 +115,96 @@ class CustomLanguageDataDe extends TLLanguageDataDe implements CustomLocalizable
   String get customersAppBarTitle => 'Kund*innen';
 
   @override
+  String get customersDescription => 'Sieh dir alle Kund*innen an, bearbeite sie oder erstelle neue.';
+
+  @override
+  String get customersTableTitle => 'Alle Kund*innen';
+
+  @override
+  String get customersTableCreateCustomerButtonTitle => 'Erstellen';
+
+  @override
+  String get customersTableEmpty => 'Keine Kund*innen gefunden.';
+
+  @override
+  String get customersTableIdColumnTitle => 'ID';
+
+  @override
+  String get customersTableNameColumnTitle => 'Name';
+
+  @override
+  String get customersTableCreatedAtColumnTitle => 'Erstellt';
+
+  @override
+  String get customersTableUpdatedAtColumnTitle => 'Zuletzt bearbeitet';
+
+  @override
+  String get customersTableEvolutionColumnTitle => 'Entwicklung';
+
+  @override
+  String get customersTableVersionColumnTitle => 'Version';
+
+  @override
+  String get customersTableFlavorColumnTitle => 'Typ';
+
+  @override
+  String get customerDetailsAppBarTitle => 'Details';
+
+  @override
+  String get customerDetailsDescription => 'Sie dir generelle Details, Mandanten oder Benutzer*innen des / der Kund*in an.';
+
+  @override
+  String get customerDetailsDetailsTabTitle => 'Details';
+
+  @override
+  String get customerDetailsMandantsTabTitle => 'Mandanten';
+
+  @override
+  String get customerDetailsProfilesTabTitle => 'Benutzer*innen';
+
+  @override
+  String get customerDetailsMandantsTableTitle => 'Alle Mandanten';
+
+  @override
+  String get customerDetailsMandantsTableEmpty => 'Keine Mandanten gefunden.';
+
+  @override
+  String get customerDetailsMandantsTableCreateCustomerButtonTitle => 'Erstellen';
+
+  @override
+  String get customerDetailsMandantsTableIdColumnTitle => 'ID';
+
+  @override
+  String get customerDetailsMandantsTableNameColumnTitle => 'Name';
+
+  @override
+  String get customerDetailsMandantsTableCreatedAtColumnTitle => 'Erstellt';
+
+  @override
+  String get customerDetailsMandantsTableUpdatedAtColumnTitle => 'Zuletzt bearbeitet';
+
+  @override
+  String get customerDetailsProfilesTableTitle => 'Alle Benutzer*innen';
+
+  @override
+  String get customerDetailsProfilesTableEmpty => 'Keine Benutzer*innen gefunden.';
+
+  @override
+  String get customerDetailsProfilesTableCreateCustomerButtonTitle => 'Erstellen';
+
+  @override
+  String get customerDetailsProfilesTableIdColumnTitle => 'ID';
+
+  @override
+  String get customerDetailsProfilesTableNameColumnTitle => 'Name';
+
+  @override
+  String get customerDetailsProfilesTableCreatedAtColumnTitle => 'Erstellt';
+
+  @override
+  String get customerDetailsProfilesTableUpdatedAtColumnTitle => 'Zuletzt bearbeitet';
+
+  @override
   String get successToastUserCreated => 'Benutzer*in erfolgreich erstellt!';
 }
 
@@ -216,6 +306,96 @@ class CustomLanguageDataEn extends TLLanguageDataEn implements CustomLocalizable
 
   @override
   String get customersAppBarTitle => 'Customers';
+
+  @override
+  String get customersDescription => 'View all customers, edit them or create new ones.';
+
+  @override
+  String get customersTableTitle => 'All customers';
+
+  @override
+  String get customersTableCreateCustomerButtonTitle => 'Create';
+
+  @override
+  String get customersTableEmpty => 'No customers found.';
+
+  @override
+  String get customersTableIdColumnTitle => 'ID';
+
+  @override
+  String get customersTableNameColumnTitle => 'Name';
+
+  @override
+  String get customersTableCreatedAtColumnTitle => 'Created at';
+
+  @override
+  String get customersTableUpdatedAtColumnTitle => 'Last updated at';
+
+  @override
+  String get customersTableEvolutionColumnTitle => 'Evolution';
+
+  @override
+  String get customersTableVersionColumnTitle => 'Version';
+
+  @override
+  String get customersTableFlavorColumnTitle => 'Type';
+
+  @override
+  String get customerDetailsAppBarTitle => 'Details';
+
+  @override
+  String get customerDetailsDescription => 'View general details, mandants and users of the customer.';
+
+  @override
+  String get customerDetailsDetailsTabTitle => 'Details';
+
+  @override
+  String get customerDetailsMandantsTabTitle => 'Mandants';
+
+  @override
+  String get customerDetailsProfilesTabTitle => 'Users';
+
+  @override
+  String get customerDetailsMandantsTableTitle => 'All mandants';
+
+  @override
+  String get customerDetailsMandantsTableEmpty => 'No mandants found.';
+
+  @override
+  String get customerDetailsMandantsTableCreateCustomerButtonTitle => 'Create';
+
+  @override
+  String get customerDetailsMandantsTableIdColumnTitle => 'ID';
+
+  @override
+  String get customerDetailsMandantsTableNameColumnTitle => 'Name';
+
+  @override
+  String get customerDetailsMandantsTableCreatedAtColumnTitle => 'Created at';
+
+  @override
+  String get customerDetailsMandantsTableUpdatedAtColumnTitle => 'Last updated at';
+
+  @override
+  String get customerDetailsProfilesTableTitle => 'All users';
+
+  @override
+  String get customerDetailsProfilesTableEmpty => 'No users found.';
+
+  @override
+  String get customerDetailsProfilesTableCreateCustomerButtonTitle => 'Create';
+
+  @override
+  String get customerDetailsProfilesTableIdColumnTitle => 'ID';
+
+  @override
+  String get customerDetailsProfilesTableNameColumnTitle => 'Name';
+
+  @override
+  String get customerDetailsProfilesTableCreatedAtColumnTitle => 'Created at';
+
+  @override
+  String get customerDetailsProfilesTableUpdatedAtColumnTitle => 'Last updated at';
 
   @override
   String get successToastUserCreated => 'Successfully created a new user!';

@@ -20,7 +20,7 @@ ProfilesRepository profilesRepository(Ref ref) {
 /// An interface for the profiles repository
 abstract interface class ProfilesRepository {
 
-  /// Signs in the user
+  /// Gets all profiles
   FutureResult<List<ProfileEntity>, Object> getProfiles({
     required int offset
   });

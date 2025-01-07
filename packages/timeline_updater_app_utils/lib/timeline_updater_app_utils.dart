@@ -5,6 +5,9 @@ export './src/result.dart';
 export './src/usecase.dart';
 
 export './src/enums/user_type.dart';
+export './src/enums/standard_evolution.dart';
+export './src/enums/standard_flavor.dart';
+export './src/enums/standard_version.dart';
 
 export './src/extensions/async_value_x.dart';
 

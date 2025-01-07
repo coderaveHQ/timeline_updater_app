@@ -463,6 +463,9 @@ class TLTableCellChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return chip;
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: chip
+    );
   }
 }

@@ -8,7 +8,7 @@ import 'package:timeline_updater_admin_app/src/features/users/domain/repositorie
 /// An implementation of the profiles repository
 class ProfilesRepositoryImpl implements ProfilesRepository {
 
-  /// The authentication datasource
+  /// The profiles datasource
   final ProfilesDatasource _profilesDatasource;
 
   /// Default constructor

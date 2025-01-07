@@ -12,13 +12,13 @@ ProfilesDatasource profilesDatasource(Ref ref) {
   return ProfilesDatasourceImpl();
 }
 
-/// An interface for the authentication datasource
+/// An interface for the profiles datasource
 abstract interface class ProfilesDatasource {
   
   /// Default constructor
   const ProfilesDatasource();
 
-  /// Signs in the user based on the given credentials consisting of `email` and `password`
+  /// Gets all profiles
   Future<List<ProfileDto>> getProfiles({
     required int offset
   });

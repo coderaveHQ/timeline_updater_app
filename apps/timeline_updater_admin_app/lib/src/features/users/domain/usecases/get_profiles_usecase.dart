@@ -17,7 +17,7 @@ GetProfilesUsecase getProfilesUsecase(Ref ref) {
 }
 
 /// A usecase for getting profiles
-class GetProfilesUsecase extends FutureUsecaseWithParams<void, Object, GetProfilesUsecaseParams> {
+class GetProfilesUsecase extends FutureUsecaseWithParams<List<ProfileEntity>, Object, GetProfilesUsecaseParams> {
   
   /// The profiles repository to be used
   final ProfilesRepository _profilesRepository;

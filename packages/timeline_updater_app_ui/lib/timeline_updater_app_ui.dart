@@ -24,6 +24,7 @@ export './widgets/tl_icon_button.dart';
 export './widgets/tl_table.dart';
 export './widgets/tl_chip.dart';
 export './widgets/tl_radio_button.dart';
+export './widgets/tl_tab_bar.dart';
 
 export './pages/settings_page.dart' hide TLSettingsLanguageMode, TLSettingsColorMode;
 
@@ -34,6 +35,9 @@ export './extensions/build_context_x.dart';
 export './extensions/object_x.dart';
 export './extensions/date_time_x.dart';
 export './extensions/user_type_x.dart';
+export './extensions/standard_evolution_x.dart';
+export './extensions/standard_version_x.dart';
+export './extensions/standard_flavor_x.dart';
 
 export './utils/constants/tl_ui_constants.dart';
 export './utils/tl_ui_utils.dart';
