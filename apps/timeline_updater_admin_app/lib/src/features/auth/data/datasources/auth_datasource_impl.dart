@@ -2,8 +2,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
 
+import 'package:timeline_updater_admin_app/core/utils/env.dart';
 import 'package:timeline_updater_admin_app/src/features/users/data/dto/profile_dto.dart';
-import 'package:timeline_updater_admin_app/core/utils/custom_env.dart';
 import 'package:timeline_updater_admin_app/src/features/auth/data/datasources/auth_datasource.dart';
 
 /// An implementation of the authentication datasource
@@ -30,7 +30,7 @@ class AuthDatasourceImpl implements AuthDatasource {
     required String password,
     required String serviceKey
   }) async {
-    final UserResponse _ = await SupabaseClient(CustomEnv().supabaseUrl, serviceKey).auth.admin.createUser(
+    final UserResponse _ = await SupabaseClient(Env.supabaseUrl, serviceKey).auth.admin.createUser(
       AdminUserAttributes(
         email: email,
         password: password,

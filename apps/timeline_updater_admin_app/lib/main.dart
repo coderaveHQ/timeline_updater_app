@@ -8,8 +8,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:timeline_updater_admin_app/core/services/custom_preferences.dart';
 
+import 'package:timeline_updater_admin_app/core/services/custom_preferences.dart';
 import 'package:timeline_updater_admin_app/core/utils/env.dart';
 import 'package:timeline_updater_admin_app/firebase_options.dart';
 import 'package:timeline_updater_admin_app/src/app.dart';
