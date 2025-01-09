@@ -18,7 +18,7 @@ class CustomersTable extends ConsumerWidget {
   const CustomersTable({ super.key });
 
   void _handleCustomersTableStateUpdate(BuildContext context, AsyncValue<OffsetPaginationData<CustomerEntity>>? last, AsyncValue<OffsetPaginationData<CustomerEntity>> next) {
-    if (next.hasError && !next.isLoading) next.showErrorToast(context);
+    if (next.hasError && !next.isLoading) next.error!.showErrorToast(context);
   }
 
   double _tableWidth(BuildContext context) {
@@ -68,8 +68,8 @@ class CustomersTable extends ConsumerWidget {
       cells: <Widget>[
         TLTableCellText(text: isSkeleton ? '3c0f378b-39d0-4847-b02c-a7077fa22439' : customer!.id),
         TLTableCellText(text: isSkeleton ? 'Florian Leeser' : customer!.name),
-        TLTableCellText(text: (isSkeleton ? DateTime.now() : customer!.createdAt).toHumanReadable(context)),
-        TLTableCellText(text: (isSkeleton ? DateTime.now() : customer!.updatedAt).toHumanReadable(context)),
+        TLTableCellText(text: (isSkeleton ? DateTime.now() : customer!.createdAt).toHumanReadable(context, DateTimeType.dateAndTime)),
+        TLTableCellText(text: (isSkeleton ? DateTime.now() : customer!.updatedAt).toHumanReadable(context, DateTimeType.dateAndTime)),
         TLTableCellChip(
           chip: TLChip.basic(
             title: (isSkeleton ? StandardEvolution.e3 : customer!.evolution).title(context),

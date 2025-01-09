@@ -72,3 +72,25 @@ class TLChip extends StatelessWidget {
     );
   }
 }
+
+/// A widget for displaying multiple chips
+class TLChips extends StatelessWidget {
+
+  /// A list containing all chips
+  final List<TLChip> chips;
+
+  /// Default constructor
+  const TLChips({
+    super.key,
+    required this.chips
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: TLSpacing.md,
+      runSpacing: TLSpacing.md,
+      children: chips
+    );
+  }
+}

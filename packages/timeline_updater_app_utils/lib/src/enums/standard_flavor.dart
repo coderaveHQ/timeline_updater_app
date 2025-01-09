@@ -3,40 +3,50 @@ enum StandardFlavor {
 
   /// Enterprise
   enterprise(
-    dbValue: 'enterprise'
+    dbValue: 'enterprise',
+    storageFileName: 'enterprise'
   ),
 
   /// Plastics
   plastics(
-    dbValue: 'plastics'
+    dbValue: 'plastics',
+    storageFileName: 'plastics'
   ),
 
   /// Neo
   neo(
-    dbValue: 'neo'
+    dbValue: 'neo',
+    storageFileName: 'neo'
   ),
 
   /// Components
   components(
-    dbValue: 'components'
+    dbValue: 'components',
+    storageFileName: 'components'
   ),
 
   /// Electronics
   electronics(
-    dbValue: 'electronics'
+    dbValue: 'electronics',
+    storageFileName: 'electronics'
   ),
 
   /// Guss
   guss(
-    dbValue: 'guss'
+    dbValue: 'guss',
+    storageFileName: 'guss'
   );
 
   /// The string value stored in the database
   final String dbValue;
 
+  /// Part of the file name for the S3 storage
+  final String storageFileName;
+
   /// Default constructor
   const StandardFlavor({
-    required this.dbValue
+    required this.dbValue,
+    required this.storageFileName
   });
 
   /// Gets the enum value based on the database string

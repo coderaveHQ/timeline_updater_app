@@ -33,7 +33,7 @@ class TLTheme extends InheritedWidget {
   /// Gets the color mode based on the context
   static TLColorMode colorModeOf(BuildContext context, { bool specifySystem = false }) {
     TLColorMode colorMode = of(context).colorMode;
-    if (colorMode == TLColorMode.system) colorMode = _systemColorMode;
+    if (colorMode == TLColorMode.system && specifySystem) colorMode = _systemColorMode;
     return colorMode;
   }
 

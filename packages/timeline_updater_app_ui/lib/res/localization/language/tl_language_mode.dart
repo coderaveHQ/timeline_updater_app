@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 import 'package:timeline_updater_app_ui/res/localization/language/tl_language_data.dart';
 import 'package:timeline_updater_app_ui/res/localization/tl_localization.dart';
@@ -42,5 +43,21 @@ enum TLLanguageMode {
       TLLanguageMode.de => translations.languageModeDeTitle,
       TLLanguageMode.en => translations.languageModeEnTitle
     };
+  }
+
+  /// Gets the Locale of the language mode
+  Locale get locale {
+    return switch (this) {
+      TLLanguageMode.system => _systemLocale,
+      TLLanguageMode.de => Locale('de'),
+      TLLanguageMode.en => Locale('en')
+    };
+  }
+
+  /// Gets the locale based on the systems settings
+  Locale get _systemLocale {
+    final Locale systemLocale = SchedulerBinding.instance.platformDispatcher.locale;
+    if (systemLocale.languageCode == 'de') return Locale('de');
+    return Locale('en');
   }
 }

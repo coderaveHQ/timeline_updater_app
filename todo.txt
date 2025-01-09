@@ -1,3 +1,7 @@
 - Outsource SignInPage
 - Fix settings not applied instant
 - Outsource ProfileButton
+- Outsource Popover widget into UI library
+- Add package "device_info" for version info in MainPage
+- Outsource and abstract TLDialog
+- outsource file picker in utils package

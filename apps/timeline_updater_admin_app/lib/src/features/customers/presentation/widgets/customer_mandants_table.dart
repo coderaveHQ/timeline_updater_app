@@ -23,7 +23,7 @@ class CustomerMandantsTable extends ConsumerWidget {
   });
 
   void _handleCustomerMandantsTableStateUpdate(BuildContext context, AsyncValue<OffsetPaginationData<CustomerMandantEntity>>? last, AsyncValue<OffsetPaginationData<CustomerMandantEntity>> next) {
-    if (next.hasError && !next.isLoading) next.showErrorToast(context);
+    if (next.hasError && !next.isLoading) next.error.showErrorToast(context);
   }
 
   double _tableWidth(BuildContext context) {
@@ -60,8 +60,8 @@ class CustomerMandantsTable extends ConsumerWidget {
       cells: <Widget>[
         TLTableCellText(text: isSkeleton ? '3c0f378b-39d0-4847-b02c-a7077fa22439' : customerMandant!.id),
         TLTableCellText(text: isSkeleton ? 'tlcw_demo' : customerMandant!.name),
-        TLTableCellText(text: (isSkeleton ? DateTime.now() : customerMandant!.createdAt).toHumanReadable(context)),
-        TLTableCellText(text: (isSkeleton ? DateTime.now() : customerMandant!.updatedAt).toHumanReadable(context))
+        TLTableCellText(text: (isSkeleton ? DateTime.now() : customerMandant!.createdAt).toHumanReadable(context, DateTimeType.dateAndTime)),
+        TLTableCellText(text: (isSkeleton ? DateTime.now() : customerMandant!.updatedAt).toHumanReadable(context, DateTimeType.dateAndTime))
       ]
     );
   }

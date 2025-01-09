@@ -63,7 +63,7 @@ class TLRectangleButton extends StatelessWidget {
         child: isLoading
           ? TLCircularProgressIndicator(
             color: foregroundColor ?? colors.rectangleButtonForeground,
-            size: shrink ? 16.0 : 18.0
+            size: shrink ? 18.0 : 18.0
           )
           : Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -72,7 +72,7 @@ class TLRectangleButton extends StatelessWidget {
                 padding: EdgeInsets.only(right: TLSpacing.md),
                 child: Icon(
                   icon,
-                  size: shrink ? 16.0 : 18.0,
+                  size: shrink ? 18.0 : 18.0,
                   color: foregroundColor ?? colors.rectangleButtonForeground
                 )
               ),

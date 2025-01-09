@@ -28,6 +28,12 @@ abstract class TLLocalizable {
   /// The title of the customer user type
   String get userTypeCustomerTitle;
 
+  /// The title of the server standard type
+  String get standardTypeServer;
+
+  /// The title of the client standard type
+  String get standardTypeClient;
+
   /// The title of the E3 standard evolution
   String get standardEvolutionE3;
 
@@ -57,6 +63,33 @@ abstract class TLLocalizable {
 
   /// The title of the standard flavor guss
   String get standardFlavorGuss;
+
+  /// The title of the cancel button
+  String get dialogCancelButtonTitle;
+
+  /// Represents the text "today"
+  String get dateTimePickerToday;
+
+  /// Represents the text "tomorrow"
+  String get dateTimePickerTomorrow;
+
+  /// Represents the text "now"
+  String get dateTimePickerNow;
+
+  /// Represents the text "year"
+  String get dateTimePickerYear;
+
+  /// Represents the text "month"
+  String get dateTimePickerMonth;
+
+  /// Represents the text "day"
+  String get dateTimePickerDay;
+
+  /// Represents the text "hour"
+  String get dateTimePickerHour;
+
+  /// Represents the text "minute"
+  String get dateTimePickerMinute;
 
   /// Settings app bar title
   String get settingsAppBarTitle;
@@ -99,6 +132,12 @@ abstract class TLLocalizable {
 
   /// ValidationError.invalidServiceKey
   String get validationErrorInvalidServiceKey;
+
+  /// ValidationError.noStandardFileSelected
+  String get validationErrorNoStandardFileSelected;
+
+  /// ValidationError.invalidStandardFileExtension
+  String get validationErrorInvalidStandardFileExtension;
 
   /// LaunchError.urlNotOpened
   String get launchErrorUrlNotOpened;
@@ -157,6 +196,12 @@ class TLLanguageDataDe implements TLLocalizable {
   String get userTypeCustomerTitle => 'Kund*in';
 
   @override
+  String get standardTypeServer => 'Server';
+
+  @override
+  String get standardTypeClient => 'Client';
+
+  @override
   String get standardEvolutionE3 => 'E3';
 
   @override
@@ -185,6 +230,33 @@ class TLLanguageDataDe implements TLLocalizable {
 
   @override
   String get standardFlavorGuss => 'Guss';
+
+  @override
+  String get dialogCancelButtonTitle => 'Abbrechen';
+
+  @override
+  String get dateTimePickerToday => 'Heute';
+
+  @override
+  String get dateTimePickerTomorrow => 'Morgen';
+
+  @override
+  String get dateTimePickerNow => 'Jetzt';
+
+  @override
+  String get dateTimePickerYear => 'Jahr';
+
+  @override
+  String get dateTimePickerMonth => 'Monat';
+
+  @override
+  String get dateTimePickerDay => 'Tag';
+
+  @override
+  String get dateTimePickerHour => 'Stunde';
+
+  @override
+  String get dateTimePickerMinute => 'Minute';
 
   @override
   String get settingsAppBarTitle => 'Einstellungen';
@@ -229,6 +301,12 @@ class TLLanguageDataDe implements TLLocalizable {
   String get validationErrorInvalidServiceKey => 'Der Serviceschlüssel darf nicht leer sein.';
 
   @override
+  String get validationErrorNoStandardFileSelected => 'Eine Standard-Datei muss ausgewählt werden.';
+
+  @override
+  String get validationErrorInvalidStandardFileExtension => 'Diese Dateiendung hat keinen Support.';
+
+  @override
   String get launchErrorUrlNotOpened => 'Die URL konnte nicht geöffnet werden.';
 
   @override
@@ -269,6 +347,12 @@ class TLLanguageDataEn implements TLLocalizable {
   String get userTypeCustomerTitle => 'Customer';
 
   @override
+  String get standardTypeServer => 'Server';
+
+  @override
+  String get standardTypeClient => 'Client';
+
+  @override
   String get standardEvolutionE3 => 'E3';
 
   @override
@@ -297,6 +381,33 @@ class TLLanguageDataEn implements TLLocalizable {
 
   @override
   String get standardFlavorGuss => 'Guss';
+
+  @override
+  String get dialogCancelButtonTitle => 'Cancel';
+
+  @override
+  String get dateTimePickerToday => 'Today';
+
+  @override
+  String get dateTimePickerTomorrow => 'Tomorrow';
+
+  @override
+  String get dateTimePickerNow => 'Now';
+
+  @override
+  String get dateTimePickerYear => 'Year';
+
+  @override
+  String get dateTimePickerMonth => 'Month';
+
+  @override
+  String get dateTimePickerDay => 'Day';
+
+  @override
+  String get dateTimePickerHour => 'Hour';
+
+  @override
+  String get dateTimePickerMinute => 'Minute';
 
   @override
   String get settingsAppBarTitle => 'Settings';
@@ -339,6 +450,12 @@ class TLLanguageDataEn implements TLLocalizable {
 
   @override
   String get validationErrorInvalidServiceKey => 'The service key can not be empty.';
+
+  @override
+  String get validationErrorNoStandardFileSelected => 'A standard file needs to be selected.';
+
+  @override
+  String get validationErrorInvalidStandardFileExtension => 'The file has an unsupported file extension.';
 
   @override
   String get launchErrorUrlNotOpened => 'The URL could not be opened.';

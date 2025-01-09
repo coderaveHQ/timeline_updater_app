@@ -19,4 +19,12 @@ class ValidationError extends IError {
   /// An error for when a service key seems to be invalid
   ValidationError.invalidServiceKey()
     : super((TLLocalizable language) => language.validationErrorInvalidServiceKey);
+
+  /// An error for when no standard file was selected
+  ValidationError.noStandardFileSelected() // TODO Outsource to custom app project (TLU)
+    : super((TLLocalizable language) => language.validationErrorNoStandardFileSelected);
+    
+  /// An error for when a selected standard file has a not supported file extension
+  ValidationError.invalidStandardFileExtension()
+    : super((TLLocalizable language) => language.validationErrorInvalidStandardFileExtension);
 }

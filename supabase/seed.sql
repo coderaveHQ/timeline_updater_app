@@ -155,3 +155,38 @@ BEGIN
         );
     END LOOP;
 END $$;
+
+DO $$
+DECLARE
+    standard_data jsonb;
+    standard_list jsonb[] := ARRAY[
+        '{"id": "4064a936-f1a1-4742-8922-7a36db01183b", "file_path": "", "type": "client", "evolution": "e3", "version": "v15.5", "flavor": "enterprise", "patch": "2024-01-24"}',
+        '{"id": "90261503-8d8b-44ff-ad0f-eb2f6f7092f9", "file_path": "", "type": "server", "evolution": "e3", "version": "v15", "patch": "2024-03-03"}',
+        '{"id": "8f8775b0-dcbc-4c24-a80a-393c9a6ce3a5", "file_path": "", "type": "server", "evolution": "e3", "version": "v15", "patch": "2024-04-09"}',
+        '{"id": "fd31abfd-3ec3-43ce-9196-22c8f9e0cdc9", "file_path": "", "type": "client", "evolution": "e3", "version": "v16", "flavor": "electronics", "patch": "2024-06-15"}',
+        '{"id": "ad5712ee-9c3d-4904-b10d-94b1db0e4e9f", "file_path": "", "type": "server", "evolution": "e3", "version": "v16", "patch": "2024-07-30"}',
+        '{"id": "2837cd79-3f1c-4b6b-83cf-4d565c5bfaa2", "file_path": "", "type": "client", "evolution": "e3", "version": "v15", "flavor": "enterprise", "patch": "2024-10-01"}',
+        '{"id": "35a8245c-35d5-4d95-be3e-bd769e68696a", "file_path": "", "type": "client", "evolution": "e3", "version": "v16", "flavor": "enterprise", "patch": "2025-01-06"}'
+    ];
+BEGIN
+    FOREACH standard_data IN ARRAY standard_list
+    LOOP
+        INSERT INTO public.standards (
+            id,
+            file_path,
+            type,
+            evolution,
+            version,
+            flavor,
+            patch
+        ) VALUES (
+            (standard_data->>'id')::UUID,
+            standard_data->>'file_path',
+            (standard_data->>'type')::public.standard_type,
+            (standard_data->>'evolution')::public.standard_evolution,
+            (standard_data->>'version')::public.standard_version,
+            (standard_data->>'flavor')::public.standard_flavor,
+            (standard_data->>'patch')::DATE
+        );
+    END LOOP;
+END $$;

@@ -1,9 +1,14 @@
+import 'package:easy_popover/easy_popover.dart';
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 
+import 'package:timeline_updater_app/core/common/app/color_mode_notifier.dart';
+import 'package:timeline_updater_app/core/common/app/language_mode_notifier.dart';
+import 'package:timeline_updater_app/src/features/auth/presentation/widgets/custom_auth_state_wrapper.dart';
 import 'package:timeline_updater_app/core/res/theme/custom_color_data.dart';
 import 'package:timeline_updater_app/core/services/router.dart';
 import 'package:timeline_updater_app/core/res/localization/custom_language_data.dart';
@@ -18,11 +23,18 @@ class App extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
 
     final GoRouter router = ref.watch(routerProvider);
+    final TLLanguageMode languageMode = ref.watch(languageModeNotifierProvider);
+    final TLColorMode colorMode = ref.watch(colorModeNotifierProvider);
     
     return TLApp(
       router: router,
-      language: CustomLanguageData(),
-      colors: CustomColorData()
+      languageMode: languageMode,
+      colorMode: colorMode,
+      languageData: CustomLanguageData(),
+      colorData: CustomColorData(),
+      builder: (Widget child) => PopoverOverlay(
+        builder: (BuildContext context) => CustomAuthStateWrapper(child: child)
+      )
     );
   }
 }

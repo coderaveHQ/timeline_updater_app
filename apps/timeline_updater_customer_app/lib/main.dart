@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -58,7 +55,5 @@ Future<void> _initializeSupabase() async {
 
 /// Initializes the Firebase client
 Future<void> _initializeFirebase() async {
-  // Skip when platform is Linux since Firebase does not support this platform, yet
-  if (!kIsWeb && Platform.isLinux) return;
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }

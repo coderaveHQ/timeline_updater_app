@@ -34,7 +34,7 @@ class TLLocalization extends InheritedWidget {
   /// Gets the language mode based on the context
   static TLLanguageMode languageModeOf(BuildContext context, { bool specifySystem = false }) {
     TLLanguageMode languageMode = of(context).languageMode;
-    if (languageMode == TLLanguageMode.system) languageMode = _systemLanguageMode;
+    if (languageMode == TLLanguageMode.system && specifySystem) languageMode = _systemLanguageMode;
     return languageMode;
   }
 

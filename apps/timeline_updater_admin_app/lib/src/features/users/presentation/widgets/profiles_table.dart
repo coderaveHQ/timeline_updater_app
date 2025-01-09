@@ -18,7 +18,7 @@ class ProfilesTable extends ConsumerWidget {
   const ProfilesTable({ super.key });
 
   void _handleProfilesTableStateUpdate(BuildContext context, AsyncValue<OffsetPaginationData<ProfileEntity>>? last, AsyncValue<OffsetPaginationData<ProfileEntity>> next) {
-    if (next.hasError && !next.isLoading) next.showErrorToast(context);
+    if (next.hasError && !next.isLoading) next.error!.showErrorToast(context);
   }
 
   double _tableWidth(BuildContext context) {
@@ -59,8 +59,8 @@ class ProfilesTable extends ConsumerWidget {
       cells: <Widget>[
         TLTableCellText(text: isSkeleton ? '3c0f378b-39d0-4847-b02c-a7077fa22439' : profile!.id),
         TLTableCellText(text: isSkeleton ? 'Florian Leeser' : profile!.name),
-        TLTableCellText(text: (isSkeleton ? DateTime.now() : profile!.createdAt).toHumanReadable(context)),
-        TLTableCellText(text: (isSkeleton ? DateTime.now() : profile!.updatedAt).toHumanReadable(context)),
+        TLTableCellText(text: (isSkeleton ? DateTime.now() : profile!.createdAt).toHumanReadable(context, DateTimeType.dateAndTime)),
+        TLTableCellText(text: (isSkeleton ? DateTime.now() : profile!.updatedAt).toHumanReadable(context, DateTimeType.dateAndTime)),
         TLTableCellChip(
           chip: TLChip.basic(
             title: (isSkeleton ? UserType.admin : profile!.type).title(context),

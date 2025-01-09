@@ -338,7 +338,7 @@ class CustomLanguageDataEn extends TLLanguageDataEn implements CustomLocalizable
   String get customersTableVersionColumnTitle => 'Version';
 
   @override
-  String get customersTableFlavorColumnTitle => 'Type';
+  String get customersTableFlavorColumnTitle => 'Flavor';
 
   @override
   String get customerDetailsAppBarTitle => 'Details';

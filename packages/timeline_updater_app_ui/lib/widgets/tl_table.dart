@@ -419,6 +419,18 @@ class _TLTableRowWidget extends StatelessWidget {
   }
 }
 
+/// A cell which displays nothing
+class TLTableCellEmpty extends StatelessWidget {
+
+  /// Default constructor
+  const TLTableCellEmpty({ super.key });
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox.shrink();
+  }
+}
+
 /// A cell which displays simple text
 class TLTableCellText extends StatelessWidget {
 

@@ -14,6 +14,12 @@ abstract class TLColorable {
   /// The color of the customer user type
   Color get userTypeCustomer;
 
+  /// The color of the standard type server
+  Color get standardTypeServer;
+
+  /// The color of the standard type client
+  Color get standardTypeClient;
+
   /// The color of the standard evolution e3
   Color get standardEvolutionE3;
 
@@ -236,6 +242,81 @@ abstract class TLColorable {
   /// The color of the title of an unselected TabBarItem
   Color get tabBarUnselectedForeground;
 
+  /// The background color of the dialog
+  Color get dialogBackground;
+
+  /// The color of the border around the leading icon of a dialog
+  Color get dialogLeadingIconBorder;
+
+  /// The color of the leading icon of a dialog
+  Color get dialogLeadingIcon;
+
+  /// The color of the dialogs title
+  Color get dialogTitle;
+
+  /// The color of the dialogs description
+  Color get dialogDescription;
+
+  /// The background color of a primary dialog button
+  Color get dialogPrimaryButtonBackground;
+
+  /// The foreground color of a primary dialog button
+  Color get dialogPrimaryButtonForeground;
+
+  /// The background color of a secondary dialog button
+  Color get dialogSecondaryButtonBackground;
+
+  /// The foreground color of a secondary dialog button
+  Color get dialogSecondaryButtonForeground;
+
+  /// The separator color
+  Color get separator;
+
+  /// The color of the drop zone border
+  Color get dropZoneBorder;
+
+  /// The background color of the drop zone when not hovering over
+  Color get dropZoneBackground;
+
+  /// The background color of the drop zone when hovering over
+  Color get dropZoneHoveringBackground;
+
+  /// The color of the clickable text in a drop zone
+  Color get dropZoneClickableTextForeground;
+
+  /// The color of the other text in a drop zone
+  Color get dropZoneOtherTextForeground;
+
+  /// The foreground color of the text button
+  Color get textButtonForeground;
+
+  /// The background color of the datetime picker
+  Color get dateTimePickerBackground;
+
+  /// The color of the text of the datetime picker
+  Color get dateTimePickerText;
+
+  /// The active color of the datetime picker
+  Color get dateTimePickerActiveColor;
+
+  /// The active text color of the datetime picker
+  Color get dateTimePickerActiveTextColor;
+
+  /// The foreground color of the datetime picker
+  Color get dateTimePickerForeground;
+
+  /// The background color of the datetime picker field
+  Color get dateTimePickerFieldBackground;
+
+  /// The icon color of the datetime picker field
+  Color get dateTimePickerFieldIcon;
+
+  /// The foreground color of the datetime picker field when empty
+  Color get dateTimePickerFieldEmptyTextForeground;
+
+  /// The foreground color of the datetime picker field
+  Color get dateTimePickerFieldForeground;
+
   /// Settings page description
   Color get settingsDescription;
 
@@ -279,6 +360,12 @@ class TLColorDataLight implements TLColorable {
 
   @override
   Color get userTypeCustomer => TLColors.purple500;
+
+  @override
+  Color get standardTypeServer => TLColors.blue500;
+
+  @override
+  Color get standardTypeClient => TLColors.purple500;
 
   @override
   Color get standardEvolutionE3 => TLColors.green500;
@@ -503,6 +590,81 @@ class TLColorDataLight implements TLColorable {
   Color get tabBarUnselectedForeground => TLColors.gray500;
 
   @override
+  Color get dialogBackground => TLColors.white;
+
+  @override
+  Color get dialogLeadingIconBorder => TLColors.gray200;
+
+  @override
+  Color get dialogLeadingIcon => TLColors.gray900;
+
+  @override
+  Color get dialogTitle => TLColors.gray900;
+
+  @override
+  Color get dialogDescription => TLColors.gray500;
+
+  @override
+  Color get dialogPrimaryButtonBackground => TLColors.timeline;
+
+  @override
+  Color get dialogPrimaryButtonForeground => TLColors.white;
+
+  @override
+  Color get dialogSecondaryButtonBackground => TLColors.gray300;
+
+  @override
+  Color get dialogSecondaryButtonForeground => TLColors.gray900;
+
+  @override
+  Color get separator => TLColors.gray200;
+
+  @override
+  Color get dropZoneBorder => TLColors.gray200;
+
+  @override
+  Color get dropZoneBackground => TLColors.gray200;
+
+  @override
+  Color get dropZoneHoveringBackground => TLColors.blue200;
+
+  @override
+  Color get dropZoneClickableTextForeground => TLColors.gray900;
+
+  @override
+  Color get dropZoneOtherTextForeground => TLColors.gray900;
+
+  @override
+  Color get textButtonForeground => TLColors.gray900;
+
+  @override
+  Color get dateTimePickerBackground => TLColors.white;
+
+  @override
+  Color get dateTimePickerText => TLColors.gray900;
+
+  @override
+  Color get dateTimePickerActiveColor => TLColors.timeline;
+
+  @override
+  Color get dateTimePickerActiveTextColor => TLColors.gray100;
+
+  @override
+  Color get dateTimePickerForeground => TLColors.gray200;
+
+  @override
+  Color get dateTimePickerFieldBackground => TLColors.gray200;
+
+  @override
+  Color get dateTimePickerFieldIcon => TLColors.gray900;
+
+  @override
+  Color get dateTimePickerFieldEmptyTextForeground => TLColors.gray500;
+
+  @override
+  Color get dateTimePickerFieldForeground => TLColors.gray900;
+
+  @override
   Color get settingsDescription => TLColors.gray900;
 
   @override
@@ -529,6 +691,12 @@ class TLColorDataDark implements TLColorable {
 
   @override
   Color get userTypeCustomer => TLColors.purple600;
+
+  @override
+  Color get standardTypeServer => TLColors.blue600;
+
+  @override
+  Color get standardTypeClient => TLColors.purple600;
 
   @override
   Color get standardEvolutionE3 => TLColors.green600;
@@ -751,6 +919,81 @@ class TLColorDataDark implements TLColorable {
 
   @override
   Color get tabBarUnselectedForeground => TLColors.gray400;
+
+  @override
+  Color get dialogBackground => TLColors.gray900;
+
+  @override
+  Color get dialogLeadingIconBorder => TLColors.gray800;
+
+  @override
+  Color get dialogLeadingIcon => TLColors.gray100;
+
+  @override
+  Color get dialogTitle => TLColors.gray100;
+
+  @override
+  Color get dialogDescription => TLColors.gray400;
+
+  @override
+  Color get dialogPrimaryButtonBackground => TLColors.timeline;
+
+  @override
+  Color get dialogPrimaryButtonForeground => TLColors.white;
+
+  @override
+  Color get dialogSecondaryButtonBackground => TLColors.gray700;
+
+  @override
+  Color get dialogSecondaryButtonForeground => TLColors.gray100;
+
+  @override
+  Color get separator => TLColors.gray800;
+
+  @override
+  Color get dropZoneBorder => TLColors.gray800;
+
+  @override
+  Color get dropZoneBackground => TLColors.gray800;
+
+  @override
+  Color get dropZoneHoveringBackground => TLColors.blue300;
+
+  @override
+  Color get dropZoneClickableTextForeground => TLColors.gray100;
+
+  @override
+  Color get dropZoneOtherTextForeground => TLColors.gray100;
+
+  @override
+  Color get textButtonForeground => TLColors.gray100;
+
+  @override
+  Color get dateTimePickerBackground => TLColors.gray900;
+
+  @override
+  Color get dateTimePickerText => TLColors.gray100;
+
+  @override
+  Color get dateTimePickerActiveColor => TLColors.timeline;
+
+  @override
+  Color get dateTimePickerActiveTextColor => TLColors.gray900;
+
+  @override
+  Color get dateTimePickerForeground => TLColors.gray800;
+
+  @override
+  Color get dateTimePickerFieldBackground => TLColors.gray800;
+
+  @override
+  Color get dateTimePickerFieldIcon => TLColors.gray100;
+
+  @override
+  Color get dateTimePickerFieldEmptyTextForeground => TLColors.gray400;
+
+  @override
+  Color get dateTimePickerFieldForeground => TLColors.gray100;
 
   @override
   Color get settingsDescription => TLColors.gray100;
