@@ -1,5 +1,4 @@
 -- [BUCKET] for storing standard files
-
 INSERT INTO storage.buckets (
     id, 
     name, 

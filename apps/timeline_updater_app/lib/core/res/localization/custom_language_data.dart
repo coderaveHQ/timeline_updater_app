@@ -136,6 +136,45 @@ class CustomLanguageDataDe extends TLLanguageDataDe implements CustomLocalizable
   String get uploadStandardDialogPatchEmpty => 'Patch-Datum auswählen';
 
   @override
+  String get updatesAppBarTitle => 'Updates';
+
+  @override
+  String get updatesDescription => 'Sieh dir alle Updates an oder erstelle ein Neues.';
+
+  @override
+  String get updatesTableTitle => 'Alle Updates';
+
+  @override
+  String get updatesTableCreateUpdateButtonTitle => 'Erstellen';
+
+  @override
+  String get updatesTableEmpty => 'Keine Updates gefunden.';
+
+  @override
+  String get updatesTableIdColumnTitle => 'ID';
+
+  @override
+  String get updatesTableCreatedAtColumnTitle => 'Erstellt';
+
+  @override
+  String get updatesTableUpdatedAtColumnTitle => 'Zuletzt bearbeitet';
+
+  @override
+  String get updatesTableCustomerNameColumnTitle => 'Kund*in';
+
+  @override
+  String get updatesTableMandantNameColumnTitle => 'Mandant';
+
+  @override
+  String get updatesTableTimedAtColumnTitle => 'Geplant';
+
+  @override
+  String get updatesTableStatusColumnTitle => 'Status';
+
+  @override
+  String get updatesTableTitleColumnTitle => 'Titel';
+
+  @override
   String get successToastStandardUploaded => 'Standard-Kit erfolgreich hochgeladen.';
 }
 
@@ -258,6 +297,45 @@ class CustomLanguageDataEn extends TLLanguageDataEn implements CustomLocalizable
 
   @override
   String get uploadStandardDialogPatchEmpty => 'Choose patch date';
+
+  @override
+  String get updatesAppBarTitle => 'Updates';
+
+  @override
+  String get updatesDescription => 'View all updates or create a new one.';
+
+  @override
+  String get updatesTableTitle => 'All updates';
+
+  @override
+  String get updatesTableCreateUpdateButtonTitle => 'Create';
+
+  @override
+  String get updatesTableEmpty => 'Keine Updates gefunden.';
+
+  @override
+  String get updatesTableIdColumnTitle => 'ID';
+
+  @override
+  String get updatesTableCreatedAtColumnTitle => 'Created at';
+
+  @override
+  String get updatesTableUpdatedAtColumnTitle => 'Last updated at';
+
+  @override
+  String get updatesTableCustomerNameColumnTitle => 'Customer';
+
+  @override
+  String get updatesTableMandantNameColumnTitle => 'Mandant';
+
+  @override
+  String get updatesTableTimedAtColumnTitle => 'Timed at';
+
+  @override
+  String get updatesTableStatusColumnTitle => 'Status';
+
+  @override
+  String get updatesTableTitleColumnTitle => 'Title';
 
   @override
   String get successToastStandardUploaded => 'New standard kit uploaded successfully.';

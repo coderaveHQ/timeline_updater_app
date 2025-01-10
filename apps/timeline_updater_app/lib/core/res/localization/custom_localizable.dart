@@ -117,6 +117,45 @@ abstract class CustomLocalizable extends TLLocalizable {
   /// The text for when the patch date was not selected in the upload standard dialog
   String get uploadStandardDialogPatchEmpty;
 
-  /// The toast message for when a new standard kit was uploaded
+  /// Updates app bar title
+  String get updatesAppBarTitle;
+
+  /// The description of the updates page
+  String get updatesDescription;
+
+  /// The text for when the patch date was not selected in the upload standard dialog
+  String get updatesTableTitle;
+
+  /// The title of the updates table
+  String get updatesTableCreateUpdateButtonTitle;
+
+  /// The text for when no update is found in updates page
+  String get updatesTableEmpty;
+
+  /// The title of the updates id table column
+  String get updatesTableIdColumnTitle;
+
+  /// The title of the updates created at table column
+  String get updatesTableCreatedAtColumnTitle;
+
+  /// The title of the updates updated at table column
+  String get updatesTableUpdatedAtColumnTitle;
+
+  /// The title of the updates id table column
+  String get updatesTableCustomerNameColumnTitle;
+
+  /// The title of the updates id table column
+  String get updatesTableMandantNameColumnTitle;
+
+  /// The title of the updates id table column
+  String get updatesTableTimedAtColumnTitle;
+
+  /// The title of the updates id table column
+  String get updatesTableStatusColumnTitle;
+
+  /// The title of the updates id table column
+  String get updatesTableTitleColumnTitle;
+
+  /// The title of the updates page standards table action button
   String get successToastStandardUploaded;
 }

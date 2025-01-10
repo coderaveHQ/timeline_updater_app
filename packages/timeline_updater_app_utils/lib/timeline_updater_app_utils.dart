@@ -8,6 +8,8 @@ export './src/enums/standard_flavor.dart';
 export './src/enums/standard_version.dart';
 export './src/enums/standard_type.dart';
 export './src/enums/date_time_type.dart';
+export './src/enums/update_status.dart';
+export './src/enums/update_file_type.dart';
 
 export './src/extensions/async_value_x.dart';
 export './src/extensions/file_x.dart';

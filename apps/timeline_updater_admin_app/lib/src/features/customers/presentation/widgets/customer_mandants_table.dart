@@ -23,7 +23,7 @@ class CustomerMandantsTable extends ConsumerWidget {
   });
 
   void _handleCustomerMandantsTableStateUpdate(BuildContext context, AsyncValue<OffsetPaginationData<CustomerMandantEntity>>? last, AsyncValue<OffsetPaginationData<CustomerMandantEntity>> next) {
-    if (next.hasError && !next.isLoading) next.error.showErrorToast(context);
+    if (next.hasError && !next.isLoading) next.error!.showErrorToast(context);
   }
 
   double _tableWidth(BuildContext context) {

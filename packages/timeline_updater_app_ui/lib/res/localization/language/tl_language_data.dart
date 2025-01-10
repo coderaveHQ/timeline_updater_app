@@ -64,6 +64,21 @@ abstract class TLLocalizable {
   /// The title of the standard flavor guss
   String get standardFlavorGuss;
 
+  /// The title of then update status upcoming
+  String get updateStatusUpcoming;
+  
+  /// The title of then update status ongoing
+  String get updateStatusOngoing;
+
+  /// The title of then update status success
+  String get updateStatusSuccess;
+
+  /// The title of then update status warning
+  String get updateStatusWarning;
+
+  /// The title of then update status error
+  String get updateStatusError;
+
   /// The title of the cancel button
   String get dialogCancelButtonTitle;
 
@@ -232,6 +247,21 @@ class TLLanguageDataDe implements TLLocalizable {
   String get standardFlavorGuss => 'Guss';
 
   @override
+  String get updateStatusUpcoming => 'Anstehend';
+  
+  @override
+  String get updateStatusOngoing => 'Laufend';
+
+  @override
+  String get updateStatusSuccess => 'Erfolgreich';
+
+  @override
+  String get updateStatusWarning => 'Warnung';
+
+  @override
+  String get updateStatusError => 'Fehlerhaft';
+
+  @override
   String get dialogCancelButtonTitle => 'Abbrechen';
 
   @override
@@ -381,6 +411,21 @@ class TLLanguageDataEn implements TLLocalizable {
 
   @override
   String get standardFlavorGuss => 'Guss';
+
+  @override
+  String get updateStatusUpcoming => 'Upcoming';
+  
+  @override
+  String get updateStatusOngoing => 'Ongoing';
+
+  @override
+  String get updateStatusSuccess => 'Success';
+
+  @override
+  String get updateStatusWarning => 'Warning';
+
+  @override
+  String get updateStatusError => 'Error';
 
   @override
   String get dialogCancelButtonTitle => 'Cancel';

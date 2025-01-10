@@ -50,6 +50,21 @@ abstract class TLColorable {
   /// The color of the standard flavor guss
   Color get standardFlavorGuss;
 
+  /// The color of the updatet status upcoming
+  Color get updateStatusUpcoming;
+  
+  /// The color of the updatet status ongoing
+  Color get updateStatusOngoing;
+
+  /// The color of the updatet status success
+  Color get updateStatusSuccess;
+
+  /// The color of the updatet status warning
+  Color get updateStatusWarning;
+
+  /// The color of the updatet status error
+  Color get updateStatusError;
+
   /// The brightness of the keyboard
   Brightness get keyboardBrightness;
 
@@ -396,6 +411,21 @@ class TLColorDataLight implements TLColorable {
 
   @override
   Color get standardFlavorGuss => TLColors.red500;
+
+  @override
+  Color get updateStatusUpcoming => TLColors.purple500;
+  
+  @override
+  Color get updateStatusOngoing => TLColors.blue500;
+
+  @override
+  Color get updateStatusSuccess => TLColors.green500;
+
+  @override
+  Color get updateStatusWarning => TLColors.orange500;
+
+  @override
+  Color get updateStatusError => TLColors.red500;
   
   @override
   Brightness get keyboardBrightness => Brightness.light;
@@ -727,6 +757,21 @@ class TLColorDataDark implements TLColorable {
 
   @override
   Color get standardFlavorGuss => TLColors.red600;
+
+  @override
+  Color get updateStatusUpcoming => TLColors.purple600;
+  
+  @override
+  Color get updateStatusOngoing => TLColors.blue600;
+
+  @override
+  Color get updateStatusSuccess => TLColors.green600;
+
+  @override
+  Color get updateStatusWarning => TLColors.orange600;
+
+  @override
+  Color get updateStatusError => TLColors.red600;
   
   @override
   Brightness get keyboardBrightness => Brightness.dark;

@@ -43,4 +43,7 @@ abstract class CustomColorable extends TLColorable {
 
   /// The foreground color of an unselected chip
   Color get uploadStandardDialogUnselectedChipForeground;
+
+  /// Updates page description
+  Color get updatesDescription;
 }

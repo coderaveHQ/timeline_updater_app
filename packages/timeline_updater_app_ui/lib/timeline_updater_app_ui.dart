@@ -44,6 +44,7 @@ export './extensions/standard_evolution_x.dart';
 export './extensions/standard_version_x.dart';
 export './extensions/standard_flavor_x.dart';
 export './extensions/standard_type_x.dart';
+export './extensions/update_status_x.dart';
 
 export './utils/constants/tl_ui_constants.dart';
 export './utils/tl_ui_utils.dart';

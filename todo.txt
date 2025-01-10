@@ -5,3 +5,4 @@
 - Add package "device_info" for version info in MainPage
 - Outsource and abstract TLDialog
 - outsource file picker in utils package
+- release notes email trigger when update finished successfully to all customers profiles.email
