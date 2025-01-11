@@ -17,7 +17,7 @@ VALUES
 (
     'customer-files',
     'customer-files',
-    false
+    true
 );
 
 -- [ENUM] for the update file type
@@ -39,7 +39,7 @@ CREATE TABLE public.customer_mandant_updates (
     status public.update_status NOT NULL DEFAULT 'upcoming'::public.update_status,
     title TEXT NOT NULL,
     release_notes TEXT NOT NULL,
-    logs JSONB NOT NULL,
+    logs JSONB,
     CONSTRAINT customer_mandant_updates_pkey PRIMARY KEY (id),
     CONSTRAINT customer_mandant_updates_customer_mandant_id_fkey FOREIGN KEY (customer_mandant_id) REFERENCES public.customer_mandants (id) ON UPDATE CASCADE ON DELETE CASCADE
 ) TABLESPACE pg_default;

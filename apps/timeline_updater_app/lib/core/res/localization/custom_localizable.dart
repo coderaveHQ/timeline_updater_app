@@ -141,21 +141,99 @@ abstract class CustomLocalizable extends TLLocalizable {
   /// The title of the updates updated at table column
   String get updatesTableUpdatedAtColumnTitle;
 
-  /// The title of the updates id table column
+  /// The title of the updates customer name table column
   String get updatesTableCustomerNameColumnTitle;
 
-  /// The title of the updates id table column
+  /// The title of the updates mandant name table column
   String get updatesTableMandantNameColumnTitle;
 
-  /// The title of the updates id table column
+  /// The title of the updates timed at table column
   String get updatesTableTimedAtColumnTitle;
 
-  /// The title of the updates id table column
+  /// The title of the updates status table column
   String get updatesTableStatusColumnTitle;
 
-  /// The title of the updates id table column
+  /// The title of the updates title table column
   String get updatesTableTitleColumnTitle;
 
-  /// The title of the updates page standards table action button
+  /// The app bar title of the create update page
+  String get createUpdateAppBarTitle;
+
+  /// The mandant section title of the create update page
+  String get createUpdateMandantSectionTitle;
+
+  /// The files section title of the create update page
+  String get createUpdateFilesSectionTitle;
+
+  /// The SQLs tab title of the create update page
+  String get createUpdateFilesSqlsTabBarTitle;
+
+  /// The Dynamic Assemblies tab title of the create update page
+  String get createUpdateFilesDynamicAssembliesTabBarTitle;
+
+  /// The Customization tab title of the create update page
+  String get createUpdateFilesCustomizationTabBarTitle;
+
+  /// The sql clickable text of the create update page
+  String get createUpdateFilesSqlDropZoneClickableText;
+
+  /// The sql other text of the create update page
+  String get createUpdateFilesSqlDropZoneOtherText;
+
+  /// The Dynamic Assemblies clickable text of the create update page
+  String get createUpdateFilesDynamicAssembliesDropZoneClickableText;
+
+  /// The Dynamic Assemblies other text of the create update page
+  String get createUpdateFilesDynamicAssembliesDropZoneOtherText;
+
+  /// The Customization clickable text of the create update page
+  String get createUpdateFilesCustomizationDropZoneClickableText;
+
+  /// The Customization other text of the create update page
+  String get createUpdateFilesCustomizationDropZoneOtherText;
+
+  /// The title of the selected files list of the create update page
+  String get createUpdateSelectedFilesTitle;
+
+  /// The title section title of the create update page
+  String get createUpdateTitleSectionTitle;
+
+  /// The hint of the create update title text field
+  String get createUpdateTitleTextFieldHint;
+
+  /// The release notes section title of the create update page
+  String get createUpdateReleaseNotesSectionTitle;
+
+  /// The hint of the create update release notes text field
+  String get createUpdateReleaseNotesTextFieldHint;
+
+  /// The timing section title of the create update page
+  String get createUpdateTimingSectionTitle;
+
+  /// The text to show when no time is selected for the timing text field on the create update page
+  String get createUpdateEmptyTimingText;
+
+  /// The create update button title of the create update page
+  String get createUpdateCreateUpdateButtonTitle;
+
+  /// The title of the customer mandants table
+  String get customerMandantsTableTitle;
+
+  /// The text for when no customer mandant is found
+  String get customerMandantsTableEmpty;
+
+  /// The title of the customer mandants customer name table column
+  String get customerMandantsTableCustomerNameColumnTitle;
+
+  /// The title of the customer mandants customer mandant name table column
+  String get customerMandantsTableCustomerMandantNameColumnTitle;
+
+  /// The title of the customer mandants isSelected table column
+  String get customerMandantsTableCustomerIsSelectedColumnTitle;
+
+  /// The text of the toast when a new update was created successfully
+  String get successToastUpdateCreated;
+
+  /// The text of the toast when a new standard was uploaded successfully
   String get successToastStandardUploaded;
 }

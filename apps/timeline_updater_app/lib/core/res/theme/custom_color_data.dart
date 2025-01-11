@@ -64,6 +64,12 @@ class CustomColorDataLight extends TLColorDataLight implements CustomColorable {
 
   @override
   Color get updatesDescription => TLColors.gray900;
+
+  @override
+  Color get createUpdateSelectedFilesText => TLColors.gray900;
+
+  @override
+  Color get createUpdateSelectedFileNames => TLColors.gray400;
 }
 
 /// Holds all dark colors
@@ -113,4 +119,10 @@ class CustomColorDataDark extends TLColorDataDark implements CustomColorable {
 
   @override
   Color get updatesDescription => TLColors.gray100;
+
+  @override
+  Color get createUpdateSelectedFilesText => TLColors.gray100;
+
+  @override
+  Color get createUpdateSelectedFileNames => TLColors.gray400;
 }

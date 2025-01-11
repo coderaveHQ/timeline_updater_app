@@ -38,4 +38,14 @@ enum UpdateFileType {
   static UpdateFileType fromDbValue(String dbValue) {
     return UpdateFileType.values.firstWhere((UpdateFileType fileType) => fileType.dbValue == dbValue);
   }
+
+  /// Gets the folder name for the S3 storage, respectively
+  String get storageFolderName {
+    return switch (this) {
+      UpdateFileType.sql => 'sql',
+      UpdateFileType.dynamicAssembly => 'dynamic_assemblies',
+      UpdateFileType.customization => 'customizations',
+      _ => throw Exception('This file type should not have a dedicated folder name.')
+    };
+  }
 }

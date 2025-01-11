@@ -108,6 +108,7 @@ enum CustomAuthStatus {
     redirectPath: UpdatesRoute.path,
     allowedPaths: <String>[
       UpdatesRoute.path,
+      CreateUpdateRoute.path,
       StandardsRoute.path,
       UploadStandardRoute.path,
       SettingsRoute.path

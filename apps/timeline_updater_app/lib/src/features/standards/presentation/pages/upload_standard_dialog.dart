@@ -61,8 +61,8 @@ class _UploadStandardDialogState extends ConsumerState<UploadStandardDialog> {
   }
 
   /// Changes the file selected
-  void _onFileChanged(File file) {
-    ref.read(uploadStandardDialogStateNotifierProvider.notifier).changeFile(file);
+  void _onFileChanged(List<File> files) {
+    ref.read(uploadStandardDialogStateNotifierProvider.notifier).changeFile(files.first);
   }
 
   /// Uploads the selected data as a new standard kit
@@ -119,7 +119,7 @@ class _UploadStandardDialogState extends ConsumerState<UploadStandardDialog> {
               const Gap(TLSpacing.md),
               TLDropZone(
                 onPressed: _onSelectFile,
-                onFileDropped: _onFileChanged,
+                onFilesDropped: _onFileChanged,
                 isEnabled: !dialogState.isLoading,
                 clickableText: translations.uploadStandardDialogClickToUploadText, 
                 otherText: translations.uploadStandardDialogUseDragAndDropText

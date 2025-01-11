@@ -195,11 +195,11 @@ DO $$
 DECLARE
     customer_mandant_update_data jsonb;
     customer_mandant_update_list jsonb[] := ARRAY[
-        '{"id": "439b8bc3-015f-4898-ba74-6413615d5397", "customer_mandant_id": "7f5f8c2f-b5b0-4c72-9a0d-90ac1dbb7630", "timed_at": "2025-02-10 12:12:56+02:00", "status": "upcoming", "title": "Standard-Kit-Update", "release_notes": "ABC", "logs": {}}',
-        '{"id": "5c740c92-728e-40b7-a15e-788ec4079c44", "customer_mandant_id": "79a3f2b2-e52e-4213-8e0c-c39f421b479f", "timed_at": "2025-01-13 10:20:56+02:00", "status": "ongoing", "title": "Anpassungen 2024-11-09", "release_notes": "ABC", "logs": {}}',
-        '{"id": "77fd8482-395c-4cec-8b1c-57498e765810", "customer_mandant_id": "e0c4e05f-83b7-4416-8a6b-07144d79c51d", "timed_at": "2024-12-20 18:58:56+02:00", "status": "success", "title": "Neues Update", "release_notes": "ABC", "logs": {}}',
-        '{"id": "4bd1a1fc-7e73-4f1d-bfef-b973a57e2bd8", "customer_mandant_id": "6311ec1a-5c4a-4b0e-9513-4cb68da211cd", "timed_at": "2024-11-19 19:33:56+02:00", "status": "error", "title": "Standard-Kit-Update", "release_notes": "ABC", "logs": {}}',
-        '{"id": "94c6ac2d-1acc-499d-9c09-4d01ebd78805", "customer_mandant_id": "17b79d4a-d57c-49d0-8c97-2b09753d7bda", "timed_at": "2024-11-19 19:33:56+02:00", "status": "success", "title": "Anpassungen 2024-11-09 (01)", "release_notes": "ABC", "logs": {}}'
+        '{"id": "439b8bc3-015f-4898-ba74-6413615d5397", "customer_mandant_id": "7f5f8c2f-b5b0-4c72-9a0d-90ac1dbb7630", "timed_at": "2025-02-10 12:12:56+02:00", "status": "upcoming", "title": "Standard-Kit-Update", "release_notes": "ABC"}',
+        '{"id": "5c740c92-728e-40b7-a15e-788ec4079c44", "customer_mandant_id": "79a3f2b2-e52e-4213-8e0c-c39f421b479f", "timed_at": "2025-01-13 10:20:56+02:00", "status": "ongoing", "title": "Anpassungen 2024-11-09", "release_notes": "ABC"}',
+        '{"id": "77fd8482-395c-4cec-8b1c-57498e765810", "customer_mandant_id": "e0c4e05f-83b7-4416-8a6b-07144d79c51d", "timed_at": "2024-12-20 18:58:56+02:00", "status": "success", "title": "Neues Update", "release_notes": "ABC"}',
+        '{"id": "4bd1a1fc-7e73-4f1d-bfef-b973a57e2bd8", "customer_mandant_id": "6311ec1a-5c4a-4b0e-9513-4cb68da211cd", "timed_at": "2024-11-19 19:33:56+02:00", "status": "error", "title": "Standard-Kit-Update", "release_notes": "ABC"}',
+        '{"id": "94c6ac2d-1acc-499d-9c09-4d01ebd78805", "customer_mandant_id": "17b79d4a-d57c-49d0-8c97-2b09753d7bda", "timed_at": "2024-11-19 19:33:56+02:00", "status": "success", "title": "Anpassungen 2024-11-09 (01)", "release_notes": "ABC"}'
     ];
 BEGIN
     FOREACH customer_mandant_update_data IN ARRAY customer_mandant_update_list
@@ -210,16 +210,14 @@ BEGIN
             timed_at,
             status,
             title,
-            release_notes,
-            logs
+            release_notes
         ) VALUES (
             (customer_mandant_update_data->>'id')::UUID,
             (customer_mandant_update_data->>'customer_mandant_id')::UUID,
             (customer_mandant_update_data->>'timed_at')::TIMESTAMP WITH TIME ZONE,
             (customer_mandant_update_data->>'status')::public.update_status,
             (customer_mandant_update_data->>'title')::TEXT,
-            (customer_mandant_update_data->>'release_notes')::TEXT,
-            (customer_mandant_update_data->>'logs')::JSONB
+            (customer_mandant_update_data->>'release_notes')::TEXT
         );
     END LOOP;
 END $$;

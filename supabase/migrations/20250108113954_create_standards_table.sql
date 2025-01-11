@@ -8,7 +8,7 @@ VALUES
 (
     'standards',
     'standards',
-    false
+    true
 );
 
 -- [TABLE] for the standards

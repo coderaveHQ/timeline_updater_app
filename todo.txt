@@ -6,3 +6,6 @@
 - Outsource and abstract TLDialog
 - outsource file picker in utils package
 - release notes email trigger when update finished successfully to all customers profiles.email
+- add list of selected files to dropzone
+- Make S3 buckets private
+- Add ability to add standard to update creation process

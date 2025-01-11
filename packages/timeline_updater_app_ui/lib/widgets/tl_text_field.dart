@@ -32,6 +32,15 @@ class TLTextField extends StatelessWidget {
   /// A focus node for requesting focuses
   final FocusNode? focusNode;
 
+  /// The type of action button on the keyboard
+  final TextInputAction? textInputAction;
+
+  /// The maximum number of lines
+  final int? maxLines;
+
+  /// The minimum number of lines
+  final int? minLines;
+
   /// Default constructor
   const TLTextField({
     super.key,
@@ -42,8 +51,25 @@ class TLTextField extends StatelessWidget {
     this.obscure = false,
     this.isEnabled = true,
     this.autofocus = false,
-    this.focusNode
-  });
+    this.focusNode,
+    this.textInputAction,
+    this.maxLines = 1
+  })  : minLines = null;
+
+  /// Default constructor
+  const TLTextField.multiline({
+    super.key,
+    this.controller,
+    this.icon,
+    this.hint,
+    this.obscure = false,
+    this.isEnabled = true,
+    this.autofocus = false,
+    this.focusNode,
+    this.minLines = 3
+  })  : maxLines = null,
+        textInputAction = TextInputAction.newline,
+        inputType = TextInputType.multiline;
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +86,9 @@ class TLTextField extends StatelessWidget {
 
     return TextField(
       keyboardAppearance: Brightness.dark,
+      minLines: minLines,
+      maxLines: maxLines,
+      textInputAction: textInputAction,
       controller: controller,
       autocorrect: false,
       enabled: isEnabled,

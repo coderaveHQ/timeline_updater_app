@@ -46,4 +46,10 @@ abstract class CustomColorable extends TLColorable {
 
   /// Updates page description
   Color get updatesDescription;
+
+  /// The color of the text for the selected files in create update page
+  Color get createUpdateSelectedFilesText;
+
+  /// The color of the text for the selected file names in create update page
+  Color get createUpdateSelectedFileNames;
 }

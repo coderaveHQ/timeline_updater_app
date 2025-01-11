@@ -481,3 +481,32 @@ class TLTableCellChip extends StatelessWidget {
     );
   }
 }
+
+/// A cell which displays an icon
+class TLTableCellIcon extends StatelessWidget {
+
+  /// The actual icon
+  final IconData? icon;
+
+  /// The color of the icon
+  final Color? color;
+
+  /// Default constructor
+  const TLTableCellIcon({ 
+    super.key,
+    this.icon,
+    this.color
+  });
+
+  @override
+  Widget build(BuildContext context) {
+
+    final TLColorable colors = TLTheme.colorsOf(context);
+
+    return Icon(
+      icon,
+      size: 20.0,
+      color: color ?? colors.tableCellIcon
+    );
+  }
+}

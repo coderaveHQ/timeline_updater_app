@@ -30,8 +30,8 @@ class TLDropZone extends StatefulWidget {
   /// A callback for when the clickable text was pressed
   final void Function()? onPressed;
 
-  /// A callback for when a file is dropped
-  final void Function(File)? onFileDropped;
+  /// A callback for when files have been dropped
+  final void Function(List<File>)? onFilesDropped;
 
   /// Default constructor
   const TLDropZone({ 
@@ -42,7 +42,7 @@ class TLDropZone extends StatefulWidget {
     this.width = double.infinity,
     this.isEnabled = true,
     this.onPressed,
-    this.onFileDropped
+    this.onFilesDropped
   });
 
   @override
@@ -54,9 +54,9 @@ class _TLDropZoneState extends State<TLDropZone> {
   bool _isHoveringOver = false;
 
   void _onDragDone(DropDoneDetails details) {
-    final DropItem dropItem = details.files.first;
-    final File file = File(dropItem.path);
-    widget.onFileDropped?.call(file);
+    final List<DropItem> dropItems = details.files;
+    final List<File> files = dropItems.map((DropItem dropItem) => File(dropItem.path)).toList();
+    widget.onFilesDropped?.call(files);
   }
 
   void _onDragEntered(DropEventDetails details) {
@@ -75,8 +75,8 @@ class _TLDropZoneState extends State<TLDropZone> {
     final Widget innerChild = ClipRRect(
       borderRadius: BorderRadius.all(Radius.circular(12.0 - TLSpacing.xs)),
       child: Container(
-        width: double.infinity,
-        height: 200.0,
+        width: widget.width,
+        height: widget.height,
         color: _isHoveringOver ? colors.dropZoneHoveringBackground : colors.dropZoneBackground,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -175,6 +175,84 @@ class CustomLanguageDataDe extends TLLanguageDataDe implements CustomLocalizable
   String get updatesTableTitleColumnTitle => 'Titel';
 
   @override
+  String get createUpdateAppBarTitle => 'Update erstellen';
+
+  @override
+  String get createUpdateMandantSectionTitle => 'Mandant auswählen';
+
+  @override
+  String get createUpdateFilesSectionTitle => 'Dateien hochladen';
+
+  @override
+  String get createUpdateFilesSqlsTabBarTitle => 'SQL';
+
+  @override
+  String get createUpdateFilesDynamicAssembliesTabBarTitle => 'DLL';
+
+  @override
+  String get createUpdateFilesCustomizationTabBarTitle => 'TLC';
+
+  @override
+  String get createUpdateFilesSqlDropZoneClickableText => 'Zum Hochladen klicken';
+
+  @override
+  String get createUpdateFilesSqlDropZoneOtherText => 'oder Drag & Drop nutzen';
+
+  @override
+  String get createUpdateFilesDynamicAssembliesDropZoneClickableText => 'Zum Hochladen klicken';
+
+  @override
+  String get createUpdateFilesDynamicAssembliesDropZoneOtherText => 'oder Drag & Drop nutzen';
+
+  @override
+  String get createUpdateFilesCustomizationDropZoneClickableText => 'Zum Hochladen klicken';
+
+  @override
+  String get createUpdateFilesCustomizationDropZoneOtherText => 'oder Drag & Drop nutzen';
+
+  @override
+  String get createUpdateSelectedFilesTitle => 'Ausgewählt:';
+
+  @override
+  String get createUpdateTitleSectionTitle => 'Titel';
+
+  @override
+  String get createUpdateTitleTextFieldHint => 'Anpassungen 2024-11-01 - 01';
+
+  @override
+  String get createUpdateReleaseNotesSectionTitle => 'Release Notes';
+
+  @override
+  String get createUpdateReleaseNotesTextFieldHint => '*Beschreibung der Änderungen';
+
+  @override
+  String get createUpdateTimingSectionTitle => 'Zeitplanung';
+
+  @override
+  String get createUpdateEmptyTimingText => 'Zeitpunkt auswählen';
+
+  @override
+  String get createUpdateCreateUpdateButtonTitle => 'Erstellen';
+
+  @override
+  String get customerMandantsTableTitle => 'Mandanten';
+
+  @override
+  String get customerMandantsTableEmpty => 'Keine Mandanten gefunden.';
+
+  @override
+  String get customerMandantsTableCustomerNameColumnTitle => 'Kund*in';
+
+  @override
+  String get customerMandantsTableCustomerMandantNameColumnTitle => 'Mandant';
+
+  @override
+  String get customerMandantsTableCustomerIsSelectedColumnTitle => 'Ausgewählt';
+
+  @override
+  String get successToastUpdateCreated => 'Neues Update erfolgreich hochgeladen.';
+
+  @override
   String get successToastStandardUploaded => 'Standard-Kit erfolgreich hochgeladen.';
 }
 
@@ -336,6 +414,84 @@ class CustomLanguageDataEn extends TLLanguageDataEn implements CustomLocalizable
 
   @override
   String get updatesTableTitleColumnTitle => 'Title';
+
+  @override
+  String get createUpdateAppBarTitle => 'Create update';
+
+  @override
+  String get createUpdateMandantSectionTitle => 'Choose mandant';
+
+  @override
+  String get createUpdateFilesSectionTitle => 'Upload files';
+
+  @override
+  String get createUpdateFilesSqlsTabBarTitle => 'SQL';
+
+  @override
+  String get createUpdateFilesDynamicAssembliesTabBarTitle => 'DLL';
+
+  @override
+  String get createUpdateFilesCustomizationTabBarTitle => 'TLC';
+
+  @override
+  String get createUpdateFilesSqlDropZoneClickableText => 'Click to upload';
+
+  @override
+  String get createUpdateFilesSqlDropZoneOtherText => 'or use Drag & Drop';
+
+  @override
+  String get createUpdateFilesDynamicAssembliesDropZoneClickableText => 'Click to upload';
+
+  @override
+  String get createUpdateFilesDynamicAssembliesDropZoneOtherText => 'or use Drag & Drop';
+
+  @override
+  String get createUpdateFilesCustomizationDropZoneClickableText => 'Click to upload';
+
+  @override
+  String get createUpdateFilesCustomizationDropZoneOtherText => 'or use Drag & Drop';
+
+  @override
+  String get createUpdateSelectedFilesTitle => 'Selected:';
+
+  @override
+  String get createUpdateTitleSectionTitle => 'Title';
+
+  @override
+  String get createUpdateTitleTextFieldHint => 'Customizations 2024-11-01 - 01';
+
+  @override
+  String get createUpdateReleaseNotesSectionTitle => 'Release Notes';
+
+  @override
+  String get createUpdateReleaseNotesTextFieldHint => '*Description of changes';
+
+  @override
+  String get createUpdateTimingSectionTitle => 'Timing';
+
+  @override
+  String get createUpdateEmptyTimingText => 'Select a time';
+
+  @override
+  String get createUpdateCreateUpdateButtonTitle => 'Create';
+
+  @override
+  String get customerMandantsTableTitle => 'Mandants';
+
+  @override
+  String get customerMandantsTableEmpty => 'No mandants found.';
+
+  @override
+  String get customerMandantsTableCustomerNameColumnTitle => 'Customer';
+
+  @override
+  String get customerMandantsTableCustomerMandantNameColumnTitle => 'Mandant';
+
+  @override
+  String get customerMandantsTableCustomerIsSelectedColumnTitle => 'Selected';
+
+  @override
+  String get successToastUpdateCreated => 'New update created successfully.';
 
   @override
   String get successToastStandardUploaded => 'New standard kit uploaded successfully.';

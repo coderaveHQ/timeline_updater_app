@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:timeline_updater_app/core/services/router.dart';
 
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 import 'package:timeline_updater_app_utils/timeline_updater_app_utils.dart';
@@ -87,7 +88,7 @@ class UpdatesTable extends ConsumerWidget {
   }
 
   Future<void> _handleCreateUpdate(BuildContext context) async {
-    // TODO
+    CreateUpdateRoute().push(context);
   }
 
   @override

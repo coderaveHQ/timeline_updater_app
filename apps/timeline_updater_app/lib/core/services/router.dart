@@ -8,6 +8,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 
+import 'package:timeline_updater_app/src/features/updates/presentation/pages/create_update_page.dart';
 import 'package:timeline_updater_app/src/features/standards/presentation/pages/upload_standard_dialog.dart';
 import 'package:timeline_updater_app/src/features/auth/presentation/app/custom_auth_state_notifier.dart';
 import 'package:timeline_updater_app/src/features/auth/presentation/pages/sign_in_page.dart';
@@ -248,5 +249,24 @@ class SettingsRoute extends GoRouteData {
       key: state.pageKey,
       child: const SettingsPage()
     );
+  }
+}
+
+/// The create update route
+@TypedGoRoute<CreateUpdateRoute>(path: CreateUpdateRoute.path)
+class CreateUpdateRoute extends GoRouteData {
+
+  /// The location of the route
+  static const String location = 'create-update';
+
+  /// The full path of the route
+  static const String path = '${ UpdatesRoute.path }/$location';
+
+  /// The parent navigator key
+  static final GlobalKey<NavigatorState> $navigatorKey = shellNavigatorKey;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const CreateUpdatePage();
   }
 }

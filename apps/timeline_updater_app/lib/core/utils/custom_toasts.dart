@@ -5,6 +5,9 @@ import 'package:timeline_updater_app/core/res/localization/custom_localizable.da
 /// A custom class defining all custom success toasts
 class CustomSuccessToasts extends TLSuccessToasts {
 
+  /// For when an update was created
+  TLToast get updateCreated => TLToast<CustomLocalizable>(ToastType.success, (CustomLocalizable translations) => translations.successToastUpdateCreated);
+
   /// For when a standard was uploaded
   TLToast get standardUploaded => TLToast<CustomLocalizable>(ToastType.success, (CustomLocalizable translations) => translations.successToastStandardUploaded);
 }

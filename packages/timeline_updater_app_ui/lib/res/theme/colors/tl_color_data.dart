@@ -224,6 +224,9 @@ abstract class TLColorable {
   /// The color of the text in a text cell
   Color get tableCellText;
 
+  /// The color of the icon in a text cell
+  Color get tableCellIcon;
+
   /// The background color of a chip
   Color get chipBackgroundColor;
 
@@ -587,6 +590,9 @@ class TLColorDataLight implements TLColorable {
   Color get tableCellText => TLColors.gray900;
 
   @override
+  Color get tableCellIcon => TLColors.gray900;
+
+  @override
   Color get chipBackgroundColor => TLColors.timeline;
 
   @override
@@ -931,6 +937,9 @@ class TLColorDataDark implements TLColorable {
 
   @override
   Color get tableCellText => TLColors.gray100;
+
+  @override
+  Color get tableCellIcon => TLColors.gray100;
 
   @override
   Color get chipBackgroundColor => TLColors.timeline;
