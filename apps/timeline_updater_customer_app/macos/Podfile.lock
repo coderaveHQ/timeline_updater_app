@@ -1,6 +1,8 @@
 PODS:
   - app_links (1.0.0):
     - FlutterMacOS
+  - desktop_drop (0.0.1):
+    - FlutterMacOS
   - Firebase/CoreOnly (11.4.2):
     - FirebaseCore (= 11.4.2)
   - Firebase/Messaging (11.4.2):
@@ -79,6 +81,7 @@ PODS:
 
 DEPENDENCIES:
   - app_links (from `Flutter/ephemeral/.symlinks/plugins/app_links/macos`)
+  - desktop_drop (from `Flutter/ephemeral/.symlinks/plugins/desktop_drop/macos`)
   - firebase_core (from `Flutter/ephemeral/.symlinks/plugins/firebase_core/macos`)
   - firebase_messaging (from `Flutter/ephemeral/.symlinks/plugins/firebase_messaging/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
@@ -101,6 +104,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   app_links:
     :path: Flutter/ephemeral/.symlinks/plugins/app_links/macos
+  desktop_drop:
+    :path: Flutter/ephemeral/.symlinks/plugins/desktop_drop/macos
   firebase_core:
     :path: Flutter/ephemeral/.symlinks/plugins/firebase_core/macos
   firebase_messaging:
@@ -116,6 +121,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   app_links: 10e0a0ab602ffaf34d142cd4862f29d34b303b2a
+  desktop_drop: 69eeff437544aa619c8db7f4481b3a65f7696898
   Firebase: 7fd5466678d964be78fbf536d8a3385da19c4828
   firebase_core: 1dfe1f4d02ad78be0277e320aa3d8384cf46231f
   firebase_messaging: 61f678060b69a7ae1013e3a939ec8e1c56ef6fcf

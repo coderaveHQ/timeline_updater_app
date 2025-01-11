@@ -43,6 +43,9 @@ class CustomColorDataLight extends TLColorDataLight implements CustomColorable {
 
   @override
   Color get signInSubtitle => TLColors.gray500;
+
+  @override
+  Color get updatesDescription => TLColors.gray900;
 }
 
 /// Holds all dark colors
@@ -71,4 +74,7 @@ class CustomColorDataDark extends TLColorDataDark implements CustomColorable {
 
   @override
   Color get signInSubtitle => TLColors.gray400;
+
+  @override
+  Color get updatesDescription => TLColors.gray100;
 }

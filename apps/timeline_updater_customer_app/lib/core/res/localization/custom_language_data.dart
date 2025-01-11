@@ -53,6 +53,39 @@ class CustomLanguageDataDe extends TLLanguageDataDe implements CustomLocalizable
 
   @override
   String get navigationRailWebAppTitle => 'Im Browser öffnen';
+
+  @override
+  String get updatesAppBarTitle => 'Updates';
+
+  @override
+  String get updatesDescription => 'Sieh dir alle Updates an oder erstelle ein Neues.';
+
+  @override
+  String get updatesTableTitle => 'Alle Updates';
+
+  @override
+  String get updatesTableEmpty => 'Keine Updates gefunden.';
+
+  @override
+  String get updatesTableIdColumnTitle => 'ID';
+
+  @override
+  String get updatesTableCreatedAtColumnTitle => 'Erstellt';
+
+  @override
+  String get updatesTableUpdatedAtColumnTitle => 'Zuletzt bearbeitet';
+
+  @override
+  String get updatesTableMandantNameColumnTitle => 'Mandant';
+
+  @override
+  String get updatesTableTimedAtColumnTitle => 'Geplant';
+
+  @override
+  String get updatesTableStatusColumnTitle => 'Status';
+
+  @override
+  String get updatesTableTitleColumnTitle => 'Titel';
 }
 
 /// Holds all english localized strings
@@ -93,4 +126,37 @@ class CustomLanguageDataEn extends TLLanguageDataEn implements CustomLocalizable
 
   @override
   String get navigationRailWebAppTitle => 'Open in browser';
+
+  @override
+  String get updatesAppBarTitle => 'Updates';
+
+  @override
+  String get updatesDescription => 'View all updates or create a new one.';
+
+  @override
+  String get updatesTableTitle => 'All updates';
+
+  @override
+  String get updatesTableEmpty => 'Keine Updates gefunden.';
+
+  @override
+  String get updatesTableIdColumnTitle => 'ID';
+
+  @override
+  String get updatesTableCreatedAtColumnTitle => 'Created at';
+
+  @override
+  String get updatesTableUpdatedAtColumnTitle => 'Last updated at';
+
+  @override
+  String get updatesTableMandantNameColumnTitle => 'Mandant';
+
+  @override
+  String get updatesTableTimedAtColumnTitle => 'Timed at';
+
+  @override
+  String get updatesTableStatusColumnTitle => 'Status';
+
+  @override
+  String get updatesTableTitleColumnTitle => 'Title';
 }

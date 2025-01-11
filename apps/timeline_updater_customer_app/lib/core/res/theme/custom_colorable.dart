@@ -25,4 +25,7 @@ abstract class CustomColorable extends TLColorable {
 
   /// Sign in page subtitle color
   Color get signInSubtitle;
+
+  /// Updates page description
+  Color get updatesDescription;
 }
