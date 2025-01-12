@@ -35,6 +35,7 @@ class CustomerDetailsPage extends HookConsumerWidget {
     
     return TLScaffold(
       appBar: TLAppBar(
+        context: context,
         navigationRailExists: true,
         title: translations.customerDetailsAppBarTitle,
         backButton: const TLAppBarBackButton(),

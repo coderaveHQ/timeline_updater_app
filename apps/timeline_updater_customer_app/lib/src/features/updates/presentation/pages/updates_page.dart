@@ -25,6 +25,7 @@ class UpdatesPage extends ConsumerWidget {
     
     return TLScaffold(
       appBar: TLAppBar(
+        context: context,
         navigationRailExists: true,
         title: translations.updatesAppBarTitle,
         actionButtons: [

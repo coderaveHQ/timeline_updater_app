@@ -75,6 +75,7 @@ class _CreateUserPageState extends ConsumerState<CreateUserPage> {
 
     return TLScaffold(
       appBar: TLAppBar(
+        context: context,
         title: translations.createUserAppBarTitle,
         backButton: TLAppBarBackButton(isEnabled: !pageState.isCreateUserLoading)
       ),

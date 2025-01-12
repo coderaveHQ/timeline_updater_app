@@ -21,10 +21,11 @@ class MainTopBar extends StatelessWidget {
     final String currentRouterPath = GoRouterState.of(context).fullPath!.toString();
 
     return Container(
-      height: kToolbarHeight,
+      height: context.topPadding + kToolbarHeight,
       color: colors.primaryBackground,
       alignment: Alignment.centerLeft,
       padding: EdgeInsets.only(
+        top: context.topPadding,
         left: TLSpacing.lg,
         right: context.rightPadding + TLSpacing.lg
       ),
@@ -41,7 +42,6 @@ class MainTopBar extends StatelessWidget {
                   color: colors.mainTopBarPath
                 )
               )
-              
             )
           ),
           const Gap(TLSpacing.lg),

@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+
 import 'package:timeline_updater_app_ui/timeline_updater_app_ui.dart';
 
 import 'package:timeline_updater_admin_app/src/features/auth/presentation/app/sign_in_page_state_notifier.dart';
@@ -52,7 +53,10 @@ class _SignInPageState extends ConsumerState<SignInPage> {
     final SignInPageState pageState = ref.watch(signInPageStateNotifierProvider);
 
     return TLScaffold(
-      appBar: TLAppBar(title: translations.signInAppBarTitle),
+      appBar: TLAppBar(
+        context: context,
+        title: translations.signInAppBarTitle
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(
           top: TLSpacing.lg,

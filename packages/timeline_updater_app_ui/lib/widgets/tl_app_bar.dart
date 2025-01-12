@@ -13,6 +13,9 @@ import 'package:timeline_updater_app_ui/widgets/tl_text.dart';
 /// Custom App Bar widget
 class TLAppBar extends StatelessWidget implements PreferredSizeWidget {
 
+  /// The BuildContext from where the widget is built
+  final BuildContext context;
+
   /// Wether there is a navigation rail, because then there is no need for subtracting the devices left padding
   final bool navigationRailExists;
 
@@ -28,6 +31,7 @@ class TLAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// Default constructor
   const TLAppBar({ 
     super.key,
+    required this.context,
     this.navigationRailExists = false,
     this.backButton,
     this.title = '',
@@ -35,53 +39,50 @@ class TLAppBar extends StatelessWidget implements PreferredSizeWidget {
   });
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight + (navigationRailExists ? 0.0 : context.topPadding));
 
   @override
   Widget build(BuildContext context) {
 
     final TLColorable colors = TLTheme.colorsOf(context);
 
-    return AppBar(
-      backgroundColor: colors.appBarBackground,
-      surfaceTintColor: colors.appBarBackground,
-      automaticallyImplyLeading: false,
-      titleSpacing: 0.0,
-      elevation: 0.0,
-      title: Padding(
-        padding: EdgeInsets.only(
-          left: (navigationRailExists ? 0.0 : context.leftPadding) + TLSpacing.lg,
-          right: context.rightPadding + TLSpacing.lg
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            if (backButton != null) backButton!,
-            if (backButton != null) const Gap(TLSpacing.md),
-            Expanded(
-              child: TLText(
-                text: title,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w600,
-                  color: colors.appBarTitle
-                )
+    return Container(
+      width: preferredSize.width,
+      height: preferredSize.height,
+      color: colors.appBarBackground,
+      padding: EdgeInsets.only(
+        top: navigationRailExists ? 0.0 : context.topPadding,
+        left: (navigationRailExists ? 0.0 : context.leftPadding) + TLSpacing.lg,
+        right: context.rightPadding + TLSpacing.lg
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          if (backButton != null) backButton!,
+          if (backButton != null) const Gap(TLSpacing.md),
+          Expanded(
+            child: TLText(
+              text: title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.w600,
+                color: colors.appBarTitle
               )
-            ),
-            if (actionButtons.isNotEmpty) const Gap(TLSpacing.md),
-            if (actionButtons.isNotEmpty) Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: List.generate(actionButtons.length, (int index) {
-                return Padding(
-                  padding: EdgeInsets.only(left: index == 0 ? 0.0 : TLSpacing.md),
-                  child: actionButtons[index]
-                );
-              })
             )
-          ]
-        )
+          ),
+          if (actionButtons.isNotEmpty) const Gap(TLSpacing.md),
+          if (actionButtons.isNotEmpty) Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: List.generate(actionButtons.length, (int index) {
+              return Padding(
+                padding: EdgeInsets.only(left: index == 0 ? 0.0 : TLSpacing.md),
+                child: actionButtons[index]
+              );
+            })
+          )
+        ]
       )
     );
   }

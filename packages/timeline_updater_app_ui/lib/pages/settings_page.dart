@@ -49,6 +49,7 @@ class TLSettingsPage extends StatelessWidget {
 
     return TLScaffold(
       appBar: TLAppBar(
+        context: context,
         navigationRailExists: true,
         title: translations.settingsAppBarTitle
       ),

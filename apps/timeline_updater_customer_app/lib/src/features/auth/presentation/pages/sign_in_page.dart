@@ -53,7 +53,10 @@ class _SignInPageState extends ConsumerState<SignInPage> {
     final SignInPageState pageState = ref.watch(signInPageStateNotifierProvider);
 
     return TLScaffold(
-      appBar: TLAppBar(title: translations.signInAppBarTitle),
+      appBar: TLAppBar(
+        title: translations.signInAppBarTitle,
+        context: context
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(
           top: TLSpacing.lg,

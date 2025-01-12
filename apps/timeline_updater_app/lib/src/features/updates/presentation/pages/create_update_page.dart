@@ -72,10 +72,7 @@ class _CreateUpdatePageState extends ConsumerState<CreateUpdatePage> {
   }
 
   void _handleCreateUpdatePageStateUpdate(CreateUpdatePageState? last, CreateUpdatePageState next) {
-    if (next.error != null) {
-      print(next.error!.toString());
-      next.error!.showErrorToast(context);
-    }
+    if (next.error != null) next.error!.showErrorToast(context);
   }
   
   @override
@@ -94,6 +91,7 @@ class _CreateUpdatePageState extends ConsumerState<CreateUpdatePage> {
 
     return TLScaffold(
       appBar: TLAppBar(
+        context: context,
         title: translations.createUpdateAppBarTitle,
         backButton: TLAppBarBackButton(isEnabled: !pageState.isLoading)
       ),

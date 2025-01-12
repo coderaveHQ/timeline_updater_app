@@ -25,6 +25,7 @@ class StandardsPage extends ConsumerWidget {
     
     return TLScaffold(
       appBar: TLAppBar(
+        context: context,
         navigationRailExists: true,
         title: translations.standardsAppBarTitle,
         actionButtons: [

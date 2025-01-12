@@ -24,6 +24,7 @@ class CustomersPage extends ConsumerWidget {
     final CustomColorable colors = TLTheme.colorsOf(context);
     return TLScaffold(
       appBar: TLAppBar(
+        context: context,
         navigationRailExists: true,
         title: translations.usersAppBarTitle,
         actionButtons: [
