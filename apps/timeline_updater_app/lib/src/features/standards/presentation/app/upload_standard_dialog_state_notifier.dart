@@ -38,6 +38,8 @@ class UploadStandardDialogStateNotifier extends _$UploadStandardDialogStateNotif
   void changeType(StandardType type) {
     state = state.copyWith(
       type: type,
+      flavor: type == StandardType.client && type != state.type ? StandardFlavor.enterprise : null,
+      removeFlavor: type == StandardType.server,
       removeError: true
     );
   }
@@ -89,7 +91,7 @@ class UploadStandardDialogStateNotifier extends _$UploadStandardDialogStateNotif
         type: state.type,
         evolution: state.evolution,
         version: state.version,
-        flavor: state.type == StandardType.client ? state.flavor : null,
+        flavor: state.flavor,
         patch: state.patch
       );
       
@@ -126,9 +128,7 @@ class UploadStandardDialogState {
   final StandardVersion version;
 
   /// The standard flavor of the file
-  /// This will be set even if is of type server 
-  /// but will not be used and removed from the UI then
-  final StandardFlavor flavor;
+  final StandardFlavor? flavor;
 
   /// The patch date of the file
   final DateTime patch;
@@ -172,14 +172,15 @@ class UploadStandardDialogState {
     DateTime? patch,
     bool? isLoading,
     Object? error,
-    bool removeError = false
+    bool removeError = false,
+    bool removeFlavor = false
   }) {
     return UploadStandardDialogState(
       file: file ?? this.file,
       type: type ?? this.type,
       evolution: evolution ?? this.evolution,
       version: version ?? this.version,
-      flavor: flavor ?? this.flavor,
+      flavor: removeFlavor ? null : flavor ?? this.flavor,
       patch: patch ?? this.patch,
       isLoading: isLoading ?? this.isLoading,
       error: removeError ? null : error ?? this.error

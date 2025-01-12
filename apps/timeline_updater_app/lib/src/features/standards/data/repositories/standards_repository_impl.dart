@@ -46,6 +46,7 @@ class StandardsRepositoryImpl implements StandardsRepository {
         type: type, 
         evolution: evolution, 
         version: version, 
+        flavor: flavor,
         patch: patch
       );
       return const Success(data: null);

@@ -49,13 +49,13 @@ class StandardsDatasourceImpl implements StandardsDatasource {
       .upload('$evolutionFolderName/$versionFolderName/$patchFolderName/$fileName.$fileExtension', standardFile);
 
     await Supabase.instance.client.rpc(
-      'app_create_standard',
+      'app_upload_standard',
       params: <String, dynamic>{
         'in_file_path' : filePath,
         'in_type' : type.dbValue,
         'in_evolution' : evolution.dbValue,
         'in_version' : version.dbValue,
-        if (flavor != null) 'in_flavor' : flavor.dbValue,
+        'in_flavor' : flavor?.dbValue,
         'in_patch' : patch.toIso8601String()
       }
     );

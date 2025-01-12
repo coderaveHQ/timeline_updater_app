@@ -19,7 +19,7 @@ class CreateUpdatePageStateNotifier extends _$CreateUpdatePageStateNotifier {
 
   /// Selects files from the users device
   Future<void> selectFiles(UpdateFileType type) async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: true);
     if (result == null) return;
 
     final List<File> files = result.files.map((PlatformFile file) => File(file.path!)).toList();
